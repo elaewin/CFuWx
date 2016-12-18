@@ -106,7 +106,6 @@
 				555FA2261E0700B80036FC1E /* Model */,
 				555FA2271E0700BD0036FC1E /* Controller */,
 				555FA2251E0700890036FC1E /* View */,
-				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 				555FA1FB1E06FE680036FC1E /* Supporting Files */,
 			);
 			path = CFuWx;
@@ -149,6 +148,7 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -486,6 +486,7 @@
 				555FA21F1E06FE680036FC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		555FA2201E06FE680036FC1E /* Build configuration list for PBXNativeTarget "CFuWxTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +495,7 @@
 				555FA2221E06FE680036FC1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
