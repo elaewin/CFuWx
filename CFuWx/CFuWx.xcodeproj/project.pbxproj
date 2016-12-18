@@ -17,6 +17,14 @@
 		555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2281E0700E90036FC1E /* Forecast.storyboard */; };
 		555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA22A1E0701110036FC1E /* Settings.storyboard */; };
 		555FA22D1E0701380036FC1E /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA22C1E0701380036FC1E /* About.storyboard */; };
+		555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA22F1E0701A70036FC1E /* HomeViewController.m */; };
+		555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA22F1E0701A70036FC1E /* HomeViewController.m */; };
+		555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2331E0701BA0036FC1E /* AboutViewController.m */; };
+		555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2331E0701BA0036FC1E /* AboutViewController.m */; };
+		555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
+		555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
+		555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
+		555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		555FA2281E0700E90036FC1E /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
 		555FA22A1E0701110036FC1E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		555FA22C1E0701380036FC1E /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		555FA22E1E0701A70036FC1E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		555FA22F1E0701A70036FC1E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		555FA2321E0701BA0036FC1E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		555FA2331E0701BA0036FC1E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		555FA2361E0701C40036FC1E /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastViewController.h; sourceTree = "<group>"; };
+		555FA2371E0701C40036FC1E /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
+		555FA23A1E0701CF0036FC1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		555FA23B1E0701CF0036FC1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +154,14 @@
 		555FA2271E0700BD0036FC1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				555FA2321E0701BA0036FC1E /* AboutViewController.h */,
+				555FA2331E0701BA0036FC1E /* AboutViewController.m */,
+				555FA2361E0701C40036FC1E /* ForecastViewController.h */,
+				555FA2371E0701C40036FC1E /* ForecastViewController.m */,
+				555FA22E1E0701A70036FC1E /* HomeViewController.h */,
+				555FA22F1E0701A70036FC1E /* HomeViewController.m */,
+				555FA23A1E0701CF0036FC1E /* SettingsViewController.h */,
+				555FA23B1E0701CF0036FC1E /* SettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -250,8 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
+				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
+				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
+				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
+				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */,
+				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
+				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
+				555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
