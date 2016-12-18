@@ -1,6 +1,6 @@
 ## Credits
 
-This project is based on [https://www.cmetwx.com/](uWx), an Andriod app developed by the University of Washington Department of Atmospheric Sciences.
+This project is based on [uWx](https://www.cmetwx.com/), an Andriod app developed by the University of Washington Department of Atmospheric Sciences.
 
 ---
 
