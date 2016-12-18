@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
-		555FA2031E06FE680036FC1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2021E06FE680036FC1E /* ViewController.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
 		555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */; };
 		555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555FA20A1E06FE680036FC1E /* Assets.xcassets */; };
 		555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */; };
 		555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2181E06FE680036FC1E /* CFuWxTests.m */; };
+		555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2281E0700E90036FC1E /* Forecast.storyboard */; };
+		555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA22A1E0701110036FC1E /* Settings.storyboard */; };
+		555FA22D1E0701380036FC1E /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA22C1E0701380036FC1E /* About.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +34,6 @@
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		555FA1FF1E06FE680036FC1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		555FA2011E06FE680036FC1E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		555FA2021E06FE680036FC1E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		555FA2051E06FE680036FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		555FA2081E06FE680036FC1E /* CFuWx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CFuWx.xcdatamodel; sourceTree = "<group>"; };
 		555FA20A1E06FE680036FC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +42,9 @@
 		555FA2141E06FE680036FC1E /* CFuWxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFuWxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA2181E06FE680036FC1E /* CFuWxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFuWxTests.m; sourceTree = "<group>"; };
 		555FA21A1E06FE680036FC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		555FA2281E0700E90036FC1E /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
+		555FA22A1E0701110036FC1E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		555FA22C1E0701380036FC1E /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +86,9 @@
 		555FA1FA1E06FE680036FC1E /* CFuWx */ = {
 			isa = PBXGroup;
 			children = (
-				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
-				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
-				555FA2011E06FE680036FC1E /* ViewController.h */,
-				555FA2021E06FE680036FC1E /* ViewController.m */,
-				555FA2041E06FE680036FC1E /* Main.storyboard */,
-				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
-				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
-				555FA20F1E06FE680036FC1E /* Info.plist */,
+				555FA2261E0700B80036FC1E /* Model */,
+				555FA2271E0700BD0036FC1E /* Controller */,
+				555FA2251E0700890036FC1E /* View */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 				555FA1FB1E06FE680036FC1E /* Supporting Files */,
 			);
@@ -100,6 +98,10 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
+				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
+				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
+				555FA20F1E06FE680036FC1E /* Info.plist */,
 				555FA1FC1E06FE680036FC1E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -112,6 +114,32 @@
 				555FA21A1E06FE680036FC1E /* Info.plist */,
 			);
 			path = CFuWxTests;
+			sourceTree = "<group>";
+		};
+		555FA2251E0700890036FC1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				555FA22C1E0701380036FC1E /* About.storyboard */,
+				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
+				555FA2041E06FE680036FC1E /* Main.storyboard */,
+				555FA22A1E0701110036FC1E /* Settings.storyboard */,
+				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		555FA2261E0700B80036FC1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		555FA2271E0700BD0036FC1E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */,
+				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
+				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
+				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				555FA2031E06FE680036FC1E /* ViewController.m in Sources */,
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
