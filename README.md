@@ -6,12 +6,18 @@ This project is based on [https://www.cmetwx.com/](uWx), an Andriod app develope
 
 ## Group Process
 
-Use Waffle.io for tracking issues:
+#### Use Waffle.io for tracking issues:
 
 * Add appropriate label when creating issue on Github (eg. "mvp", "stretch goal", "bug", etc.)
 * If applicable, add milestone (day to finish) when creating issue.
+* Assign yourself to an issue when you start work on it, and add the "in progress" label (or add yourself and drag over to the In Process column in Waffle.)
 
-Github/Git Flow:
+#### TDD:
+
+* Write at least one test *before* starting on a new function/method.
+* Put suggested tests into the issue when you enter it on GH, if possible, so that if someone else picks up the issue, they have a place to start.
+
+#### Github/Git Flow:
 
 * Branch names should include your name, the issue number (with #), and descriptive name, eg. 'pearl#13-readableDateFunc' or 'ruby#15-dateBugFix'.
 * ACP **AT LEAST** once every 30 minutes.
