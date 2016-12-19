@@ -5,8 +5,10 @@
 //  Created by Erica Winberry on 12/18/16.
 //  Copyright © 2016 Erica Winberry. All rights reserved.
 //
+@import Parse;
 
 #import "AppDelegate.h"
+#import "Credentials.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId = kApplicationID;
+        configuration.clientKey = kMasterKey;
+        configuration.server = kServerURL;
+    }]];
+
     return YES;
 }
 
