@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8291E084E0F00B63BE8 /* Altimiter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0180B8271E084CD500B63BE8 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		0180B8281E084E0F00B63BE8 /* Altimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimiter.h; sourceTree = "<group>"; };
+		0180B8291E084E0F00B63BE8 /* Altimiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimiter.m; sourceTree = "<group>"; };
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				555FA23E1E0702370036FC1E /* Credentials.h */,
+				0180B8271E084CD500B63BE8 /* Credentials.h */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
 				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
@@ -148,6 +153,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0180B8281E084E0F00B63BE8 /* Altimiter.h */,
+				0180B8291E084E0F00B63BE8 /* Altimiter.m */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 			);
 			name = Model;
@@ -276,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
+				0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
