@@ -8,6 +8,7 @@
 @import Parse;
 
 #import "AppDelegate.h"
+#import "Credentials.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId = kApplicationID;
         configuration.clientKey = kMasterKey;
-        configuration.server = KServerURL;
+        configuration.server = kServerURL;
     }]];
 
     return YES;
