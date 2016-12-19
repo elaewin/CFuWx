@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8291E084E0F00B63BE8 /* Altimiter.m */; };
+
+		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
 		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
 		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
 		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -59,9 +61,13 @@
 /* Begin PBXFileReference section */
 		0180B8281E084E0F00B63BE8 /* Altimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimiter.h; sourceTree = "<group>"; };
 		0180B8291E084E0F00B63BE8 /* Altimiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimiter.m; sourceTree = "<group>"; };
+
+		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
+
 		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		555CD9A81E088BF5002E72DA /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,7 +155,10 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				555CD9A81E088BF5002E72DA /* Credentials.h */,
+
+				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
+				0180B8271E084CD500B63BE8 /* Credentials.h */,
+
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
 				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
@@ -292,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */,
+				0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */,
 				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
