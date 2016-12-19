@@ -11,6 +11,8 @@
 
 @interface HomeViewController ()
 
+@property(strong, nonatomic)Altimiter *altimeter;
+
 @end
 
 @implementation HomeViewController
@@ -18,15 +20,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     Altimiter *altimeter = [[Altimiter alloc]init];
-    [altimeter getAltitudeChange];
+    [self.altimeter getAltitudeChange];
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
-    
-
 }
 
 

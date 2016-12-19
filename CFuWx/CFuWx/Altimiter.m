@@ -8,20 +8,28 @@
 
 #import "Altimiter.h"
 
-@implementation Altimiter
+@interface Altimiter ()
 
+@property(strong, nonatomic) CMAltimeter *altimeter;
+
+
+@end
+@implementation Altimiter
 
 
 -(void)getAltitudeChange{
     if([CMAltimeter isRelativeAltitudeAvailable]) {
 //        NSOperationQueue *altitudeQueue = [[NSOperationQueue alloc]init];
 
-        CMAltimeter *altimeter = [[CMAltimeter alloc]init];
-        [altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
-            NSLog(@"Pressure: %@", altitudeData.pressure);
+        self.altimeter = [[CMAltimeter alloc]init];
+        [self.altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
+            NSLog(@"Pressure: %@", altitudeData);
+            NSLog(@"Error: %@", error);
 
         }];
         
+    } else {
+        NSLog(@"Error Retrieving Altitude Change Data");
     }
 }
 
