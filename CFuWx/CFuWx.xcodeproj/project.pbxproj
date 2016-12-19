@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8291E084E0F00B63BE8 /* Altimiter.m */; };
+		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
+		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
+		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
@@ -38,10 +42,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		555CD9981E087FFC002E72DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */,
+				555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0180B8271E084CD500B63BE8 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		0180B8281E084E0F00B63BE8 /* Altimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimiter.h; sourceTree = "<group>"; };
 		0180B8291E084E0F00B63BE8 /* Altimiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimiter.m; sourceTree = "<group>"; };
+		555CD9921E087E0B002E72DA /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,7 +85,6 @@
 		555FA2371E0701C40036FC1E /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		555FA23A1E0701CF0036FC1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		555FA23B1E0701CF0036FC1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		555FA23E1E0702370036FC1E /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */,
+				555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +107,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		555CD9931E087FDB002E72DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				555CD9961E087FEA002E72DA /* Parse.framework */,
+				555CD9941E087FDB002E72DA /* Bolts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		555FA1EF1E06FE680036FC1E = {
 			isa = PBXGroup;
 			children = (
 				555FA1FA1E06FE680036FC1E /* CFuWx */,
 				555FA2171E06FE680036FC1E /* CFuWxTests */,
 				555FA1F91E06FE680036FC1E /* Products */,
+				555CD9931E087FDB002E72DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,8 +149,7 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				555FA23E1E0702370036FC1E /* Credentials.h */,
-				0180B8271E084CD500B63BE8 /* Credentials.h */,
+				555CD9921E087E0B002E72DA /* Credentials.h */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
 				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
@@ -185,6 +215,8 @@
 				555FA1F41E06FE680036FC1E /* Sources */,
 				555FA1F51E06FE680036FC1E /* Frameworks */,
 				555FA1F61E06FE680036FC1E /* Resources */,
+				555CD9981E087FFC002E72DA /* CopyFiles */,
+				555CD99B1E0881DD002E72DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -224,7 +256,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = U5DE7QAC5B;
+						DevelopmentTeam = 4YFWUVNT8L;
 						ProvisioningStyle = Automatic;
 					};
 					555FA2131E06FE680036FC1E = {
@@ -276,6 +308,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		555CD99B1E0881DD002E72DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		555FA1F41E06FE680036FC1E /* Sources */ = {
@@ -429,7 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U5DE7QAC5B;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -442,7 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U5DE7QAC5B;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

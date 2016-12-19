@@ -23,8 +23,8 @@
 
         self.altimeter = [[CMAltimeter alloc]init];
         [self.altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
-            NSLog(@"Pressure: %@", altitudeData);
-            NSLog(@"Error: %@", error);
+            NSLog(@"Pressure: %.4f", altitudeData.pressure.floatValue);
+//            NSLog(@"Error: %@", error);
 
         }];
         

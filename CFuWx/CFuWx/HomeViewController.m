@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Altimiter *altimeter = [[Altimiter alloc]init];
+    self.altimeter = [[Altimiter alloc]init];
     [self.altimeter getAltitudeChange];
 
 }
