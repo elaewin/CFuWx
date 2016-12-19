@@ -2,6 +2,9 @@
 
 This project is based on [uWx](https://www.cmetwx.com/), an Andriod app developed by the University of Washington Department of Atmospheric Sciences.
 
+Weather icons from [Daniel Vierich](http://www.danvierich.de/weather/).
+Charts creates using [Charts](https://github.com/danielgindi/Charts).
+
 ---
 
 ## Group Process
