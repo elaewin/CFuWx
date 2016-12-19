@@ -1,18 +1,19 @@
 //
-//  CFuWxTests.m
-//  CFuWxTests
+//  DarkSkyTest.m
+//  CFuWx
 //
-//  Created by Erica Winberry on 12/18/16.
+//  Created by Corey Malek on 12/19/16.
 //  Copyright © 2016 Erica Winberry. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface CFuWxTests : XCTestCase
+
+@interface DarkSkyTest : XCTestCase
 
 @end
 
-@implementation CFuWxTests
+@implementation DarkSkyTest
 
 - (void)setUp {
     [super setUp];
@@ -22,11 +23,13 @@
     
     
     
-    
 }
 
+
+
+
+
 - (void)tearDown {
-    
     
     
     
