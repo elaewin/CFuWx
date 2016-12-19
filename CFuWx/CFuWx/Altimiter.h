@@ -12,7 +12,7 @@
 
 @interface Altimiter : NSObject
 
-
+-(void)getAltitudeChange;
 
 
 @end

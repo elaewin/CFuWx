@@ -12,8 +12,18 @@
 
 
 
+-(void)getAltitudeChange{
+    if([CMAltimeter isRelativeAltitudeAvailable]) {
+//        NSOperationQueue *altitudeQueue = [[NSOperationQueue alloc]init];
 
+        CMAltimeter *altimeter = [[CMAltimeter alloc]init];
+        [altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
+            NSLog(@"Pressure: %@", altitudeData.pressure);
 
+        }];
+        
+    }
+}
 
 
 
