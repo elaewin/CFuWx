@@ -2,7 +2,7 @@
 
 This project is based on [uWx](https://www.cmetwx.com/), an Andriod app developed by the University of Washington Department of Atmospheric Sciences.
 
-Weather icons from [Daniel Vierich](http://www.danvierich.de/weather/).
+Weather icons from [Daniel Vierich](http://www.danvierich.de/weather/). Other icons from [PixelKit](http://www.iconarchive.com/show/swanky-outlines-icons-by-pixelkit/15-Light-Bulb-icon.html), [thenounproject](https://thenounproject.com/term/barometer/1841/), [Rami McMin](http://www.flaticon.com/free-icon/winds-symbol_53372).
 
 Charts creates using [Charts](https://github.com/danielgindi/Charts).
 
