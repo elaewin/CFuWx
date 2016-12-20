@@ -7,7 +7,6 @@
 //
 
 #import "ChartViewController.h"
-
 #import "CFuWx-Swift.h"
 
 @import Charts;
@@ -38,7 +37,7 @@
     
     [self.view addSubview:self.chartView];
     
-    [self setupChart];
+//    [self setupChart];
     
     
 }
@@ -71,7 +70,7 @@
             NSNumber *pressure = altitudeData.pressure;
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
-            [hulk refreshChart:hulk.values];
+//            [hulk refreshChart:hulk.values];
             NSLog(@"pressure: %@", pressure);
         }];
         
