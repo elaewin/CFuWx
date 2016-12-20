@@ -25,8 +25,41 @@
         configuration.server = kServerURL;
     }]];
 
+    [self bootstrapApp];
     return YES;
 }
+
+-(void)bootstrapApp{
+    
+//        NSDictionary *currently = [[NSDictionary alloc]init];
+//        NSDictionary *hourly = [[NSDictionary alloc]init];
+//        NSDictionary *daily = [[NSDictionary alloc]init];
+//        NSDictionary *alerts = [[NSDictionary alloc]init];
+    
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"forecast" ofType:@"JSON"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+    
+    NSError *error;
+    
+    NSDictionary *responseObj = [NSJSONSerialization
+                                 JSONObjectWithData:jsonData
+                                 options:0
+                                 error:&error];
+    
+    if (!error) {
+        NSDictionary *currently = responseObj[@"currently"];
+        NSNumber *time = currently[@"time"];
+        
+        NSLog(@"%@", time);
+        
+        
+    }
+
+
+    
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
