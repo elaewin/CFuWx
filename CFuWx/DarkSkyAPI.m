@@ -53,20 +53,11 @@
 
 
 
-
-
-
-
-
-
-//-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-//    
-//    [self.delegate fetchData:self.receivedData sender:self];
-//     //setting to 'nil' will ensure that once the method makes connection to API, it will refresh and instantiate again when needed (see setter methods)
-//    self.delegate = nil;
-//    self.receivedData = nil;
-//    self.requestURL = nil;
-//}
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+     //setting to 'nil' will ensure that once the method makes connection to API, it will refresh and instantiate again when needed (see setter methods)
+    self.receivedData = nil;
+    self.requestURL = nil;
+}
 
 
 
