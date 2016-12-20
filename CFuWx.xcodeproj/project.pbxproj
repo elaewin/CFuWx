@@ -14,9 +14,11 @@
 		0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */; };
 		0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8351E08F4B000B63BE8 /* HomeViewTest.m */; };
 		0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */; };
+
 		0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */; };
 
 		1A9FCD401E09BD1E00DC0C2F /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */; };
+
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
@@ -37,6 +39,7 @@
 		555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
 		555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
+
 		55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; };
 		55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; };
 		55DC16561E09C70800E5A8A6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; };
@@ -62,7 +65,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-
 				55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */,
 				55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */,
 				55DC16571E09C71200E5A8A6 /* Bolts.framework in CopyFiles */,
@@ -111,6 +113,7 @@
 		555FA2371E0701C40036FC1E /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		555FA23A1E0701CF0036FC1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		555FA23B1E0701CF0036FC1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+
 		55DC16501E09C3B100E5A8A6 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		55DC16511E09C70800E5A8A6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		55DC16521E09C70800E5A8A6 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 
 				55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */,
 				55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */,
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 
+
 				55DC16511E09C70800E5A8A6 /* Bolts.framework */,
 				55DC16521E09C70800E5A8A6 /* Charts.framework */,
 				55DC16531E09C70800E5A8A6 /* Parse.framework */,
@@ -155,7 +160,6 @@
 		555FA1EF1E06FE680036FC1E = {
 			isa = PBXGroup;
 			children = (
-				1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */,
 				555FA1FA1E06FE680036FC1E /* CFuWx */,
 				555FA2171E06FE680036FC1E /* CFuWxTests */,
 				555FA1F91E06FE680036FC1E /* Products */,
@@ -175,6 +179,7 @@
 		555FA1FA1E06FE680036FC1E /* CFuWx */ = {
 			isa = PBXGroup;
 			children = (
+				7C4B39FC1E09DA45003E1AC4 /* garbage.swift */,
 				555FA2261E0700B80036FC1E /* Model */,
 				555FA2271E0700BD0036FC1E /* Controller */,
 				555FA2251E0700890036FC1E /* View */,
@@ -186,6 +191,7 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+
 				55DC16501E09C3B100E5A8A6 /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
@@ -305,6 +311,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
+
 						DevelopmentTeam = 4YFWUVNT8L;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
@@ -392,7 +399,7 @@
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
-				1A9FCD401E09BD1E00DC0C2F /* garbage.swift in Sources */,
+				7C4B39FD1E09DA45003E1AC4 /* garbage.swift in Sources */,
 				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
@@ -486,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -528,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -542,6 +549,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
@@ -561,6 +569,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
