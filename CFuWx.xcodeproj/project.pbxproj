@@ -14,6 +14,8 @@
 		0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */; };
 		0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8351E08F4B000B63BE8 /* HomeViewTest.m */; };
 		0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */; };
+		0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */; };
+
 		1A9FCD401E09BD1E00DC0C2F /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */; };
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
@@ -60,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+
 				55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */,
 				55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */,
 				55DC16571E09C71200E5A8A6 /* Bolts.framework in CopyFiles */,
@@ -76,6 +79,9 @@
 		0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewTest.m; sourceTree = "<group>"; };
 		0180B8351E08F4B000B63BE8 /* HomeViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTest.m; sourceTree = "<group>"; };
 		0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewTest.m; sourceTree = "<group>"; };
+		0197C2501E09CE79006D7A29 /* DarkSkyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkSkyAPI.h; sourceTree = "<group>"; };
+		0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyAPI.m; sourceTree = "<group>"; };
+
 		1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
 		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
 		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
@@ -116,9 +122,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */,
 				55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */,
 				55DC16561E09C70800E5A8A6 /* Parse.framework in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,9 +143,11 @@
 		555CD9931E087FDB002E72DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+
 				55DC16511E09C70800E5A8A6 /* Bolts.framework */,
 				55DC16521E09C70800E5A8A6 /* Charts.framework */,
 				55DC16531E09C70800E5A8A6 /* Parse.framework */,
+
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,6 +228,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0197C2501E09CE79006D7A29 /* DarkSkyAPI.h */,
+				0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */,
 				555CD9C11E08CE2F002E72DA /* Altimeter.h */,
 				555CD9C21E08CE2F002E72DA /* Altimeter.m */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
@@ -374,6 +386,7 @@
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
+				0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */,
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
