@@ -1,5 +1,5 @@
 //
-//  MainPressureChartViewController.h
+//  ChartViewController.h
 //  CFuWx
 //
 //  Created by Erica Winberry on 12/19/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainPressureChartViewController : UIViewController
+@interface ChartViewController : UIViewController
 
 @end

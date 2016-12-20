@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8291E084E0F00B63BE8 /* Altimiter.m */; };
 		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
 		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
 		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
@@ -16,8 +15,8 @@
 		555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		555CD9B11E08C3A6002E72DA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; };
 		555CD9B21E08C3B4002E72DA /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		555CD9B41E08C43F002E72DA /* MainPressureChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555CD9B31E08C43F002E72DA /* MainPressureChart.xib */; };
-		555CD9B71E08C486002E72DA /* MainPressureChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */; };
+		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
+		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
@@ -64,17 +63,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0180B8281E084E0F00B63BE8 /* Altimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimiter.h; sourceTree = "<group>"; };
-		0180B8291E084E0F00B63BE8 /* Altimiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimiter.m; sourceTree = "<group>"; };
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
 		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
 		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		555CD9B01E08C3A6002E72DA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
-		555CD9B31E08C43F002E72DA /* MainPressureChart.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPressureChart.xib; sourceTree = "<group>"; };
-		555CD9B51E08C486002E72DA /* MainPressureChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPressureChartViewController.h; sourceTree = "<group>"; };
-		555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPressureChartViewController.m; sourceTree = "<group>"; };
 		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
+		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		555CD9BD1E08CAC6002E72DA /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		555CD9C11E08CE2F002E72DA /* Altimeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimeter.h; sourceTree = "<group>"; };
+		555CD9C21E08CE2F002E72DA /* Altimeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimeter.m; sourceTree = "<group>"; };
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,9 +198,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				555CD9B31E08C43F002E72DA /* MainPressureChart.xib */,
-				0180B8281E084E0F00B63BE8 /* Altimiter.h */,
-				0180B8291E084E0F00B63BE8 /* Altimiter.m */,
+				555CD9C11E08CE2F002E72DA /* Altimeter.h */,
+				555CD9C21E08CE2F002E72DA /* Altimeter.m */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 			);
 			name = Model;
@@ -211,8 +208,6 @@
 		555FA2271E0700BD0036FC1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				555CD9B51E08C486002E72DA /* MainPressureChartViewController.h */,
-				555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */,
 				555FA2321E0701BA0036FC1E /* AboutViewController.h */,
 				555FA2331E0701BA0036FC1E /* AboutViewController.m */,
 				555FA2361E0701C40036FC1E /* ForecastViewController.h */,
@@ -221,6 +216,8 @@
 				555FA22F1E0701A70036FC1E /* HomeViewController.m */,
 				555FA23A1E0701CF0036FC1E /* SettingsViewController.h */,
 				555FA23B1E0701CF0036FC1E /* SettingsViewController.m */,
+				555CD9BC1E08CAC6002E72DA /* ChartViewController.h */,
+				555CD9BD1E08CAC6002E72DA /* ChartViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -318,7 +315,6 @@
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
-				555CD9B41E08C43F002E72DA /* MainPressureChart.xib in Resources */,
 				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,13 +353,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
-				0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
+				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
-				555CD9B71E08C486002E72DA /* MainPressureChartViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
+				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
