@@ -37,6 +37,8 @@
     
     [self.view addSubview:self.chartView];
     
+    [self setupChart];
+    
     
 }
 
@@ -77,12 +79,22 @@
 }
 
 -(void)setupChart {
-
-    
     self.chartView.dragEnabled = NO;
     self.chartView.drawGridBackgroundEnabled = NO;
     self.chartView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
     self.chartView.legend.enabled = NO;
+    
+    ChartXAxis *xAxis = self.chartView.xAxis;
+    xAxis.drawAxisLineEnabled = NO;
+    xAxis.drawGridLinesEnabled = NO;
+    
+    ChartYAxis *leftAxis = self.chartView.leftAxis;
+    leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
+    leftAxis.labelFont = [UIFont fontWithName:@"Arial" size:9.0];
+    leftAxis.labelTextColor = [UIColor magentaColor];
+    leftAxis.drawAxisLineEnabled = YES;
+    leftAxis.axisMaximum = self.chartUpperLimit;
+    leftAxis.axisMinimum = self.chartLowerLimit;
     
 }
 
@@ -124,6 +136,8 @@
         LineChartData *data = [[LineChartData alloc] initWithDataSets:dataSets];
         [data setValueTextColor:[UIColor blackColor]];
         [data setValueFont:[UIFont fontWithName:@"Arial" size:9.0]];
+        
+        self.chartView.data = data;
     }
 }
 
