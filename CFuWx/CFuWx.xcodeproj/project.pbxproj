@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8291E084E0F00B63BE8 /* Altimiter.m */; };
 		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
+		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
 		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
 		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
 		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,6 +67,7 @@
 		0180B8281E084E0F00B63BE8 /* Altimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimiter.h; sourceTree = "<group>"; };
 		0180B8291E084E0F00B63BE8 /* Altimiter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimiter.m; sourceTree = "<group>"; };
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
+		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
 		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		555CD9B01E08C3A6002E72DA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		555FA2171E06FE680036FC1E /* CFuWxTests */ = {
 			isa = PBXGroup;
 			children = (
+				0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */,
 				555FA2181E06FE680036FC1E /* CFuWxTests.m */,
 				555FA21A1E06FE680036FC1E /* Info.plist */,
 			);
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */,
+				0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */,
 				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
