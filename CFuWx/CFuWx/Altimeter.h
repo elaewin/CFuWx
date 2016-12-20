@@ -1,8 +1,8 @@
 //
-//  Altimiter.h
+//  Altimeter.h
 //  CFuWx
 //
-//  Created by Corey Malek on 12/19/16.
+//  Created by Erica Winberry on 12/19/16.
 //  Copyright © 2016 Erica Winberry. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 @import CoreMotion;
 
 
-@interface Altimiter : NSObject
+@interface Altimeter : NSObject
 
 -(void)getAltitudeChange;
 

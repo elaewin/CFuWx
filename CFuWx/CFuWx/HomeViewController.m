@@ -7,13 +7,13 @@
 //
 
 #import "HomeViewController.h"
-#import "Altimiter.h"
+#import "Altimeter.h"
 
 @import CoreLocation;
 
 @interface HomeViewController ()
 
-@property(strong, nonatomic)Altimiter *altimeter;
+@property(strong, nonatomic)Altimeter *altimeter;
 @property(strong, nonatomic)CLLocationManager *locationManager;
 //@property(strong, nonatomic)CLGeocoder *gecoder;
 @property(strong, nonatomic)CLPlacemark *placemark;
@@ -24,8 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.altimeter = [[Altimiter alloc]init];
-    [self.altimeter getAltitudeChange];
+    self.altimeter = [[Altimeter alloc]init];
+//    [self.altimeter getAltitudeChange];
     
     // Core Location request permission for user's current location
     [self requestPermissions];
