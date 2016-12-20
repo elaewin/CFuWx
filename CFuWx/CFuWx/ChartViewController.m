@@ -71,6 +71,12 @@
     }
 }
 
+-(void)setupChart {
+    self.chartView.dragEnabled = NO;
+    self.chartView.drawGridBackgroundEnabled = NO;
+    
+}
+
 -(void)refreshChart:(NSMutableArray *)chartData {
     
 }
