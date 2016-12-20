@@ -7,7 +7,6 @@
 //
 
 #import "ChartViewController.h"
-
 #import "CFuWx-Swift.h"
 
 @import Charts;
@@ -15,11 +14,13 @@
 
 @interface ChartViewController ()
 
-@property(strong, nonatomic) LineChartView *chartView;
 @property(strong, nonatomic) NSMutableArray *values;
 @property(strong, nonatomic) CMAltimeter *altimeter;
 @property(nonatomic) double chartUpperLimit;
 @property(nonatomic) double chartLowerLimit;
+
+@property (strong, nonatomic) IBOutlet LineChartView *chartView;
+
 
 @end
 
@@ -32,11 +33,11 @@
     self.chartUpperLimit = 0;
     self.chartLowerLimit = 0;
     
-    self.chartView = [[LineChartView alloc]init];
+//    self.chartView = [[LineChartView alloc]init];
     
-    self.chartView.frame = self.view.frame;
+//    self.chartView.frame = self.view.frame;
     
-    [self.view addSubview:self.chartView];
+//    [self.view addSubview:self.chartView];
     
     [self setupChart];
     
@@ -71,7 +72,7 @@
             NSNumber *pressure = altitudeData.pressure;
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
-            [hulk refreshChart:hulk.values];
+//            [hulk refreshChart:hulk.values];
             NSLog(@"pressure: %@", pressure);
         }];
         
@@ -83,21 +84,25 @@
 -(void)setupChart {
     self.chartView.dragEnabled = NO;
     self.chartView.drawGridBackgroundEnabled = NO;
-    self.chartView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
+//    self.chartView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.25];
     self.chartView.legend.enabled = NO;
+    self.chartView.chartDescription.text=@"";
+    self.chartView.noDataText = @"No pressure sensor data being received from your device.";
+    self.chartView.autoScaleMinMaxEnabled = YES;
     
     ChartXAxis *xAxis = self.chartView.xAxis;
     xAxis.drawAxisLineEnabled = NO;
     xAxis.drawGridLinesEnabled = NO;
     
     ChartYAxis *leftAxis = self.chartView.leftAxis;
+    leftAxis.labelCount = 4;
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
     leftAxis.labelFont = [UIFont fontWithName:@"Arial" size:9.0];
     leftAxis.labelTextColor = [UIColor magentaColor];
     leftAxis.drawAxisLineEnabled = YES;
-    leftAxis.axisMaximum = self.chartUpperLimit;
-    leftAxis.axisMinimum = self.chartLowerLimit;
-    
+    leftAxis.axisMaximum = 1000.01;
+    leftAxis.axisMinimum = 900.50;
+    leftAxis.drawZeroLineEnabled = NO;
 }
 
 -(void)getChartLimits:(double)newNumber {
