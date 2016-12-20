@@ -13,6 +13,10 @@
 		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
 		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD9B11E08C3A6002E72DA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; };
+		555CD9B21E08C3B4002E72DA /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD9B41E08C43F002E72DA /* MainPressureChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555CD9B31E08C43F002E72DA /* MainPressureChart.xib */; };
+		555CD9B71E08C486002E72DA /* MainPressureChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
@@ -50,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				555CD9B21E08C3B4002E72DA /* Charts.framework in CopyFiles */,
 				555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */,
 				555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */,
 			);
@@ -63,6 +68,11 @@
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
 		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		555CD9B01E08C3A6002E72DA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		555CD9B31E08C43F002E72DA /* MainPressureChart.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPressureChart.xib; sourceTree = "<group>"; };
+		555CD9B51E08C486002E72DA /* MainPressureChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPressureChartViewController.h; sourceTree = "<group>"; };
+		555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPressureChartViewController.m; sourceTree = "<group>"; };
+		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555CD9B11E08C3A6002E72DA /* Charts.framework in Frameworks */,
 				555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */,
 				555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */,
 			);
@@ -111,6 +122,7 @@
 		555CD9931E087FDB002E72DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				555CD9B01E08C3A6002E72DA /* Charts.framework */,
 				555CD9961E087FEA002E72DA /* Parse.framework */,
 				555CD9941E087FDB002E72DA /* Bolts.framework */,
 			);
@@ -150,6 +162,7 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
@@ -184,6 +197,7 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				555CD9B31E08C43F002E72DA /* MainPressureChart.xib */,
 				0180B8281E084E0F00B63BE8 /* Altimiter.h */,
 				0180B8291E084E0F00B63BE8 /* Altimiter.m */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
@@ -194,6 +208,8 @@
 		555FA2271E0700BD0036FC1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				555CD9B51E08C486002E72DA /* MainPressureChartViewController.h */,
+				555CD9B61E08C486002E72DA /* MainPressureChartViewController.m */,
 				555FA2321E0701BA0036FC1E /* AboutViewController.h */,
 				555FA2331E0701BA0036FC1E /* AboutViewController.m */,
 				555FA2361E0701C40036FC1E /* ForecastViewController.h */,
@@ -258,6 +274,7 @@
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 4YFWUVNT8L;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					555FA2131E06FE680036FC1E = {
@@ -298,6 +315,7 @@
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
+				555CD9B41E08C43F002E72DA /* MainPressureChart.xib in Resources */,
 				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +338,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
 			);
 			outputPaths = (
 			);
@@ -338,6 +357,7 @@
 				0180B82A1E084E0F00B63BE8 /* Altimiter.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
+				555CD9B71E08C486002E72DA /* MainPressureChartViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
@@ -480,7 +500,9 @@
 		555FA21E1E06FE680036FC1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
@@ -488,13 +510,18 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericawinberry.CFuWx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CFuWx/CFuWx-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		555FA21F1E06FE680036FC1E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
@@ -502,6 +529,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericawinberry.CFuWx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CFuWx/CFuWx-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
