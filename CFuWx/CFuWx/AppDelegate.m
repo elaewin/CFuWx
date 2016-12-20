@@ -29,6 +29,8 @@
     return YES;
 }
 
+//Where do we test this method?..
+
 -(void)bootstrapApp{
     
 //        NSDictionary *currently = [[NSDictionary alloc]init];

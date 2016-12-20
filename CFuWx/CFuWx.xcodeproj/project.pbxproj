@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
 		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
+		0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82F1E08F45300B63BE8 /* AltimeterTest.m */; };
+		0180B8321E08F47600B63BE8 /* AboutViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8311E08F47600B63BE8 /* AboutViewTest.m */; };
+		0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */; };
+		0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8351E08F4B000B63BE8 /* HomeViewTest.m */; };
+		0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */; };
 		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
 		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
 		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,6 +70,11 @@
 /* Begin PBXFileReference section */
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
 		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
+		0180B82F1E08F45300B63BE8 /* AltimeterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltimeterTest.m; sourceTree = "<group>"; };
+		0180B8311E08F47600B63BE8 /* AboutViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewTest.m; sourceTree = "<group>"; };
+		0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewTest.m; sourceTree = "<group>"; };
+		0180B8351E08F4B000B63BE8 /* HomeViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTest.m; sourceTree = "<group>"; };
+		0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewTest.m; sourceTree = "<group>"; };
 		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		555CD9B01E08C3A6002E72DA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
@@ -176,6 +186,11 @@
 		555FA2171E06FE680036FC1E /* CFuWxTests */ = {
 			isa = PBXGroup;
 			children = (
+				0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */,
+				0180B8351E08F4B000B63BE8 /* HomeViewTest.m */,
+				0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */,
+				0180B8311E08F47600B63BE8 /* AboutViewTest.m */,
+				0180B82F1E08F45300B63BE8 /* AltimeterTest.m */,
 				0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */,
 				555FA2181E06FE680036FC1E /* CFuWxTests.m */,
 				555FA21A1E06FE680036FC1E /* Info.plist */,
@@ -368,12 +383,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0180B8321E08F47600B63BE8 /* AboutViewTest.m in Sources */,
 				555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */,
+				0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */,
+				0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */,
 				0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */,
+				0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */,
 				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
 				555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */,
+				0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
