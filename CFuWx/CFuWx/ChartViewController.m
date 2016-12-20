@@ -10,12 +10,12 @@
 #import "CFuWx-Swift.h"
 
 @import Charts;
-#import "Altimeter.h"
+@import CoreMotion;
 
-@interface ChartViewController () <ChartViewDelegate>
+@interface ChartViewController ()
 
 @property(nonatomic, strong) LineChartView *chartView;
-@property(nonatomic, strong) Altimeter *altimeter;
+@property(nonatomic, strong) CMAltimeter *altimeter;
 
 @end
 
@@ -32,12 +32,22 @@
     
     [self.view addSubview:self.chartView];
     
-    self.chartView.delegate = self;
-
 }
 
 -(void)getChartData {
-    
+    if([CMAltimeter isRelativeAltitudeAvailable]) {
+        //        NSOperationQueue *altitudeQueue = [[NSOperationQueue alloc]init];
+        
+        self.chartView.data = [[ChartData alloc]init];
+        
+        self.altimeter = [[CMAltimeter alloc]init];
+        [self.altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
+            NSLog(@"Pressure: %.4f", altitudeData.pressure.floatValue);
+        }];
+        
+    } else {
+        NSLog(@"Error");
+    }
 }
 
 @end
