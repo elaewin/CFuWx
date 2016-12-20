@@ -8,7 +8,7 @@
 @import Parse;
 
 #import "AppDelegate.h"
-//#import "Credentials.h"
+#import "Credentials.h"
 
 @interface AppDelegate ()
 
@@ -20,9 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = @"asdfasdf";
-        configuration.clientKey =  @"asdfasdf";
-        configuration.server =  @"asdfasdf";
+        configuration.applicationId = kDarkSkyAPIKey;
+        configuration.clientKey =  kMasterKey;
+        configuration.server =  kServerURL;
     }]];
 
     [self bootstrapApp];
