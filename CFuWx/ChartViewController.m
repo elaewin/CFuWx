@@ -103,9 +103,6 @@
     leftAxis.axisMaximum = 1000.01;
     leftAxis.axisMinimum = 900.50;
     leftAxis.drawZeroLineEnabled = NO;
-    
-    
-    
 }
 
 -(void)getChartLimits:(double)newNumber {
