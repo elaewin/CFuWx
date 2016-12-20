@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "Altimeter.h"
 
+
+
 @import CoreLocation;
 
 @interface HomeViewController ()
@@ -56,20 +58,20 @@
 -(void)reverseGeocode {
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     CLLocation *location = self.locationManager.location;
-    
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        
-        if (error == nil && [placemarks count] > 0) {
-            _placemark = [placemarks lastObject];
-            
-            NSLog(@"%@", _placemark);
-            
-            return _placemark.locality;
-        } else {
-            return error.debugDescription;
-        }
-    }];
+//    
+//    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+//        
+//        if (error == nil && [placemarks count] > 0) {
+//            _placemark = [placemarks lastObject];
+//            
+//            NSLog(@"%@", _placemark);
+//            
+//            return _placemark.locality;
+//        } else {
+//            return error.debugDescription;
+//        }
+//    }];
 }
 
 
