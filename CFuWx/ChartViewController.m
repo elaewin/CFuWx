@@ -7,6 +7,7 @@
 //
 
 #import "ChartViewController.h"
+
 #import "CFuWx-Swift.h"
 
 @import Charts;
@@ -71,6 +72,7 @@
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
             [hulk refreshChart:hulk.values];
+            NSLog(@"pressure: %@", pressure);
         }];
         
     } else {

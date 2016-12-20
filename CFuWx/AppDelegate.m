@@ -5,8 +5,10 @@
 //  Created by Erica Winberry on 12/18/16.
 //  Copyright © 2016 Erica Winberry. All rights reserved.
 //
+@import Parse;
 
 #import "AppDelegate.h"
+//#import "Credentials.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +18,58 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId = @"asdfasdf";
+        configuration.clientKey =  @"asdfasdf";
+        configuration.server =  @"asdfasdf";
+    }]];
+
+    [self bootstrapApp];
     return YES;
 }
+
+//Where do we test this method?..
+
+-(void)bootstrapApp{
+    
+//        NSDictionary *currently = [[NSDictionary alloc]init];
+//        NSDictionary *hourly = [[NSDictionary alloc]init];
+//        NSDictionary *daily = [[NSDictionary alloc]init];
+//        NSDictionary *alerts = [[NSDictionary alloc]init];
+    
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"forecast" ofType:@"JSON"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+    
+    NSError *error;
+    
+    NSDictionary *responseObj = [NSJSONSerialization
+                                 JSONObjectWithData:jsonData
+                                 options:0
+                                 error:&error];
+    
+    if (!error)
+    {
+        NSDictionary *currently = responseObj[@"currently"];
+        NSNumber *time = currently[@"time"];
+        NSNumber *latitude = responseObj[@"latitude"];
+        NSNumber *longitude = responseObj[@"longitude"];
+        
+        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
+        
+        //write method to convert time to readable format, write method to retrieve 'TIMEZONE' from json//
+        
+    } else
+        
+    {
+        NSLog(@"Error: Cannot Retrieve JSON");
+    }
+
+
+    
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -7,16 +7,11 @@
 //
 
 #import "HomeViewController.h"
-#import "Altimeter.h"
-
-@import CoreLocation;
+#import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController ()
 
-@property(strong, nonatomic)Altimeter *altimeter;
 @property(strong, nonatomic)CLLocationManager *locationManager;
-//@property(strong, nonatomic)CLGeocoder *gecoder;
-@property(strong, nonatomic)CLPlacemark *placemark;
 
 @end
 
@@ -24,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.altimeter = [[Altimeter alloc]init];
-//    [self.altimeter getAltitudeChange];
     
     // Core Location request permission for user's current location
     [self requestPermissions];
@@ -51,84 +44,6 @@
     NSLog(@"%@", currentLocation);
     
     return currentLocation;
-}
-
--(void)reverseGeocode {
-    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-    CLLocation *location = self.locationManager.location;
-    
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        
-        if (error == nil && [placemarks count] > 0) {
-            _placemark = [placemarks lastObject];
-            
-            NSLog(@"%@", _placemark);
-            
-            return _placemark.locality;
-        } else {
-            return error.debugDescription;
-        }
-    }];
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
 }
 
 

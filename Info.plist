@@ -2,12 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSLocationUsageDescription</key>
-	<string>&quot;This Application Would Like To Access Your Location&quot;</string>
-	<key>NSMotionUsageDescription</key>
-	<string>&quot;This Application Would Like To Access Your Motion Sensors&quot;</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The uWx app would like to use your current location while using the app to display weather info.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
