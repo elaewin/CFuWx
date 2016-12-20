@@ -15,6 +15,13 @@
 
 @interface HomeViewController ()
 
+
+
+
+
+
+
+
 @property(strong, nonatomic)Altimeter *altimeter;
 @property(strong, nonatomic)CLLocationManager *locationManager;
 //@property(strong, nonatomic)CLGeocoder *gecoder;
