@@ -114,7 +114,7 @@
                     <view key="view" contentMode="scaleToFill" id="K2I-Na-AT9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbk-wa-vGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
