@@ -1,3 +1,14 @@
+## Curious about the science behind uWx?
+
+Check out these publications to learn more about how pressure observations from smartphones could improve weather forecasting.
+
+* [Surface Pressure Observations From Smartphones: A Potential Revolution for High-Resolution Weather Prediction?](http://journals.ametsoc.org/doi/abs/10.1175/BAMS-D-13-00188.1)
+* [Crowdsourcing for climate and atmospheric sciences: current status and future potential](http://onlinelibrary.wiley.com/doi/10.1002/joc.4210/abstract)
+* [Utility of Dense Pressure Observations for Improving Mesoscale Analyses and Forecasts](http://journals.ametsoc.org/doi/citedby/10.1175/MWR-D-13-00269.1)
+* [The Impact of Assimilating Surface Pressure Observations on Severe Weather Events in a WRF Mesoscale Ensemble System](http://journals.ametsoc.org/doi/abs/10.1175/2009MWR3042.1)
+* [Impacts of Frequent Assimilation of Surface Pressure Observations on Atmospheric Analyses](http://journals.ametsoc.org/doi/abs/10.1175/MWR-D-14-00097.1)
+
+
 ## Credits
 
 This project is based on [uWx](https://www.cmetwx.com/), an Andriod app developed by the University of Washington Department of Atmospheric Sciences.
