@@ -84,7 +84,7 @@
                                 <sections/>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mH-Ni-r75">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="467" width="375" height="192"/>
                                 <connections>
                                     <segue destination="dOx-FF-clu" kind="embed" id="xwI-sx-jJk"/>
                                 </connections>
@@ -97,7 +97,7 @@
                             <constraint firstItem="Ciq-OY-ANU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="ClT-lE-j7s"/>
                             <constraint firstItem="Ciq-OY-ANU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J9s-fg-YeP"/>
                             <constraint firstItem="2mH-Ni-r75" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kz1-uS-RSs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2mH-Ni-r75" secondAttribute="bottom" id="amh-Fj-OEA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2mH-Ni-r75" secondAttribute="bottom" constant="8" id="amh-Fj-OEA"/>
                             <constraint firstAttribute="trailing" secondItem="Ciq-OY-ANU" secondAttribute="trailing" id="pvS-uy-HnQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ciq-OY-ANU" secondAttribute="bottom" constant="200" id="t5B-Ob-wuf"/>
                         </constraints>
@@ -112,7 +112,7 @@
             <objects>
                 <viewController id="dOx-FF-clu" customClass="ChartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2I-Na-AT9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>

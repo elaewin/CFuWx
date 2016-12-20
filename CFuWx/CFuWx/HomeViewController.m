@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.altimeter = [[Altimeter alloc]init];
-    [self.altimeter getAltitudeChange];
+//    [self.altimeter getAltitudeChange];
     
     // Core Location request permission for user's current location
     [self requestPermissions];
