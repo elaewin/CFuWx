@@ -43,6 +43,12 @@
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.altimeter stopRelativeAltitudeUpdates];
+    [self.values removeAllObjects];
+}
+
 -(void)getChartData {
     if([CMAltimeter isRelativeAltitudeAvailable]) {
         NSOperationQueue *altimeterQueue = [[NSOperationQueue alloc]init];
@@ -66,7 +72,7 @@
 }
 
 -(void)refreshChart:(NSMutableArray *)chartData {
-
+    
 }
 
 @end
