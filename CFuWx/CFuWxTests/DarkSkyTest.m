@@ -11,6 +11,9 @@
 
 @interface DarkSkyTest : XCTestCase
 
+@property(strong, nonatomic) DarkSkyTest *testDarkSky;
+
+
 @end
 
 @implementation DarkSkyTest
@@ -19,24 +22,35 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    
-    
-    
-    
 }
-
-
-
 
 
 - (void)tearDown {
     
-    
-    
-    
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
+
+
+
+
+
+
+-(void)testDarkSkyNotNil{
+    XCTAssertNotNil(self.testDarkSky, @"self.testDarkSky is nil");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

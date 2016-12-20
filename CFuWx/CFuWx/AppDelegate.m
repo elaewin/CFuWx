@@ -25,47 +25,39 @@
         configuration.server = kServerURL;
     }]];
 
+    [self bootstrapApp];
     return YES;
 }
 
 -(void)bootstrapApp{
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PressureData"];
+//        NSDictionary *currently = [[NSDictionary alloc]init];
+//        NSDictionary *hourly = [[NSDictionary alloc]init];
+//        NSDictionary *daily = [[NSDictionary alloc]init];
+//        NSDictionary *alerts = [[NSDictionary alloc]init];
+    
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"forecast" ofType:@"JSON"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
     
     NSError *error;
-    NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request error:&error];
     
-    if(error){
-        NSLog(@"Error Receiving Pressure Data from Core Data");
-    }
+    NSDictionary *responseObj = [NSJSONSerialization
+                                 JSONObjectWithData:jsonData
+                                 options:0
+                                 error:&error];
     
-    if(count == 0){
-        NSDictionary *latitude = [[NSDictionary alloc]init];
-        NSDictionary *longtitude = [[NSDictionary alloc]init];
-        NSDictionary *timeZone = [[NSDictionary alloc]init];
+    if (!error) {
+        NSDictionary *currently = responseObj[@"currently"];
+        NSNumber *time = currently[@"time"];
         
-        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"forecast" ofType:@"json"];
-        
-        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-        
-        
-        NSError *jsonError;
-        
-        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
-        
-        if(jsonError){
-            NSLog(@"ERROR SERIALIZING JSON");
-            return;
-        }
-        
-        
-        latitude = rootObject[@"DataPoints"];
-        
-        
-        
+        NSLog(@"%@", time);
         
         
     }
+
+
+    
+    
 }
 
 
