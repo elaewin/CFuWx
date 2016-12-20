@@ -42,6 +42,8 @@
 		55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC165F1E09E37D00E5A8A6 /* Conversions.m */; };
+		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
+		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		55DC16531E09C70800E5A8A6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		55DC165E1E09E37D00E5A8A6 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
 		55DC165F1E09E37D00E5A8A6 /* Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversions.m; sourceTree = "<group>"; };
+		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
+		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		555FA2171E06FE680036FC1E /* CFuWxTests */ = {
 			isa = PBXGroup;
 			children = (
+				55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */,
 				0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */,
 				0180B8351E08F4B000B63BE8 /* HomeViewTest.m */,
 				0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */,
@@ -221,6 +226,7 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55F25CA61E09F1C900BAF2FA /* garbage.swift */,
 				55DC165E1E09E37D00E5A8A6 /* Conversions.h */,
 				55DC165F1E09E37D00E5A8A6 /* Conversions.m */,
 				0197C2501E09CE79006D7A29 /* DarkSkyAPI.h */,
@@ -388,6 +394,7 @@
 				55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
+				55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */,
 				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
@@ -406,6 +413,7 @@
 				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
+				55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */,
 				555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */,
 				0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */,
 			);
