@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
+		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
+		0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82F1E08F45300B63BE8 /* AltimeterTest.m */; };
+		0180B8321E08F47600B63BE8 /* AboutViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8311E08F47600B63BE8 /* AboutViewTest.m */; };
+		0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */; };
+		0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8351E08F4B000B63BE8 /* HomeViewTest.m */; };
+		0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */; };
+		555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; };
+		555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; };
+		555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9941E087FDB002E72DA /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9961E087FEA002E72DA /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD9B11E08C3A6002E72DA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; };
+		555CD9B21E08C3B4002E72DA /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 555CD9B01E08C3A6002E72DA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
+		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
@@ -25,7 +40,6 @@
 		555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
 		555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
-		7C6087AF1E08625900D9EA00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6087AE1E08625900D9EA00 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +52,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		555CD9981E087FFC002E72DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				555CD9B21E08C3B4002E72DA /* Charts.framework in CopyFiles */,
+				555CD99A1E08800E002E72DA /* Parse.framework in CopyFiles */,
+				555CD9991E088008002E72DA /* Bolts.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
+		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
+		0180B82F1E08F45300B63BE8 /* AltimeterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltimeterTest.m; sourceTree = "<group>"; };
+		0180B8311E08F47600B63BE8 /* AboutViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewTest.m; sourceTree = "<group>"; };
+		0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewTest.m; sourceTree = "<group>"; };
+		0180B8351E08F4B000B63BE8 /* HomeViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTest.m; sourceTree = "<group>"; };
+		0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewTest.m; sourceTree = "<group>"; };
+		555CD9941E087FDB002E72DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		555CD9961E087FEA002E72DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		555CD9B01E08C3A6002E72DA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
+		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		555CD9BD1E08CAC6002E72DA /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		555CD9C11E08CE2F002E72DA /* Altimeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Altimeter.h; sourceTree = "<group>"; };
+		555CD9C21E08CE2F002E72DA /* Altimeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Altimeter.m; sourceTree = "<group>"; };
 		555FA1F81E06FE680036FC1E /* CFuWx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFuWx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA1FC1E06FE680036FC1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		555FA1FE1E06FE680036FC1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,8 +106,6 @@
 		555FA2371E0701C40036FC1E /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		555FA23A1E0701CF0036FC1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		555FA23B1E0701CF0036FC1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		7C6087AC1E085E3A00D9EA00 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Credentials.h; path = ../Credentials.h; sourceTree = "<group>"; };
-		7C6087AE1E08625900D9EA00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C6087AF1E08625900D9EA00 /* CoreLocation.framework in Frameworks */,
+				555CD9B11E08C3A6002E72DA /* Charts.framework in Frameworks */,
+				555CD9971E087FEA002E72DA /* Parse.framework in Frameworks */,
+				555CD9951E087FDB002E72DA /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,13 +129,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		555CD9931E087FDB002E72DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				555CD9B01E08C3A6002E72DA /* Charts.framework */,
+				555CD9961E087FEA002E72DA /* Parse.framework */,
+				555CD9941E087FDB002E72DA /* Bolts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		555FA1EF1E06FE680036FC1E = {
 			isa = PBXGroup;
 			children = (
 				555FA1FA1E06FE680036FC1E /* CFuWx */,
 				555FA2171E06FE680036FC1E /* CFuWxTests */,
 				555FA1F91E06FE680036FC1E /* Products */,
-				7C6087AD1E08625800D9EA00 /* Frameworks */,
+				555CD9931E087FDB002E72DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +172,8 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C6087AC1E085E3A00D9EA00 /* Credentials.h */,
+				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
+				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
 				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
@@ -131,6 +186,12 @@
 		555FA2171E06FE680036FC1E /* CFuWxTests */ = {
 			isa = PBXGroup;
 			children = (
+				0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */,
+				0180B8351E08F4B000B63BE8 /* HomeViewTest.m */,
+				0180B8331E08F48D00B63BE8 /* ForecastViewTest.m */,
+				0180B8311E08F47600B63BE8 /* AboutViewTest.m */,
+				0180B82F1E08F45300B63BE8 /* AltimeterTest.m */,
+				0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */,
 				555FA2181E06FE680036FC1E /* CFuWxTests.m */,
 				555FA21A1E06FE680036FC1E /* Info.plist */,
 			);
@@ -152,6 +213,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				555CD9C11E08CE2F002E72DA /* Altimeter.h */,
+				555CD9C21E08CE2F002E72DA /* Altimeter.m */,
 				555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */,
 			);
 			name = Model;
@@ -168,16 +231,10 @@
 				555FA22F1E0701A70036FC1E /* HomeViewController.m */,
 				555FA23A1E0701CF0036FC1E /* SettingsViewController.h */,
 				555FA23B1E0701CF0036FC1E /* SettingsViewController.m */,
+				555CD9BC1E08CAC6002E72DA /* ChartViewController.h */,
+				555CD9BD1E08CAC6002E72DA /* ChartViewController.m */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		7C6087AD1E08625800D9EA00 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7C6087AE1E08625900D9EA00 /* CoreLocation.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +247,8 @@
 				555FA1F41E06FE680036FC1E /* Sources */,
 				555FA1F51E06FE680036FC1E /* Frameworks */,
 				555FA1F61E06FE680036FC1E /* Resources */,
+				555CD9981E087FFC002E72DA /* CopyFiles */,
+				555CD99B1E0881DD002E72DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -229,7 +288,8 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = R3W67YCVBM;
+						DevelopmentTeam = 4YFWUVNT8L;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					555FA2131E06FE680036FC1E = {
@@ -265,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */,
+				0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */,
 				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
@@ -282,6 +343,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		555CD99B1E0881DD002E72DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		555FA1F41E06FE680036FC1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,10 +369,12 @@
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
+				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
+				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,11 +383,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0180B8321E08F47600B63BE8 /* AboutViewTest.m in Sources */,
 				555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */,
+				0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */,
+				0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */,
+				0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */,
+				0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */,
 				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
 				555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */,
+				0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,26 +520,37 @@
 		555FA21E1E06FE680036FC1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R3W67YCVBM;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericawinberry.CFuWx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CFuWx/CFuWx-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		555FA21F1E06FE680036FC1E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R3W67YCVBM;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericawinberry.CFuWx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CFuWx/CFuWx-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
