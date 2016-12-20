@@ -17,10 +17,10 @@
 		1A9FCD371E09B83B00DC0C2F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9FCD341E09B83B00DC0C2F /* Bolts.framework */; };
 		1A9FCD381E09B83B00DC0C2F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9FCD351E09B83B00DC0C2F /* Charts.framework */; };
 		1A9FCD391E09B83B00DC0C2F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9FCD361E09B83B00DC0C2F /* Parse.framework */; };
-		1A9FCD3B1E09B87B00DC0C2F /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCD3A1E09B87B00DC0C2F /* garbage.swift */; };
 		1A9FCD3C1E09B93A00DC0C2F /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A9FCD341E09B83B00DC0C2F /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A9FCD3D1E09B94000DC0C2F /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A9FCD361E09B83B00DC0C2F /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A9FCD3E1E09B94400DC0C2F /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A9FCD351E09B83B00DC0C2F /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A9FCD401E09BD1E00DC0C2F /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */; };
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
@@ -79,7 +79,7 @@
 		1A9FCD341E09B83B00DC0C2F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		1A9FCD351E09B83B00DC0C2F /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		1A9FCD361E09B83B00DC0C2F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
-		1A9FCD3A1E09B87B00DC0C2F /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
+		1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
 		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
 		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		555CD9BD1E08CAC6002E72DA /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		555FA1EF1E06FE680036FC1E = {
 			isa = PBXGroup;
 			children = (
-				1A9FCD3A1E09B87B00DC0C2F /* garbage.swift */,
+				1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */,
 				555FA1FA1E06FE680036FC1E /* CFuWx */,
 				555FA2171E06FE680036FC1E /* CFuWxTests */,
 				555FA1F91E06FE680036FC1E /* Products */,
@@ -377,7 +377,7 @@
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
-				1A9FCD3B1E09B87B00DC0C2F /* garbage.swift in Sources */,
+				1A9FCD401E09BD1E00DC0C2F /* garbage.swift in Sources */,
 				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 			);
