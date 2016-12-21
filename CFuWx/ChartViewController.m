@@ -7,7 +7,7 @@
 //
 
 #import "ChartViewController.h"
-#import "CFuWx-Swift.h"
+//#import "CFuWx-Swift.h"
 
 @import Charts;
 @import CoreMotion;
