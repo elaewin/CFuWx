@@ -64,44 +64,47 @@
 }
 
 
-//// Depth of Precipitation Conversions from Inches
-//+(double)convertToCentimeters:(double)depth  {
-//
-//}
-//
-//+(double)convertToMillimeters:(double)depth  {
-//
-//}
-//
-//
-//// Wind Speed Unit Conversions from mph
-//+(double)convertToKPH:(double)speed  {
-//
-//}
-//
-//+(double)convertToMetersPerSecond:(double)speed  {
-//
-//}
-//
-//+(double)convertToKnots:(double)speed  {
-//
-//}
-//
-//
-//// Convert Dates
-//+(NSString *)convertToDayOnly:(NSDate *)date  {
-//
-//}
-//
-//+(NSString *)convertToReadableDate:(NSDate *)date  {
-//
-//}
-//
-//
-//// Convert Time
-//+(NSString *)convertToReadableTime:(NSDate *)date  {
-//
-//}
+// Depth of Precipitation Conversions from Inches
++(NSString *)convertToCentimeters:(double)inches {
+    double centimeters = (inches * 2.54);
+    return [Conversions formattedNumber:centimeters];
+}
+
++(NSString *)convertToMillimeters:(double)inches {
+    double millimeters = (inches * 25.4);
+    return [Conversions formattedNumber:millimeters];
+}
+
+// Wind Speed Unit Conversions from mph
++(NSString *)convertToKPH:(double)miles {
+    double kph = (miles * 1.609344);
+    return [Conversions formattedNumber:kph];
+}
+
++(NSString *)convertToMetersPerSecond:(double)miles {
+    double mps = (miles * 0.44704);
+    return [Conversions formattedNumber:mps];
+}
+
++(NSString *)convertToKnots:(double)miles {
+    double knots = (miles * 1.15078);
+    return [Conversions formattedNumber:knots];
+}
+
+// Convert Dates
++(NSString *)convertToDayOnly:(NSDate *)date  {
+    return @"meh";
+}
+
++(NSString *)convertToReadableDate:(NSDate *)date  {
+    return @"meh";
+}
+
+
+// Convert Time
++(NSString *)convertToReadableTime:(NSDate *)date  {
+    return @"meh";
+}
 
 
 @end

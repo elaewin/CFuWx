@@ -60,7 +60,37 @@
     XCTAssert([[Conversions convertToKilometers:1015.24] isEqualToString:@"1.02"], @"Value returned from conversion is %@, NOT 1.02!", [Conversions convertToKilometers:1015.24]);
 }
 
+-(void)testConvertToCentimeters {
+    XCTAssert([[Conversions convertToCentimeters:1.0] isEqualToString:@"2.54"], @"Value returned from conversion is %@, NOT 2.54!", [Conversions convertToCentimeters:1.0]);
+    XCTAssert([[Conversions convertToCentimeters:1015.24] isEqualToString:@"2,578.71"], @"Value returned from conversion is %@, NOT 2,578.71!", [Conversions convertToCentimeters:1015.24]);
+}
+
+-(void)testConvertToMillimeters {
+    XCTAssert([[Conversions convertToMillimeters:1.0] isEqualToString:@"25.40"], @"Value returned from conversion is %@, NOT 25.40!", [Conversions convertToMillimeters:1.0]);
+    XCTAssert([[Conversions convertToMillimeters:1015.24] isEqualToString:@"25,787.10"], @"Value returned from conversion is %@, NOT 25,787.10!", [Conversions convertToMillimeters:1015.24]);
+}
+
+-(void)testConvertToKPH {
+    XCTAssert([[Conversions convertToKPH:1.0] isEqualToString:@"1.61"], @"Value returned from conversion is %@, NOT 1.61!", [Conversions convertToKPH:1.0]);
+    XCTAssert([[Conversions convertToKPH:1015.24] isEqualToString:@"1,633.87"], @"Value returned from conversion is %@, NOT 1,633.87!", [Conversions convertToKPH:1015.24]);
+}
+
+-(void)testConvertToMetersPerSecond {
+    XCTAssert([[Conversions convertToMetersPerSecond:1.0] isEqualToString:@"0.45"], @"Value returned from conversion is %@, NOT 0.45!", [Conversions convertToMetersPerSecond:1.0]);
+    XCTAssert([[Conversions convertToMetersPerSecond:1015.24] isEqualToString:@"453.85"], @"Value returned from conversion is %@, NOT 453.85!", [Conversions convertToMetersPerSecond:1015.24]);
+}
+
+-(void)testConvertToKnots {
+    XCTAssert([[Conversions convertToKnots:1.0] isEqualToString:@"1.15"], @"Value returned from conversion is %@, NOT 1.15!", [Conversions convertToKnots:1.0]);
+    XCTAssert([[Conversions convertToKnots:1015.24] isEqualToString:@"1,168.32"], @"Value returned from conversion is %@, NOT 1,168.32!", [Conversions convertToKnots:1015.24]);
+}
+
 
 
 
 @end
+
+
+
+
+
