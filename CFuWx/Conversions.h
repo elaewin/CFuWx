@@ -10,8 +10,6 @@
 
 @interface Conversions : NSObject
 
-<<<<<<< HEAD
-
 // Pressure Conversions from kPa
 +(NSString *)convertToInchesHg:(double)pressure;
 +(NSString *)convertToMillimetersHg:(double)pressure;

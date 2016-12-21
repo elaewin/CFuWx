@@ -44,6 +44,7 @@
 		55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC165F1E09E37D00E5A8A6 /* Conversions.m */; };
+		55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF0DC91E0AF6FB00750E6E /* dummy.swift */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
 		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
 		7CF703561E09FEC800354143 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF703551E09FEC800354143 /* LocationManager.m */; };
@@ -121,13 +122,12 @@
 		55DC16531E09C70800E5A8A6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		55DC165E1E09E37D00E5A8A6 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
 		55DC165F1E09E37D00E5A8A6 /* Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversions.m; sourceTree = "<group>"; };
+		55EF0DC91E0AF6FB00750E6E /* dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
+		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
+		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
 		7C008A401E09EA0300040CB9 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		7CF703541E09FEC800354143 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		7CF703551E09FEC800354143 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		55DC165E1E09E37D00E5A8A6 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
-		55DC165F1E09E37D00E5A8A6 /* Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversions.m; sourceTree = "<group>"; };
-		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
-		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +196,7 @@
 			children = (
 				7C008A401E09EA0300040CB9 /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
+				55EF0DC91E0AF6FB00750E6E /* dummy.swift */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
@@ -403,6 +404,7 @@
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
 				0197C2581E09E66E006D7A29 /* BottomTableViewCell.m in Sources */,
+				55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */,
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
