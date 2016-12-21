@@ -47,17 +47,17 @@
 
 -(void)testConvertToFeet {
     XCTAssert([[Conversions convertToFeet:1.0] isEqualToString:@"3.28"], @"Value returned from conversion is %@, NOT 3.28!", [Conversions convertToFeet:1.0]);
-    
     XCTAssert([[Conversions convertToFeet:1015.24] isEqualToString:@"3,330.80"], @"Value returned from conversion is %@, NOT 3,330.80!", [Conversions convertToFeet:1015.24]);
 }
 
 -(void)testConvertToMiles {
     XCTAssert([[Conversions convertToMiles:1.0] isEqualToString:@"0.00"], @"Value returned from conversion is %@, NOT 0.00!", [Conversions convertToFeet:1.0]);
-    
+    XCTAssert([[Conversions convertToMiles:1015.24] isEqualToString:@"0.63"], @"Value returned from conversion is %@, NOT 0.63!", [Conversions convertToFeet:1015.24]);
 }
 
 -(void)testConvertToKilometers {
     XCTAssert([[Conversions convertToKilometers:1.0] isEqualToString:@"0.00"], @"Value returned from conversion is %@, NOT 0.00!", [Conversions convertToKilometers:1.0]);
+    XCTAssert([[Conversions convertToKilometers:1015.24] isEqualToString:@"1.02"], @"Value returned from conversion is %@, NOT 1.02!", [Conversions convertToKilometers:1015.24]);
 }
 
 

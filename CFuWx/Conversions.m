@@ -54,13 +54,13 @@
 }
 
 +(NSString *)convertToMiles:(double)meters  {
-    return @"meh";
-
+    double miles = (meters / 1609.344);
+    return [Conversions formattedNumber:miles];
 }
 
 +(NSString *)convertToKilometers:(double)meters  {
-    return @"meh";
-
+    double kilometers = (meters / 1000);
+    return [Conversions formattedNumber:kilometers];
 }
 
 
