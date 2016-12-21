@@ -23,7 +23,7 @@
 
 +(instancetype)sharedManager {
     static LocationManager *sharedManager;
-    
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[LocationManager alloc]init];
@@ -33,15 +33,15 @@
 
 -(instancetype)init{
     self = [super init];
-    
+
     if(self){
         _locationManager = [[CLLocationManager alloc]init];
         _locationManager.delegate = self;
         [self requestPermissions];
     }
-    
+
     return self;
-    
+
 }
 
 -(void)requestPermissions {
@@ -65,44 +65,44 @@
 
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
-    
+
     NSLog(@"Current Location from returnCurrentCoordinate: %@", self.currentLocation);
-    
+
     return coordinate;
 }
 
 
 -(void)getLocationFrom:(NSString *)stringFromUser{
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-    
+
     __weak typeof(self) bruce = self;
-    
+
     [geocoder geocodeAddressString:stringFromUser completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         __strong typeof(bruce) hulk = bruce;
         if(placemarks.count > 0) {
             CLLocation *location = [[CLLocation alloc]init];
             hulk.currentLocation = location;
         }
-        
-        
-        
+
+
+
     }];
 
-    
-    
+
+
 }
 
 
 -(NSString *)reverseGeocode:(CLLocation *)location {
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     //CLLocation *location = self.locationManager.location;
-    
+
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        
+
         if (error == nil && [placemarks count] > 0) {
             _placemark = [placemarks lastObject];
-            
+
             NSLog(@"city: %@", _placemark.locality);                    //city name
             NSLog(@"timeZone: %@", _placemark.timeZone);                //time zone
             NSLog(@"region: %@", _placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
@@ -125,10 +125,12 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [self setCurrentLocation:locations.lastObject];
-    
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
-    NSLog(@"Current location from didUpdateLocations: %@", self.currentLocation);
-    
+
+    NSLog(@"%@", self.currentLocation);
+    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *currentWeather) {
+        NSLog(@"%@", currentWeather);
+    }];
+
 }
 
 

@@ -13,23 +13,23 @@
 
 
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary{
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary{
     self = [super init];
     
-    //remember to change these to corresponding JSON object
-    if(self) {
-        self.temperature = @"temperature";
-        self.precipProbability = @"precipProbability";
-        self.humidity = @"humidity";
-        self.windSpeed = @"windSpeed";
-        self.windBearing = @"windBearing";
-        self.pressure = @"pressure";
-        self.time = @"time";
+    
+    
+    
+    
+        _temperature = jsonDictionary[@"currently.temperature"];
+        _precipProbability = jsonDictionary[@"currently.precipProbability"];
+        _humidity = jsonDictionary[@"currently.humidity"];
+        _windSpeed = jsonDictionary[@"currently.windSpeed"];
+        _windBearing = jsonDictionary[@"currently.windBearing"];
+        _pressure = jsonDictionary[@"currently.pressure"];
+        _time = jsonDictionary[@"currently.time"];
         
-        self.summary = @"summary";
-        self.icon = [self getWeatherIcon:@"icon"];
-        
-    }
+        _summary = jsonDictionary[@"currently.summary"];
+        _icon = [self getWeatherIcon:@"currently.icon"];
     
     return self;
     
