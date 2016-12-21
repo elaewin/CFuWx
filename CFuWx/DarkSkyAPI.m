@@ -25,30 +25,11 @@
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
    
     NSString *baseURL = @"https://api.darkysky.net/forecast/";
-    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyKey, coordinate.latitude, coordinate.longitude];
+    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
     
     NSLog(@"%@", requestURL);
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 -(NSMutableData *)receivedData {

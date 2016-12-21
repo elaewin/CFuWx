@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = kDarkSkyKey;
+        configuration.applicationId = kApplicationID;
         configuration.clientKey =  kMasterKey;
         configuration.server =  kServerURL;
     }]];
@@ -30,7 +30,6 @@
     return YES;
 }
 
-//Where do we test this method?..
 
 -(void)bootstrapApp{
     
@@ -49,22 +48,22 @@
                                  options:0
                                  error:&error];
     
-    if (!error)
-    {
-        NSDictionary *currently = responseObj[@"currently"];
-        NSNumber *time = currently[@"time"];
-        NSNumber *latitude = responseObj[@"latitude"];
-        NSNumber *longitude = responseObj[@"longitude"];
-        
-//        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
-        
-        //write method to convert time to readable format, write method to retrieve 'TIMEZONE' from json//
-        
-    } else
-        
-    {
-        NSLog(@"Error: Cannot Retrieve JSON");
-    }
+//    if (!error)
+//    {
+//        NSDictionary *currently = responseObj[@"currently"];
+//        NSNumber *time = currently[@"time"];
+//        NSNumber *latitude = responseObj[@"latitude"];
+//        NSNumber *longitude = responseObj[@"longitude"];
+//        
+////        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
+//        
+//        //write method to convert time to readable format, write method to retrieve 'TIMEZONE' from json//
+//        
+//    } else
+//        
+//    {
+//        NSLog(@"Error: Cannot Retrieve JSON");
+//    }
 
 
     
