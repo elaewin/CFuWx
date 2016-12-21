@@ -15,6 +15,7 @@
 +(NSURLQueryItem *)currentlyQuery;
 +(NSURLQueryItem *)hourlyQuery;
 +(NSURLQueryItem *)dailyQuery;
++(void)fetchCurrentWeatherWithQuery;
 
 
 

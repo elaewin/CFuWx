@@ -60,11 +60,28 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 
-+(void)fetchCurrentWeatherWith:(NSDictionary *)weatherDictionary{
++(void)fetchCurrentWeatherWithQuery {
+    NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
     
+    NSURLSession *session = [[NSURLSession alloc]init];
     
+    [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"Response: %@", response);
+        
+        if(data) {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:nil];
+            NSLog(@"%@", json);
+            //create new weather object here.
+        }
     
+        if(error) {
+            NSLog(@"There was a problem getting weather data from API - Error: %@", error.localizedDescription);
+        }
+    }];
     
+
 }
 
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
