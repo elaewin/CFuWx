@@ -7,16 +7,17 @@
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "Weather.h"
+
+typedef void(^currentWeatherCompletion)(Weather *currentWeather);
 
 @interface DarkSkyAPI : NSObject
-
 
 +(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem;
 +(NSURLQueryItem *)currentlyQuery;
 +(NSURLQueryItem *)hourlyQuery;
 +(NSURLQueryItem *)dailyQuery;
-+(void)fetchCurrentWeatherWithQuery;
-
++(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion;
 
 
 

@@ -17,7 +17,6 @@
 
 NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
-
 @interface DarkSkyAPI()
 
 
@@ -60,26 +59,37 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 
-+(void)fetchCurrentWeatherWithQuery {
++(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion {
     NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
     
-    NSURLSession *session = [[NSURLSession alloc]init];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
     
-    [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"Response: %@", response);
         
-        if(data) {
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
-                                                                 options:NSJSONReadingMutableContainers
-                                                                   error:nil];
-            NSLog(@"%@", json);
-            //create new weather object here.
-        }
-    
         if(error) {
             NSLog(@"There was a problem getting weather data from API - Error: %@", error.localizedDescription);
         }
-    }];
+        
+        if(data) {
+            NSError *jsonParsingError;
+            
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&jsonParsingError];
+            NSLog(@"JSON!!!!!: %@", json);
+            if (error) {
+                NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
+            } else {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    Weather *currentWeather = [[Weather alloc]initWithDictionary:json];
+                    completion(currentWeather);
+                }];
+            }
+        }
+    }] resume];
     
 }
 
