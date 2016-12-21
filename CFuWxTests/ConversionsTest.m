@@ -37,8 +37,10 @@
 
 -(void)testConvertToPSI {
     XCTAssert([[Conversions convertToPSI:1.0] isEqualToString:@"0.15"], @"Value returned from conversion is %@, NOT 0.15!", [Conversions convertToPSI:1.0]);
-    XCTAssert([[Conversions convertToPSI:1015.24] isEqualToString:@"0.15"], @"Value returned from conversion is %@, NOT 0.15!", [Conversions convertToPSI:1.0]);
+    XCTAssert([[Conversions convertToPSI:1015.24] isEqualToString:@"147.25"], @"Value returned from conversion is %@, NOT 147.25!", [Conversions convertToPSI:1015.24]);
 }
+
+
 
 
 
