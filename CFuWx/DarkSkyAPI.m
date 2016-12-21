@@ -10,10 +10,19 @@
 #import "Credentials.h"
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "LocationManager.h"
+
 @import CoreLocation;
+
+
+NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
+
 
 @interface DarkSkyAPI()
 
+
+
+@property(nonatomic) CLLocationCoordinate2D coordinate;
 @property(strong, nonatomic) NSMutableData *receivedData;
 @property(strong, nonatomic) NSURLConnection *requestURL;
 
@@ -22,12 +31,49 @@
 
 @implementation DarkSkyAPI
 
+//NSString *kBaseUrl = @"https://stackexchange.com/oauth/dialog";
+//NSString *kClientId = @"8609";
+//NSString *kRedirectURI = @"https://stackexchange.com/oauth/login_success";
+
+-(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem {
+    CLLocationCoordinate2D coordinate = [[LocationManager sharedManager] returnCurrentCoordinate];
+    NSURLComponents *components = [[NSURLComponents alloc]init];
+    components.scheme = @"https";
+    components.host = @"api.darksky.net";
+    components.path = @"/forecast/%@/%f,%f", kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude;
+    components.queryItems = @[queryItem];
+    NSURL *url = components.URL;
+    NSLog(@"%@", components.URL);
+    return url;
+
+}
+
+-(NSURLQueryItem *)currentlyQuery {
+    NSURLQueryItem *excludeQueryItem = [NSURLQueryItem queryItemWithName:@"exclude" value:@"minutely,hourly,daily,alerts,flag"];
+    return excludeQueryItem;
+}
+
+-(NSURLQueryItem *)hourlyQuery {
+    NSURLQueryItem *excludeQueryItem = [NSURLQueryItem queryItemWithName:@"exclude" value:@"currently,minutely,daily,flag"];
+    return excludeQueryItem;
+}
+
+-(NSURLQueryItem *)dailyQuery {
+    NSURLQueryItem *excludeQueryItem = [NSURLQueryItem queryItemWithName:@"exclude" value:@"currently,minutely,hourly,flag"];
+    return excludeQueryItem;
+}
+
+
+-(void)fetchCurrentWeatherWith:(NSDictionary *)weatherDictionary{
+    
+}
+
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
    
-    NSString *baseURL = @"https://api.darkysky.net/forecast/";
-    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
-    
-    NSLog(@"%@", requestURL);
+//    NSString *baseURL = @"https://api.darkysky.net/forecast/";
+//    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
+//    
+//    NSLog(@"%@", requestURL);
     
 }
 
