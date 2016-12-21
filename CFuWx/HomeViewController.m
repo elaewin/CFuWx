@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "LocationManager.h"
 #import "Altimeter.h"
 #import "DarkSkyAPI.h"
 #import "AppDelegate.h"
@@ -19,10 +20,9 @@
 @property(strong, nonatomic) TopTableViewCell *topTableViewCell;
 @property(strong, nonatomic) BottomTableViewCell *bottomTableViewCell;
 
+
 @property(strong, nonatomic)Altimeter *altimeter;
-@property(strong, nonatomic)CLLocationManager *locationManager;
-//@property(strong, nonatomic)CLGeocoder *gecoder;
-@property(strong, nonatomic)CLPlacemark *placemark;
+@property(strong, nonatomic) LocationManager *locationManager;
 
 @end
 
@@ -64,7 +64,12 @@
     
     NSLog(@"%@", currentLocation);
     
-    return currentLocation;
+   // [[[LocationManager sharedManager] reverseGeocode:[LocationManager sharedManager] locationManager];
+    CLLocation *location = [[CLLocation alloc]init];
+    [[LocationManager sharedManager] reverseGeocode:location];
+    NSLog(@"%@", location);
+    Altimeter *altimeter = [[Altimeter alloc]init];
+    [altimeter getAltitudeChange];
 }
 
 -(NSString *)reverseGeocode {
@@ -106,12 +111,6 @@
     
     return 2;
 }
-
-
-
-
-
-
 
 
 @end

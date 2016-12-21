@@ -54,6 +54,8 @@
 -(NSMutableData *)receivedData {
     if(!_receivedData){
         _receivedData = [[NSMutableData alloc]init];
+        
+//        [HomeViewController ]
     }
     return _receivedData;
 }
@@ -74,6 +76,7 @@
             self.delegate = nil;
         } else {
             NSLog(@"Error Fetching Data");
+            
         }
     }];
 }
