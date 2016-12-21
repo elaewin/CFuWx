@@ -42,6 +42,8 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    //bug fix
+    
 }
 
 -(void)requestPermissions {
