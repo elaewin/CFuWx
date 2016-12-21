@@ -10,6 +10,10 @@
 
 @interface Conversions : NSObject
 
+// Temperature Conversions from degrees Fahrenheit
++(NSString *) convertToCelsius:(double)tempFahrenheit;
++(NSString *) convertToKelvin:(double)tempFahrenheit;
+
 // Pressure Conversions from kPa
 +(NSString *)convertToInchesHg:(double)pressure;
 +(NSString *)convertToMillimetersHg:(double)pressure;

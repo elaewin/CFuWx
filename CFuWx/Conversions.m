@@ -26,6 +26,15 @@
     return [formatter stringFromNumber:number];
 }
 
+// Temperature Conversions from degrees Fahrenheit
++(NSString *) convertToCelsius:(double)tempFahrenheit {
+    return @"meh";
+}
+
++(NSString *) convertToKelvin:(double)tempFahrenheit {
+    return @"meh";
+}
+
 // Pressure Conversions from kPa
 +(NSString *)convertToInchesHg:(double)pressure {
     double inHg = (pressure * 0.295300);
