@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		015631DE1E0AFE47009AB385 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 015631DD1E0AFE47009AB385 /* Weather.m */; };
 		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
 		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
 		0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82F1E08F45300B63BE8 /* AltimeterTest.m */; };
@@ -76,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		015631DC1E0AFE47009AB385 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		015631DD1E0AFE47009AB385 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
 		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
 		0180B82F1E08F45300B63BE8 /* AltimeterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltimeterTest.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				015631DC1E0AFE47009AB385 /* Weather.h */,
+				015631DD1E0AFE47009AB385 /* Weather.m */,
 				7CF703541E09FEC800354143 /* LocationManager.h */,
 				7CF703551E09FEC800354143 /* LocationManager.m */,
 				55DC165E1E09E37D00E5A8A6 /* Conversions.h */,
@@ -407,6 +412,7 @@
 				55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */,
+				015631DE1E0AFE47009AB385 /* Weather.m in Sources */,
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,

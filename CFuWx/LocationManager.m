@@ -8,10 +8,12 @@
 
 #import "LocationManager.h"
 
-@interface LocationManager()
+@interface LocationManager()<CLLocationManagerDelegate>
 
 @property(strong, nonatomic)CLLocationManager *locationManager;
 @property(strong, nonatomic)CLPlacemark *placemark;
+
+@property(strong, nonatomic) CLLocation *currentLocation;
 
 @end
 
@@ -28,6 +30,18 @@
     return sharedManager;
 }
 
+-(instancetype)init{
+    self = [super init];
+    
+    if(self){
+        _locationManager = [[CLLocationManager alloc]init];
+        _locationManager.delegate = self;
+        [_locationManager requestPermissions];
+    }
+    
+    return self;
+}
+
 -(void)requestPermissions {
     if ( ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) ) {
         NSLog(@"not authorized for location services");
@@ -41,23 +55,39 @@
     }
 }
 
--(NSString *)getCurrentLocationWithCoordinatesAndAltitude {
+-(void)requestLocation {
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
+    [self.locationManager requestLocation];
     
-    NSString *currentLocation = [NSString stringWithFormat:@"latitude: %f longitude: %f altitude: %f city: %@", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude, self.locationManager.location.altitude, [self reverseGeocode:self.locationManager.location]]; //putting coordinates(lat/long) and altitude as floats into string
-    
-    NSLog(@"%@", currentLocation);
-    
-    return currentLocation;
 }
 
-//-(CLLocationCoordinate2D)returnCoordinate {
-//    CLLocationCoordinate2D coordinate = [CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude)];
-//    return coordinate;
-//}
+-(CLLocationCoordinate2D)returnCurrentCoordinate {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+    
+    return coordinate;
+}
 
+
+-(void)getLocationFrom:(NSString *)stringFromUser{
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    
+    __weak typeof(self) bruce = self;
+    
+    [geocoder geocodeAddressString:stringFromUser completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        __strong typeof(bruce) hulk = bruce;
+        if(placemarks.count > 0) {
+            CLLocation *location = [[CLLocation alloc]init];
+            hulk.currentLocation = location;
+        }
+        
+        
+        
+    }];
+
+    
+    
+}
 
 
 -(NSString *)reverseGeocode:(CLLocation *)location {
@@ -81,5 +111,31 @@
     }];
     return _placemark.locality;
 }
+
+
+
+
+
+//MARK: CLLocationManager Delegate Methods Go Here:
+
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    [self setCurrentLocation:locations.lastObject];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

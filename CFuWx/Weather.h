@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface Weather : NSObject
+
+@property(strong, nonatomic) NSNumber *temperature;
+@property(strong, nonatomic) NSNumber *precipProbability;
+@property(strong, nonatomic) NSNumber *humidity;
+@property(strong, nonatomic) NSNumber *windSpeed;
+@property(strong, nonatomic) NSNumber *windBearing;
+@property(strong, nonatomic) NSNumber *pressure;
+@property(strong, nonatomic) NSNumber *time;
+
+@property(strong, nonatomic) NSString *summary;
+@property(strong, nonatomic) UIImage *icon;
+
+@property(strong, nonatomic) NSDictionary *iconDictionary;
 
 @end

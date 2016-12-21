@@ -37,7 +37,7 @@
     
     // Core Location request permission for user's current location
     [[LocationManager sharedManager] requestPermissions];
-    [[LocationManager sharedManager] getCurrentLocationWithCoordinatesAndAltitude];
+    [[LocationManager sharedManager] requestLocation];
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
