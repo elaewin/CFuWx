@@ -13,13 +13,12 @@
 @interface LocationManager : NSObject
 
 +(instancetype)sharedManager;
--(instancetype)init;
+
 -(void)requestPermissions;
 -(void)requestLocation;
+-(CLLocationCoordinate2D)returnCurrentCoordinate;
 
 -(void)getLocationFrom:(NSString *)stringFromUser;
--(CLLocationCoordinate2D)returnCurrentCoordinate;
--(NSString *)reverseGeocode:(CLLocation *)location;
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations;
+-(NSString *)reverseGeocode:(CLLocation *)location;
 @end
