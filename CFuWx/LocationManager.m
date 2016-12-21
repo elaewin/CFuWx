@@ -8,6 +8,9 @@
 
 #import "LocationManager.h"
 
+
+#import "DarkSkyAPI.h"
+
 @interface LocationManager()<CLLocationManagerDelegate>
 
 @property(strong, nonatomic)CLLocationManager *locationManager;
@@ -36,7 +39,7 @@
     if(self){
         _locationManager = [[CLLocationManager alloc]init];
         _locationManager.delegate = self;
-        [_locationManager requestPermissions];
+        [self requestPermissions];
     }
     
     return self;
@@ -45,25 +48,27 @@
 -(void)requestPermissions {
     if ( ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) ) {
         NSLog(@"not authorized for location services");
-        [self.locationManager requestWhenInUseAuthorization];
+        [_locationManager requestWhenInUseAuthorization];
         //[self setLocationManager:[[CLLocationManager alloc]init]];
         //[CLLocationManager locationServicesEnabled];
     } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
         NSLog(@"authorized for location services");
-        [self setLocationManager:[[CLLocationManager alloc]init]];
         [CLLocationManager locationServicesEnabled];
     }
 }
 
 -(void)requestLocation {
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.distanceFilter = 5000;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestLocation];
+    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
     
 }
 
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+    
+    NSLog(@"%@", self.currentLocation);
     
     return coordinate;
 }
@@ -123,10 +128,15 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [self setCurrentLocation:locations.lastObject];
     
+    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
+    NSLog(@"%@", self.currentLocation);
+    
 }
 
 
-
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"%@", error);
+}
 
 
 

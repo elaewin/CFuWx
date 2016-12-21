@@ -21,9 +21,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = kApplicationID;
-        configuration.clientKey =  kMasterKey;
-        configuration.server =  kServerURL;
+        configuration.applicationId = @" ";
+        configuration.clientKey =  @" ";
+        configuration.server =  @"https://CFuWx.herokuapp.com/parse";
     }]];
 
     [self bootstrapApp];

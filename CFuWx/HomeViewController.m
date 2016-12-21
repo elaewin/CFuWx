@@ -42,7 +42,6 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    
 }
 
 //Delegate Methods:

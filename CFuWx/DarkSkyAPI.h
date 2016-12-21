@@ -18,6 +18,13 @@
 
 //public method: 
 @interface DarkSkyAPI : NSObject
+
+
++(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem;
++(NSURLQueryItem *)currentlyQuery;
+
+
+
 -(void)httpRequest:(NSURL *)url;
 
 +(void)fetchForecast:(CGFloat)latitude andLong:(CGFloat)longitude;

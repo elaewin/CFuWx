@@ -20,8 +20,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 @interface DarkSkyAPI()
 
-
-
 @property(nonatomic) CLLocationCoordinate2D coordinate;
 @property(strong, nonatomic) NSMutableData *receivedData;
 @property(strong, nonatomic) NSURLConnection *requestURL;
@@ -31,16 +29,12 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 @implementation DarkSkyAPI
 
-//NSString *kBaseUrl = @"https://stackexchange.com/oauth/dialog";
-//NSString *kClientId = @"8609";
-//NSString *kRedirectURI = @"https://stackexchange.com/oauth/login_success";
-
--(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem {
++(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem {
     CLLocationCoordinate2D coordinate = [[LocationManager sharedManager] returnCurrentCoordinate];
     NSURLComponents *components = [[NSURLComponents alloc]init];
     components.scheme = @"https";
     components.host = @"api.darksky.net";
-    components.path = @"/forecast/%@/%f,%f", kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude;
+    components.path = [NSString stringWithFormat:@"/forecast/%@/%f,%f", @"someCrazyAPIKey", coordinate.latitude, coordinate.longitude];
     components.queryItems = @[queryItem];
     NSURL *url = components.URL;
     NSLog(@"%@", components.URL);
@@ -48,7 +42,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 }
 
--(NSURLQueryItem *)currentlyQuery {
++(NSURLQueryItem *)currentlyQuery {
     NSURLQueryItem *excludeQueryItem = [NSURLQueryItem queryItemWithName:@"exclude" value:@"minutely,hourly,daily,alerts,flag"];
     return excludeQueryItem;
 }

@@ -92,6 +92,7 @@
 		0197C2541E09E661006D7A29 /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
 		0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomTableViewCell.h; sourceTree = "<group>"; };
 		0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomTableViewCell.m; sourceTree = "<group>"; };
+		1A9FCD951E0B2D3300DC0C2F /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
 		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		555CD9BD1E08CAC6002E72DA /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				7C008A401E09EA0300040CB9 /* Credentials.h */,
+				1A9FCD951E0B2D3300DC0C2F /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				55EF0DC91E0AF6FB00750E6E /* dummy.swift */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
