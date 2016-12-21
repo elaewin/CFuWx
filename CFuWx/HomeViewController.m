@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [DarkSkyAPI fetchForecast: ];
+    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
     
     self.altimeter = [[Altimeter alloc]init];
 //    [self.altimeter getAltitudeChange];

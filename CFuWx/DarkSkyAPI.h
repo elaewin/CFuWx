@@ -8,20 +8,15 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@class DarkSkyAPI;
-@protocol DarkSkyAPIDelegate <NSObject>
-
--(void)fetchData: (NSMutableData *)data sender:(DarkSkyAPI *)sender;
-
-@end
-
-
-//public method: 
 @interface DarkSkyAPI : NSObject
--(void)httpRequest:(NSURL *)url;
 
-+(void)fetchForecast:(CGFloat)latitude andLong:(CGFloat)longitude;
 
-@property(weak, nonatomic) id <DarkSkyAPIDelegate> delegate;
++(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem;
++(NSURLQueryItem *)currentlyQuery;
++(NSURLQueryItem *)hourlyQuery;
++(NSURLQueryItem *)dailyQuery;
+
+
+
 
 @end
