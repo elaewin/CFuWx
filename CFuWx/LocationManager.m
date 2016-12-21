@@ -66,7 +66,7 @@
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
     
-    NSLog(@"%@", self.currentLocation);
+    NSLog(@"Current Location from returnCurrentCoordinate: %@", self.currentLocation);
     
     return coordinate;
 }
@@ -127,7 +127,7 @@
     [self setCurrentLocation:locations.lastObject];
     
     [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
-    NSLog(@"%@", self.currentLocation);
+    NSLog(@"Current location from didUpdateLocations: %@", self.currentLocation);
     
 }
 
