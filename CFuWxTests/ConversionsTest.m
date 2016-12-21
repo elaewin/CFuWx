@@ -39,6 +39,19 @@
     [super tearDown];
 }
 
+-(void)testConvertToCelsius {
+    XCTAssert([[Conversions convertToCelsius:32.0] isEqualToString:@"0.0"], @"Value returned from conversion is %@, NOT 0.0!", [Conversions convertToCelsius:32.0]);
+    XCTAssert([[Conversions convertToCelsius:100.0] isEqualToString:@"37.8"], @"Value returned from conversion is %@, NOT 37.8!", [Conversions convertToCelsius:100.0]);
+    XCTAssert([[Conversions convertToCelsius:-10.0] isEqualToString:@"-23.3"], @"Value returned from conversion is %@, NOT -23.3!", [Conversions convertToCelsius:-10.0]);
+}
+
+-(void)testConvertToKelvin {
+    XCTAssert([[Conversions convertToKelvin:32.0] isEqualToString:@"273.2"],
+              @"Value returned from conversion is %@, NOT 273.2!", [Conversions convertToKelvin:32.0]);
+    XCTAssert([[Conversions convertToKelvin:100.0] isEqualToString:@"310.9"], @"Value returned from conversion is %@, NOT 310.9!", [Conversions convertToKelvin:100.0]);
+    XCTAssert([[Conversions convertToKelvin:-10.0] isEqualToString:@"249.8"], @"Value returned from conversion is %@, NOT 249.8!", [Conversions convertToKelvin:-10.0]);
+}
+
 -(void)testConvertToInchesHg {
 //    NSString *result = [Conversions convertToInchesHg:1.0];
     XCTAssert([[Conversions convertToInchesHg:1.0] isEqualToString:@"0.30"], @"Value returned from conversion is %@, NOT 0.30!", [Conversions convertToInchesHg:1.0]);

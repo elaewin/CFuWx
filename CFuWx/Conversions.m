@@ -10,8 +10,20 @@
 
 @implementation Conversions
 
++(NSString *)formatToOneDecimal:(double)numberToFormat {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter = [[NSNumberFormatter alloc]init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.allowsFloats = YES;
+    formatter.usesSignificantDigits = NO;
+    formatter.minimumFractionDigits = 1;
+    formatter.maximumFractionDigits = 1;
+    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
+    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
+    return [formatter stringFromNumber:number];
+}
 
-+(NSString *)formattedNumber:(double)numberToFormat {
++(NSString *)formatToTwoDecimals:(double)numberToFormat {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     formatter = [[NSNumberFormatter alloc]init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -21,83 +33,84 @@
     formatter.maximumFractionDigits = 2;
     formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
     NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
-//    NSString *result = [NSString stringWithFormat:@"%@", number.decimalValue];
-//    return result;
     return [formatter stringFromNumber:number];
 }
 
 // Temperature Conversions from degrees Fahrenheit
 +(NSString *) convertToCelsius:(double)tempFahrenheit {
-    return @"meh";
+//    double multiplier = (
+    double tempCelsius = ((tempFahrenheit - 32) * 5) / 9;
+    return [Conversions formatToOneDecimal:tempCelsius];
 }
 
 +(NSString *) convertToKelvin:(double)tempFahrenheit {
-    return @"meh";
+    double tempKelvin = (((tempFahrenheit - 32) * 5) / 9) + 273.15;
+    return [Conversions formatToOneDecimal:tempKelvin];
 }
 
 // Pressure Conversions from kPa
 +(NSString *)convertToInchesHg:(double)pressure {
     double inHg = (pressure * 0.295300);
-    return [Conversions formattedNumber:inHg];
+    return [Conversions formatToTwoDecimals:inHg];
 }
 
 +(NSString *)convertToMillimetersHg:(double)pressure  {
     double mmHg = (pressure * 7.50062);
-    return [Conversions formattedNumber:mmHg];
+    return [Conversions formatToTwoDecimals:mmHg];
 }
 
 +(NSString *)convertToPSI:(double)pressure  {
     double psi = (pressure * 0.145038);
-    return [Conversions formattedNumber:psi];
+    return [Conversions formatToTwoDecimals:psi];
 }
 
 +(NSString *)convertToHectoPascal:(double)pressure {
     double hPa = (pressure * 10);
-    return [Conversions formattedNumber:hPa];
+    return [Conversions formatToTwoDecimals:hPa];
 }
 
 // Height Conversions from Meters
 +(NSString *)convertToFeet:(double)meters  {
     double feet = (meters * 3.2808);
-    return [Conversions formattedNumber:feet];
+    return [Conversions formatToTwoDecimals:feet];
 }
 
 +(NSString *)convertToMiles:(double)meters  {
     double miles = (meters / 1609.344);
-    return [Conversions formattedNumber:miles];
+    return [Conversions formatToTwoDecimals:miles];
 }
 
 +(NSString *)convertToKilometers:(double)meters  {
     double kilometers = (meters / 1000);
-    return [Conversions formattedNumber:kilometers];
+    return [Conversions formatToTwoDecimals:kilometers];
 }
 
 
 // Depth of Precipitation Conversions from Inches
 +(NSString *)convertToCentimeters:(double)inches {
     double centimeters = (inches * 2.54);
-    return [Conversions formattedNumber:centimeters];
+    return [Conversions formatToTwoDecimals:centimeters];
 }
 
 +(NSString *)convertToMillimeters:(double)inches {
     double millimeters = (inches * 25.4);
-    return [Conversions formattedNumber:millimeters];
+    return [Conversions formatToTwoDecimals:millimeters];
 }
 
 // Wind Speed Unit Conversions from mph
 +(NSString *)convertToKPH:(double)miles {
     double kph = (miles * 1.609344);
-    return [Conversions formattedNumber:kph];
+    return [Conversions formatToTwoDecimals:kph];
 }
 
 +(NSString *)convertToMetersPerSecond:(double)miles {
     double mps = (miles * 0.44704);
-    return [Conversions formattedNumber:mps];
+    return [Conversions formatToTwoDecimals:mps];
 }
 
 +(NSString *)convertToKnots:(double)miles {
     double knots = (miles * 1.15078);
-    return [Conversions formattedNumber:knots];
+    return [Conversions formatToTwoDecimals:knots];
 }
 
 // Convert Dates
