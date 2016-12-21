@@ -10,19 +10,37 @@
 
 @implementation Conversions
 
-// Pressure Conversions from kPa
-+(double)convertToInchesHg:(double)pressure {
-    
-    return 1;
+
++(NSString *)formattedNumber:(double)numberToFormat {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter = [[NSNumberFormatter alloc]init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.allowsFloats = YES;
+    formatter.usesSignificantDigits = NO;
+    formatter.minimumFractionDigits = 2;
+    formatter.maximumFractionDigits = 2;
+    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
+    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
+//    NSString *result = [NSString stringWithFormat:@"%@", number.decimalValue];
+//    return result;
+    return [formatter stringFromNumber:number];
 }
 
-//+(double)convertToMillimetersHg:(double)pressure  {
+// Pressure Conversions from kPa
++(NSString *)convertToInchesHg:(double)pressure {
+    double inHg = (pressure * 0.295300);
+    return [Conversions formattedNumber:inHg];
+}
+
++(NSString *)convertToMillimetersHg:(double)pressure  {
+    double mmHg = (pressure * 7.50062);
+    return [Conversions formattedNumber:mmHg];
+}
 //
-//}
-//
-//+(double)convertToPSI:(double)pressure  {
-//
-//}
++(NSString *)convertToPSI:(double)pressure  {
+    double psi = (pressure * 0.145038);
+    return [Conversions formattedNumber:psi];
+}
 //
 //+(double)convertToHectoPascal:(double)pressure  {
 //

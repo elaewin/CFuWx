@@ -12,8 +12,8 @@
 
 @property(strong, nonatomic) CMAltimeter *altimeter;
 
-
 @end
+
 @implementation Altimeter
 
 
