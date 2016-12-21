@@ -36,7 +36,7 @@
     if(self){
         _locationManager = [[CLLocationManager alloc]init];
         _locationManager.delegate = self;
-        [_locationManager requestPermissions];
+        [self requestPermissions];
     }
     
     return self;
@@ -46,11 +46,9 @@
     if ( ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) ) {
         NSLog(@"not authorized for location services");
         [self.locationManager requestWhenInUseAuthorization];
-        //[self setLocationManager:[[CLLocationManager alloc]init]];
         //[CLLocationManager locationServicesEnabled];
     } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
         NSLog(@"authorized for location services");
-        [self setLocationManager:[[CLLocationManager alloc]init]];
         [CLLocationManager locationServicesEnabled];
     }
 }

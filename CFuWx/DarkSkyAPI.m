@@ -35,7 +35,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 //NSString *kClientId = @"8609";
 //NSString *kRedirectURI = @"https://stackexchange.com/oauth/login_success";
 
--(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem {
++(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem {
     CLLocationCoordinate2D coordinate = [[LocationManager sharedManager] returnCurrentCoordinate];
     NSURLComponents *components = [[NSURLComponents alloc]init];
     components.scheme = @"https";
@@ -48,7 +48,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 }
 
--(NSURLQueryItem *)currentlyQuery {
++(NSURLQueryItem *)currentlyQuery {
     NSURLQueryItem *excludeQueryItem = [NSURLQueryItem queryItemWithName:@"exclude" value:@"minutely,hourly,daily,alerts,flag"];
     return excludeQueryItem;
 }
