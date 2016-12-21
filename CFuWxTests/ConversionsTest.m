@@ -39,6 +39,16 @@
     [super tearDown];
 }
 
+-(void)testFormatToOneDecimal {
+    XCTAssert([[Conversions formatToOneDecimal:3.1415926] isKindOfClass:[NSString class]], @"formatToOneDecimal does NOT return an NSString");
+    XCTAssert([[Conversions formatToOneDecimal:3.1415926] isEqualToString:@"3.1"], @"Value returned from conversion is %@, NOT 3.1!", [Conversions formatToOneDecimal:3.1415926]);
+}
+
+-(void)testFormatToTwoDecimals{
+    XCTAssert([[Conversions formatToTwoDecimals:3.1415926] isKindOfClass:[NSString class]], @"formatToTwoDecimals does NOT return an NSString");
+    XCTAssert([[Conversions formatToTwoDecimals:3.1415926] isEqualToString:@"3.14"], @"Value returned from conversion is %@, NOT 3.14!", [Conversions formatToTwoDecimals:3.1415926]);
+}
+
 -(void)testConvertToCelsius {
     XCTAssert([[Conversions convertToCelsius:32.0] isEqualToString:@"0.0"], @"Value returned from conversion is %@, NOT 0.0!", [Conversions convertToCelsius:32.0]);
     XCTAssert([[Conversions convertToCelsius:100.0] isEqualToString:@"37.8"], @"Value returned from conversion is %@, NOT 37.8!", [Conversions convertToCelsius:100.0]);

@@ -10,6 +10,10 @@
 
 @interface Conversions : NSObject
 
+// Number formatters
++(NSString *)formatToOneDecimal:(double)numberToFormat;
++(NSString *)formatToTwoDecimals:(double)numberToFormat;
+
 // Temperature Conversions from degrees Fahrenheit
 +(NSString *) convertToCelsius:(double)tempFahrenheit;
 +(NSString *) convertToKelvin:(double)tempFahrenheit;
