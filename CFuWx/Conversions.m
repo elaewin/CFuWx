@@ -10,7 +10,6 @@
 
 @implementation Conversions
 
-
 +(NSString *)formattedNumber:(double)numberToFormat {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     formatter = [[NSNumberFormatter alloc]init];
@@ -100,6 +99,5 @@
 //+(NSString *)convertToReadableTime:(NSDate *)date  {
 //
 //}
-
 
 @end

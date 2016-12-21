@@ -7,8 +7,12 @@
 //
 
 #import "DarkSkyAPI.h"
+#import "Credentials.h"
+#import "AppDelegate.h"
+#import "HomeViewController.h"
+@import CoreLocation;
 
-@interface DarkSkyAPI() <NSURLConnectionDataDelegate>
+@interface DarkSkyAPI()
 
 @property(strong, nonatomic) NSMutableData *receivedData;
 @property(strong, nonatomic) NSURLConnection *requestURL;
@@ -18,9 +22,40 @@
 
 @implementation DarkSkyAPI
 
++(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
+   
+    NSString *baseURL = @"https://api.darkysky.net/forecast/";
+    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyKey, coordinate.latitude, coordinate.longitude];
+    
+    NSLog(@"%@", requestURL);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -(NSMutableData *)receivedData {
     if(!_receivedData){
         _receivedData = [[NSMutableData alloc]init];
+        
+//        [HomeViewController ]
     }
     return _receivedData;
 }
@@ -41,6 +76,7 @@
             self.delegate = nil;
         } else {
             NSLog(@"Error Fetching Data");
+            
         }
     }];
 }
@@ -53,20 +89,11 @@
 
 
 
-
-
-
-
-
-
-//-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-//    
-//    [self.delegate fetchData:self.receivedData sender:self];
-//     //setting to 'nil' will ensure that once the method makes connection to API, it will refresh and instantiate again when needed (see setter methods)
-//    self.delegate = nil;
-//    self.receivedData = nil;
-//    self.requestURL = nil;
-//}
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+     //setting to 'nil' will ensure that once the method makes connection to API, it will refresh and instantiate again when needed (see setter methods)
+    self.receivedData = nil;
+    self.requestURL = nil;
+}
 
 
 

@@ -15,6 +15,9 @@
 		0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8351E08F4B000B63BE8 /* HomeViewTest.m */; };
 		0180B8381E08F4CB00B63BE8 /* SettingsViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */; };
 		0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */; };
+
+		0197C2551E09E661006D7A29 /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2541E09E661006D7A29 /* TopTableViewCell.m */; };
+		0197C2581E09E66E006D7A29 /* BottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */; };
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
@@ -41,6 +44,7 @@
 		55DC16571E09C71200E5A8A6 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CF703561E09FEC800354143 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF703551E09FEC800354143 /* LocationManager.m */; };
 		55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC165F1E09E37D00E5A8A6 /* Conversions.m */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
 		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
@@ -81,6 +85,14 @@
 		0180B8371E08F4CB00B63BE8 /* SettingsViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewTest.m; sourceTree = "<group>"; };
 		0197C2501E09CE79006D7A29 /* DarkSkyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkSkyAPI.h; sourceTree = "<group>"; };
 		0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyAPI.m; sourceTree = "<group>"; };
+
+		0197C2531E09E661006D7A29 /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewCell.h; sourceTree = "<group>"; };
+		0197C2541E09E661006D7A29 /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
+		0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomTableViewCell.h; sourceTree = "<group>"; };
+		0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomTableViewCell.m; sourceTree = "<group>"; };
+		0197C25B1E09EFDE006D7A29 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		1A9FCD3F1E09BD1E00DC0C2F /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
+
 		555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CFuWx-Bridging-Header.h"; sourceTree = "<group>"; };
 		555CD9BC1E08CAC6002E72DA /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		555CD9BD1E08CAC6002E72DA /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
@@ -109,10 +121,12 @@
 		555FA2371E0701C40036FC1E /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastViewController.m; sourceTree = "<group>"; };
 		555FA23A1E0701CF0036FC1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		555FA23B1E0701CF0036FC1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		55DC16501E09C3B100E5A8A6 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		55DC16511E09C70800E5A8A6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		55DC16521E09C70800E5A8A6 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		55DC16531E09C70800E5A8A6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		7C008A401E09EA0300040CB9 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		7CF703541E09FEC800354143 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		7CF703551E09FEC800354143 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		55DC165E1E09E37D00E5A8A6 /* Conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversions.h; sourceTree = "<group>"; };
 		55DC165F1E09E37D00E5A8A6 /* Conversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversions.m; sourceTree = "<group>"; };
 		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
@@ -183,6 +197,8 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C008A401E09EA0300040CB9 /* Credentials.h */,
+				0197C2591E09E6AC006D7A29 /* Credentials.h */,
 				55DC16501E09C3B100E5A8A6 /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
@@ -214,11 +230,15 @@
 		555FA2251E0700890036FC1E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0197C2531E09E661006D7A29 /* TopTableViewCell.h */,
+				0197C2541E09E661006D7A29 /* TopTableViewCell.m */,
 				555FA22C1E0701380036FC1E /* About.storyboard */,
 				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
 				555FA2041E06FE680036FC1E /* Main.storyboard */,
 				555FA22A1E0701110036FC1E /* Settings.storyboard */,
 				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
+				0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */,
+				0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -226,7 +246,8 @@
 		555FA2261E0700B80036FC1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				55F25CA61E09F1C900BAF2FA /* garbage.swift */,
+				7CF703541E09FEC800354143 /* LocationManager.h */,
+				7CF703551E09FEC800354143 /* LocationManager.m */,
 				55DC165E1E09E37D00E5A8A6 /* Conversions.h */,
 				55DC165F1E09E37D00E5A8A6 /* Conversions.m */,
 				0197C2501E09CE79006D7A29 /* DarkSkyAPI.h */,
@@ -386,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */,
+				0197C2581E09E66E006D7A29 /* BottomTableViewCell.m in Sources */,
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */,
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
@@ -393,10 +415,12 @@
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
+				0197C2551E09E661006D7A29 /* TopTableViewCell.m in Sources */,
 				555FA2301E0701A70036FC1E /* HomeViewController.m in Sources */,
 				55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */,
 				555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */,
 				555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
+				7CF703561E09FEC800354143 /* LocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
