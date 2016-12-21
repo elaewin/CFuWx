@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="419" id="VNB-ZT-8vg"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="166" id="Mpz-mO-m1O" customClass="TopTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopTableViewCell" rowHeight="166" id="Mpz-mO-m1O" customClass="TopTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mpz-mO-m1O" id="uEV-Dx-GAt">
@@ -41,6 +41,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX7-Lb-0ux">
                                                     <rect key="frame" x="312" y="8" width="42" height="21"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="DIV-3M-S8E"/>
                                                         <constraint firstAttribute="width" constant="42" id="iSN-hw-Yi2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -83,8 +84,14 @@
                                                 <constraint firstItem="jX7-Lb-0ux" firstAttribute="baseline" secondItem="e9u-lJ-p74" secondAttribute="firstBaseline" id="xCM-bi-icV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="d5T-hO-XNq" id="h6Z-dy-u43"/>
+                                            <outlet property="location" destination="e9u-lJ-p74" id="Fam-a2-bfa"/>
+                                            <outlet property="temperature" destination="htT-X5-unD" id="oKf-6l-OhY"/>
+                                            <outlet property="time" destination="jX7-Lb-0ux" id="J7z-lT-QBh"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="225" id="vj9-eZ-R0o" customClass="BottomTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BottomTableViewCell" rowHeight="225" id="vj9-eZ-R0o" customClass="BottomTableViewCell">
                                         <rect key="frame" x="0.0" y="194" width="375" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vj9-eZ-R0o" id="oYM-IR-7Ij">
@@ -107,6 +114,9 @@
                                                 <constraint firstItem="RKk-uY-3IG" firstAttribute="top" secondItem="oYM-IR-7Ij" secondAttribute="topMargin" constant="33" id="eCe-KH-a8s"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pressure" destination="RKk-uY-3IG" id="VBE-W8-xIO"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="225" id="YdV-vL-Vd7">
                                         <rect key="frame" x="0.0" y="419" width="375" height="225"/>

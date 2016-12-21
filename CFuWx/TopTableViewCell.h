@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 
 @interface TopTableViewCell : UITableViewCell
+
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *time;
+
+@property (weak, nonatomic) IBOutlet UILabel *date;
+
+@property (weak, nonatomic) IBOutlet UILabel *location;
+
+@property (weak, nonatomic) IBOutlet UILabel *temperature;
 
 @end
