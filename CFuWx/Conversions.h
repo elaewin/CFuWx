@@ -10,32 +10,39 @@
 
 @interface Conversions : NSObject
 
+// Number formatters
++(NSString *)formatToOneDecimal:(double)numberToFormat;
++(NSString *)formatToTwoDecimals:(double)numberToFormat;
+
+// Temperature Conversions from degrees Fahrenheit
++(NSString *) convertToCelsius:(double)tempFahrenheit;
++(NSString *) convertToKelvin:(double)tempFahrenheit;
+
 // Pressure Conversions from kPa
 +(NSString *)convertToInchesHg:(double)pressure;
 +(NSString *)convertToMillimetersHg:(double)pressure;
 +(NSString *)convertToPSI:(double)pressure;
 +(NSString *)convertToHectoPascal:(double)pressure;
 
+// Height Conversions from Meters
++(NSString *)convertToFeet:(double)meters;
++(NSString *)convertToMiles:(double)meters;
++(NSString *)convertToKilometers:(double)meters;
 
-//// Height Conversions from Meters
-//+(double)convertToFeet:(double)height;
-//+(double)convertToMiles:(double)height;
-//+(double)convertToKilometer:(double)height;
-//
-//// Depth of Precipitation Conversions from Inches
-//+(double)convertToCentimeters:(double)depth;
-//+(double)convertToMillimeters:(double)depth;
-//
-//// Wind Speed Unit Conversions from mph
-//+(double)convertToKPH:(double)speed;
-//+(double)convertToMetersPerSecond:(double)speed;
-//+(double)convertToKnots:(double)speed;
-//
-//// Convert Dates
-//+(NSString *)convertToDayOnly:(NSDate *)date;
-//+(NSString *)convertToReadableDate:(NSDate *)date;
-//
-//// Convert Time
-//+(NSString *)convertToReadableTime:(NSDate *)date;
+// Depth of Precipitation Conversions from Inches
++(NSString *)convertToCentimeters:(double)inches;
++(NSString *)convertToMillimeters:(double)inches;
+
+// Wind Speed Unit Conversions from mph
++(NSString *)convertToKPH:(double)miles;
++(NSString *)convertToMetersPerSecond:(double)miles;
++(NSString *)convertToKnots:(double)miles;
+
+// Convert Dates
++(NSString *)convertToDayOnly:(NSDate *)date;
++(NSString *)convertToReadableDate:(NSDate *)date;
+
+// Convert Time
++(NSString *)convertToReadableTime:(NSDate *)date;
 
 @end
