@@ -42,26 +42,27 @@
     return [Conversions formattedNumber:psi];
 }
 
-+(NSString *)convertToHectoPascal:(double)pressure  {
++(NSString *)convertToHectoPascal:(double)pressure {
+    double hPa = (pressure * 10);
+    return [Conversions formattedNumber:hPa];
+}
+
+// Height Conversions from Meters
++(NSString *)convertToFeet:(double)height  {
     return @"meh";
 }
-//
-//
-//
-//// Height Conversions from Meters
-//+(double)convertToFeet:(double)height  {
-//
-//}
-//
-//+(double)convertToMiles:(double)height  {
-//
-//}
-//
-//+(double)convertToKilometer:(double)height  {
-//
-//}
-//
-//
+
++(NSString *)convertToMiles:(double)height  {
+    return @"meh";
+
+}
+
++(NSString *)convertToKilometer:(double)height  {
+    return @"meh";
+
+}
+
+
 //// Depth of Precipitation Conversions from Inches
 //+(double)convertToCentimeters:(double)depth  {
 //

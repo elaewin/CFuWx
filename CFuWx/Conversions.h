@@ -18,11 +18,12 @@
 +(NSString *)convertToHectoPascal:(double)pressure;
 
 
-//// Height Conversions from Meters
-//+(double)convertToFeet:(double)height;
-//+(double)convertToMiles:(double)height;
-//+(double)convertToKilometer:(double)height;
-//
+// Height Conversions from Meters
++(NSString *)convertToFeet:(double)height;
++(NSString *)convertToMiles:(double)height;
++(NSString *)convertToKilometer:(double)height;
+
+
 //// Depth of Precipitation Conversions from Inches
 //+(double)convertToCentimeters:(double)depth;
 //+(double)convertToMillimeters:(double)depth;

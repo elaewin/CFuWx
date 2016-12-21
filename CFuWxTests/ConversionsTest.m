@@ -41,7 +41,8 @@
 }
 
 -(void)testConvertToHectoPascal {
-    XCTAssert([[Conversions convertToHectoPascal:1.0] isEqualToString:@"0.15"], @"Value returned from conversion is %@, NOT 0.15!", [Conversions convertToPSI:1.0]);
+    XCTAssert([[Conversions convertToHectoPascal:1.0] isEqualToString:@"10.00"], @"Value returned from conversion is %@, NOT 10.00!", [Conversions convertToHectoPascal:1.0]);
+    XCTAssert([[Conversions convertToHectoPascal:1015.24] isEqualToString:@"10,152.40"], @"Value returned from conversion is %@, NOT 10,152.40!", [Conversions convertToHectoPascal:1015.24]);
 }
 
 
