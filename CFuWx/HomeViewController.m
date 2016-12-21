@@ -15,9 +15,9 @@
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+
 @property(strong, nonatomic) TopTableViewCell *topTableViewCell;
 @property(strong, nonatomic) BottomTableViewCell *bottomTableViewCell;
-
 
 @property(strong, nonatomic)Altimeter *altimeter;
 @property(strong, nonatomic)CLLocationManager *locationManager;
