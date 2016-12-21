@@ -36,59 +36,13 @@
 //    [self.altimeter getAltitudeChange];
     
     // Core Location request permission for user's current location
-    [self requestPermissions];
-    [self getCurrentLocationWithCoordinatesAndAltitude];
+    [[LocationManager sharedManager] requestPermissions];
+    [[LocationManager sharedManager] getCurrentLocationWithCoordinatesAndAltitude];
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    //bug fix
     
-}
-
--(void)requestPermissions {
-    if ( ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) ) {
-        [self.locationManager requestWhenInUseAuthorization];
-    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self setLocationManager:[[CLLocationManager alloc]init]];
-        [CLLocationManager locationServicesEnabled];
-    }
-}
-
--(NSString *)getCurrentLocationWithCoordinatesAndAltitude {
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
-    
-    NSString *currentLocation = [NSString stringWithFormat:@"latitude: %f longitude: %f altitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude, self.locationManager.location.altitude]; //putting coordinates(lat/long) and altitude as floats into string
-    
-    NSLog(@"%@", currentLocation);
-    
-   // [[[LocationManager sharedManager] reverseGeocode:[LocationManager sharedManager] locationManager];
-    CLLocation *location = [[CLLocation alloc]init];
-    [[LocationManager sharedManager] reverseGeocode:location];
-    NSLog(@"%@", location);
-    Altimeter *altimeter = [[Altimeter alloc]init];
-    [altimeter getAltitudeChange];
-}
-
--(NSString *)reverseGeocode {
-    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-    CLLocation *location = self.locationManager.location;
-    
-    
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        
-        if (error == nil && [placemarks count] > 0) {
-            _placemark = [placemarks lastObject];
-            
-            NSLog(@"%@", _placemark);
-        }
-        
-    }];
-    _currentCity = _placemark.locality;
-    return _currentCity;
 }
 
 //Delegate Methods:
