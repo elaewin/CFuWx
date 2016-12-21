@@ -15,9 +15,9 @@
 +(NSString *)convertToInchesHg:(double)pressure;
 +(NSString *)convertToMillimetersHg:(double)pressure;
 +(NSString *)convertToPSI:(double)pressure;
-//+(double)convertToHectoPascal:(double)pressure;
-//
-//
++(NSString *)convertToHectoPascal:(double)pressure;
+
+
 //// Height Conversions from Meters
 //+(double)convertToFeet:(double)height;
 //+(double)convertToMiles:(double)height;

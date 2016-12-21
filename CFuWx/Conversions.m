@@ -36,15 +36,15 @@
     double mmHg = (pressure * 7.50062);
     return [Conversions formattedNumber:mmHg];
 }
-//
+
 +(NSString *)convertToPSI:(double)pressure  {
     double psi = (pressure * 0.145038);
     return [Conversions formattedNumber:psi];
 }
-//
-//+(double)convertToHectoPascal:(double)pressure  {
-//
-//}
+
++(NSString *)convertToHectoPascal:(double)pressure  {
+    return @"meh";
+}
 //
 //
 //
