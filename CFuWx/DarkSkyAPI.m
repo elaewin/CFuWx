@@ -81,7 +81,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
         }
     }];
     
-
 }
 
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
