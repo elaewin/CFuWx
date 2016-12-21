@@ -25,29 +25,11 @@
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
    
     NSString *baseURL = @"https://api.darkysky.net/forecast/";
-    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyKey, coordinate.latitude, coordinate.longitude];
+    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
     
     NSLog(@"%@", requestURL);
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -68,18 +50,18 @@
 }
 
 
--(void)httpRequest:(NSURL *)url{
-    NSURLSession *session = [NSURLSession sharedSession];
-    [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if(!error){
-            [self.delegate fetchData:data sender:self];
-            self.delegate = nil;
-        } else {
-            NSLog(@"Error Fetching Data");
-            
-        }
-    }];
-}
+//-(void)httpRequest:(NSURL *)url{
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        if(!error){
+//            [self.delegate fetchData:data sender:self];
+//            self.delegate = nil;
+//        } else {
+//            NSLog(@"Error Fetching Data");
+//            
+//        }
+//    }];
+//}
 
 
 

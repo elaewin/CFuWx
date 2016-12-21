@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = kDarkSkyKey;
+        configuration.applicationId = kApplicationID;
         configuration.clientKey =  kMasterKey;
         configuration.server =  kServerURL;
     }]];

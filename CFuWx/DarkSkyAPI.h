@@ -18,9 +18,9 @@
 
 //public method: 
 @interface DarkSkyAPI : NSObject
--(void)httpRequest:(NSURL *)url;
-
-+(void)fetchForecast:(CGFloat)latitude andLong:(CGFloat)longitude;
+//-(void)httpRequest:(NSURL *)url;
+//
+//+(void)fetchForecast:(CGFloat)latitude andLong:(CGFloat)longitude;
 
 @property(weak, nonatomic) id <DarkSkyAPIDelegate> delegate;
 
