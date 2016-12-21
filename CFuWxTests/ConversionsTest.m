@@ -45,14 +45,20 @@
     XCTAssert([[Conversions convertToHectoPascal:1015.24] isEqualToString:@"10,152.40"], @"Value returned from conversion is %@, NOT 10,152.40!", [Conversions convertToHectoPascal:1015.24]);
 }
 
+-(void)testConvertToFeet {
+    XCTAssert([[Conversions convertToFeet:1.0] isEqualToString:@"3.28"], @"Value returned from conversion is %@, NOT 3.28!", [Conversions convertToFeet:1.0]);
+    
+    XCTAssert([[Conversions convertToFeet:1015.24] isEqualToString:@"3,330.80"], @"Value returned from conversion is %@, NOT 3,330.80!", [Conversions convertToFeet:1015.24]);
+}
 
+-(void)testConvertToMiles {
+    XCTAssert([[Conversions convertToMiles:1.0] isEqualToString:@"0.00"], @"Value returned from conversion is %@, NOT 0.00!", [Conversions convertToFeet:1.0]);
+    
+}
 
-
-
-
-
-
-
+-(void)testConvertToKilometers {
+    XCTAssert([[Conversions convertToKilometers:1.0] isEqualToString:@"0.00"], @"Value returned from conversion is %@, NOT 0.00!", [Conversions convertToKilometers:1.0]);
+}
 
 
 

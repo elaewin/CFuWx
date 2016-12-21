@@ -19,9 +19,9 @@
 
 
 // Height Conversions from Meters
-+(NSString *)convertToFeet:(double)height;
-+(NSString *)convertToMiles:(double)height;
-+(NSString *)convertToKilometer:(double)height;
++(NSString *)convertToFeet:(double)meters;
++(NSString *)convertToMiles:(double)meters;
++(NSString *)convertToKilometers:(double)meters;
 
 
 //// Depth of Precipitation Conversions from Inches

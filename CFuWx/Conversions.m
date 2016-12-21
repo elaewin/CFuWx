@@ -48,16 +48,17 @@
 }
 
 // Height Conversions from Meters
-+(NSString *)convertToFeet:(double)height  {
-    return @"meh";
++(NSString *)convertToFeet:(double)meters  {
+    double feet = (meters * 3.2808);
+    return [Conversions formattedNumber:feet];
 }
 
-+(NSString *)convertToMiles:(double)height  {
++(NSString *)convertToMiles:(double)meters  {
     return @"meh";
 
 }
 
-+(NSString *)convertToKilometer:(double)height  {
++(NSString *)convertToKilometers:(double)meters  {
     return @"meh";
 
 }
