@@ -16,16 +16,20 @@
 -(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary{
     self = [super init];
     
-        _temperature = jsonDictionary[@"temperature"];
-        _precipProbability = jsonDictionary[@"precipProbability"];
-        _humidity = jsonDictionary[@"humidity"];
-        _windSpeed = jsonDictionary[@"windSpeed"];
-        _windBearing = jsonDictionary[@"windBearing"];
-        _pressure = jsonDictionary[@"pressure"];
-        _time = jsonDictionary[@"time"];
+    
+    
+    
+    
+        _temperature = jsonDictionary[@"currently.temperature"];
+        _precipProbability = jsonDictionary[@"currently.precipProbability"];
+        _humidity = jsonDictionary[@"currently.humidity"];
+        _windSpeed = jsonDictionary[@"currently.windSpeed"];
+        _windBearing = jsonDictionary[@"currently.windBearing"];
+        _pressure = jsonDictionary[@"currently.pressure"];
+        _time = jsonDictionary[@"currently.time"];
         
-        _summary = jsonDictionary[@"summary"];
-        _icon = [self getWeatherIcon:@"icon"];
+        _summary = jsonDictionary[@"currently.summary"];
+        _icon = [self getWeatherIcon:@"currently.icon"];
     
     return self;
     
