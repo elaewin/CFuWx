@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "Credentials.h"
+#import "DarkSkyAPI.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = kDarkSkyAPIKey;
+        configuration.applicationId = kDarkSkyKey;
         configuration.clientKey =  kMasterKey;
         configuration.server =  kServerURL;
     }]];
@@ -55,7 +56,7 @@
         NSNumber *latitude = responseObj[@"latitude"];
         NSNumber *longitude = responseObj[@"longitude"];
         
-        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
+//        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
         
         //write method to convert time to readable format, write method to retrieve 'TIMEZONE' from json//
         

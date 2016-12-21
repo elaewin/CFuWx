@@ -10,4 +10,9 @@
 
 @interface BottomTableViewCell : UITableViewCell
 
+
+@property (weak, nonatomic) IBOutlet UILabel *pressure;
+
+
+
 @end

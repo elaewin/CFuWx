@@ -7,6 +7,12 @@
 //
 
 #import "TopTableViewCell.h"
+@interface TopTableViewCell()
+
+@property(strong, nonatomic) HomeViewController *homeViewController;
+
+
+@end
 
 @implementation TopTableViewCell
 
@@ -17,7 +23,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    _location.text = _homeViewController.currentCity;
+    
+    NSLog(@"%@", _homeViewController.currentCity);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -7,9 +7,12 @@
 //
 
 #import "DarkSkyAPI.h"
+#import "Credentials.h"
+#import "AppDelegate.h"
 #import "HomeViewController.h"
+@import CoreLocation;
 
-@interface DarkSkyAPI() <NSURLConnectionDataDelegate>
+@interface DarkSkyAPI()
 
 @property(strong, nonatomic) NSMutableData *receivedData;
 @property(strong, nonatomic) NSURLConnection *requestURL;
@@ -18,6 +21,35 @@
 
 
 @implementation DarkSkyAPI
+
++(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
+   
+    NSString *baseURL = @"https://api.darkysky.net/forecast/";
+    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyKey, coordinate.latitude, coordinate.longitude];
+    
+    NSLog(@"%@", requestURL);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -(NSMutableData *)receivedData {
     if(!_receivedData){
