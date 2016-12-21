@@ -11,16 +11,31 @@
 
 @interface ConversionsTest : XCTestCase
 
+@property(strong, nonatomic) NSDate *date;
+
 @end
 
 @implementation ConversionsTest
 
 - (void)setUp {
     [super setUp];
+    
+    NSCalendar *calendar = [[NSCalendar alloc]
+                            initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setYear:2016];
+    [components setMonth:12];
+    [components setDay:21];
+    [components setHour:00];
+    [components setMinute:31];
+    [components setSecond:45];
+    
+    self.date = [calendar dateFromComponents:components];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.date = nil;
+    
     [super tearDown];
 }
 
@@ -85,7 +100,18 @@
     XCTAssert([[Conversions convertToKnots:1015.24] isEqualToString:@"1,168.32"], @"Value returned from conversion is %@, NOT 1,168.32!", [Conversions convertToKnots:1015.24]);
 }
 
+-(void)testConvertToDayOnly {
+    XCTAssert([[Conversions convertToDayOnly:self.date] isEqualToString:@"Wed"], @"Value returned from conversion is %@, NOT Wed", [Conversions convertToDayOnly:self.date]);
+}
 
+-(void)testConvertToReadableDate {
+    XCTAssert([[Conversions convertToReadableDate:self.date] isEqualToString:@"Wed, Dec 21"], @"Value returned from conversion is %@, NOT Wed, Dec 21", [Conversions convertToReadableDate:self.date]);
+}
+
+// Convert Time
+-(void)testConvertToReadableTime {
+    XCTAssert([[Conversions convertToReadableTime:self.date] isEqualToString:@"00:31 AM"], @"Value returned from conversion is %@, NOT 00:31 AM", [Conversions convertToReadableTime:self.date]);
+}
 
 
 @end

@@ -93,17 +93,28 @@
 
 // Convert Dates
 +(NSString *)convertToDayOnly:(NSDate *)date  {
-    return @"meh";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [formatter setLocale:locale];
+    [formatter setDateFormat:@"EEE"];
+    return [formatter stringFromDate:date];
 }
 
 +(NSString *)convertToReadableDate:(NSDate *)date  {
-    return @"meh";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [formatter setLocale:locale];
+    [formatter setDateFormat:@"EEE, MMM dd"];
+    return [formatter stringFromDate:date];
 }
-
 
 // Convert Time
 +(NSString *)convertToReadableTime:(NSDate *)date  {
-    return @"meh";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [formatter setLocale:locale];
+    [formatter setDateFormat:@"HH:mm a"];
+    return [formatter stringFromDate:date];
 }
 
 
