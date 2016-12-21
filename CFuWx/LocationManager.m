@@ -12,6 +12,7 @@
 
 @property(strong, nonatomic)CLLocationManager *locationManager;
 @property(strong, nonatomic)CLPlacemark *placemark;
+@property(strong, nonatomic)CLLocation *coordinateLocation;
 
 @end
 
@@ -54,7 +55,8 @@
 }
 
 //-(CLLocationCoordinate2D)returnCoordinate {
-//    CLLocationCoordinate2D coordinate = [CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude)];
+//    CLLocationCoordinate2D coordinate =
+//    [CLLocationCoordinate2DMake([LocationManager sharedManager] locationManager.location.coordinate.latitude], ;
 //    return coordinate;
 //}
 

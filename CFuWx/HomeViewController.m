@@ -14,8 +14,8 @@
 
 @interface HomeViewController ()
 
-@property(strong, nonatomic)Altimeter *altimeter;
-@property(strong, nonatomic) LocationManager *locationManager;
+@property(strong, nonatomic)Altimeter *homeAltimeter;
+//@property(strong, nonatomic) LocationManager *locationManager;
 
 @end
 
@@ -32,8 +32,8 @@
     CLLocation *location = [[CLLocation alloc]init];
     [[LocationManager sharedManager] reverseGeocode:location];
     NSLog(@"%@", location);
-    Altimeter *altimeter = [[Altimeter alloc]init];
-    [altimeter getAltitudeChange];
+    Altimeter * homeAltimeter = [[Altimeter alloc]init];
+    [ homeAltimeter getAltitudeChange];
 }
 
 
