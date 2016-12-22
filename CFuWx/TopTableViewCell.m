@@ -25,7 +25,7 @@
     [super awakeFromNib];
     _location.text = _homeViewController.currentCity;
     
-    NSLog(@"%@", _homeViewController.currentCity);
+    NSLog(@"AWAKE FROM NIB: %@", _homeViewController.currentCity);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

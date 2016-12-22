@@ -60,14 +60,13 @@
     self.locationManager.distanceFilter = 500;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestLocation];
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
 }
 
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
 
-    NSLog(@"%@", self.currentLocation);
-
+    NSLog(@"CURRENT COORDINATE: %@", self.currentLocation);
+    
     return coordinate;
 }
 
@@ -84,12 +83,7 @@
             hulk.currentLocation = location;
         }
 
-
-
     }];
-
-
-
 }
 
 
@@ -126,9 +120,12 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [self setCurrentLocation:locations.lastObject];
 
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
+    
     NSLog(@"%@", self.currentLocation);
-
+    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *currentWeather) {
+        NSLog(@"%@", currentWeather);
+    }];
+    
 }
 
 

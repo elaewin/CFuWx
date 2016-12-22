@@ -24,4 +24,7 @@
 
 @property(strong, nonatomic) NSDictionary *iconDictionary;
 
+
+-(UIImage *)getWeatherIcon:(NSString *)iconName;
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary;
 @end
