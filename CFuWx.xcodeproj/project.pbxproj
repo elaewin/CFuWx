@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		015631DE1E0AFE47009AB385 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 015631DD1E0AFE47009AB385 /* Weather.m */; };
+		015631E21E0C6A7C009AB385 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 015631E11E0C6A7C009AB385 /* NSString+Validation.m */; };
 		0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 0180B82B1E088C5E00B63BE8 /* forecast.JSON */; };
 		0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */; };
 		0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0180B82F1E08F45300B63BE8 /* AltimeterTest.m */; };
@@ -88,6 +89,8 @@
 /* Begin PBXFileReference section */
 		015631DC1E0AFE47009AB385 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		015631DD1E0AFE47009AB385 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		015631E01E0C6A7C009AB385 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		015631E11E0C6A7C009AB385 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
 		0180B82B1E088C5E00B63BE8 /* forecast.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forecast.JSON; sourceTree = "<group>"; };
 		0180B82D1E089B1F00B63BE8 /* DarkSkyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkSkyTest.m; sourceTree = "<group>"; };
 		0180B82F1E08F45300B63BE8 /* AltimeterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AltimeterTest.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				015631E01E0C6A7C009AB385 /* NSString+Validation.h */,
+				015631E11E0C6A7C009AB385 /* NSString+Validation.m */,
 				7C008A401E09EA0300040CB9 /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				55EF0DC91E0AF6FB00750E6E /* dummy.swift */,
@@ -384,7 +389,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4YFWUVNT8L;
+						DevelopmentTeam = U5DE7QAC5B;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -480,6 +485,7 @@
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
+				015631E21E0C6A7C009AB385 /* NSString+Validation.m in Sources */,
 				55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */,
 				7CD83DAB1E0B6CFD009BE48F /* DailyTableViewCell.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
@@ -637,7 +643,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = U5DE7QAC5B;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -656,7 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = U5DE7QAC5B;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
