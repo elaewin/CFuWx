@@ -16,10 +16,7 @@
 -(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary{
     self = [super init];
     
-    
-    
-    
-    
+    if (self) {
         _temperature = jsonDictionary[@"currently.temperature"];
         _precipProbability = jsonDictionary[@"currently.precipProbability"];
         _humidity = jsonDictionary[@"currently.humidity"];
@@ -30,9 +27,9 @@
         
         _summary = jsonDictionary[@"currently.summary"];
         _icon = [self getWeatherIcon:@"currently.icon"];
+    }
     
     return self;
-    
 }
 
 
