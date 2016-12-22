@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HourlyTableViewCell.h"
+#import "DailyTableViewCell.h"
+#import "Weather.h"
 
 @interface ForecastViewController : UIViewController
 
