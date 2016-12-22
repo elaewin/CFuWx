@@ -17,10 +17,6 @@
 @implementation TopTableViewCell
 
 
-
-
-
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     _location.text = _homeViewController.currentCity;
