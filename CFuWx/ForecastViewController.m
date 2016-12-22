@@ -40,6 +40,7 @@
     
     self.forecastTableView.dataSource = self;
     
+    
     UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
     UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
@@ -95,7 +96,7 @@
         dailyCell.dailyDayLabel.text = [Conversions convertToDayOnly:date];
         dailyCell.dailyHighLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMax.floatValue]];
         dailyCell.dailyLowLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMin.floatValue]];
-        dailyCell.dailyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
+        dailyCell.dailyWindLabel.text = [NSString stringWithFormat:@"%ld mph", (long)forecast.windSpeed.integerValue];
         dailyCell.dailyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
         dailyCell.dailyWxLabel.image = forecast.icon;
         
