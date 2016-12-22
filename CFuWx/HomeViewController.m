@@ -45,7 +45,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-//    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(Weather *weather) {
+    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(Weather *weather) {
 //        for (Weather *hourlyWeather in weather) {
 //            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[hourlyWeather.time doubleValue]];
 //            cell.time.text = [Conversions convertToHourOnly:date];
@@ -54,7 +54,7 @@
 //            cell.precip.text = [NSString stringWithFormat:@"%@\%", hourlyWeather.precipProbability];
 //            cell.icon = hourlyWeather.icon;
 //        }
-//    }];
+    }];
     
 }
 
@@ -75,8 +75,9 @@
         cell.time.text = [Conversions convertToReadableTime:date];
         cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
         cell.location.text = [[LocationManager sharedManager] reverseGeocode:[[LocationManager sharedManager] initialCLLocation]];
-        cell.weatherIconImage.image = self.currentWeather.icon;
+        [cell.weatherIconImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         cell.weatherIconImage.tintColor = [UIColor whiteColor];
+        cell.weatherIconImage.image = self.currentWeather.icon;
         cell.summaryLabel.text = self.currentWeather.summary;
         return cell;
     }
