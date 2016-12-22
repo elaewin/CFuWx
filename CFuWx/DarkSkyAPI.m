@@ -59,6 +59,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 
+
 +(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion {
     NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
     
@@ -94,19 +95,19 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
-   
+
 //    NSString *baseURL = @"https://api.darkysky.net/forecast/";
 //    NSString *requestURL = [NSString stringWithFormat:@"%@%@/%f,%f", baseURL,kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
-//    
+//
 //    NSLog(@"%@", requestURL);
-    
+
 }
 
 
 //-(NSMutableData *)receivedData {
 //    if(!_receivedData){
 //        _receivedData = [[NSMutableData alloc]init];
-//        
+//
 ////        [HomeViewController ]
 //    }
 //    return _receivedData;
@@ -128,7 +129,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 //            self.delegate = nil;
 //        } else {
 //            NSLog(@"Error Fetching Data");
-//            
+//
 //        }
 //    }];
 //}
@@ -150,23 +151,3 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

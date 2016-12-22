@@ -48,6 +48,12 @@
 		55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF0DC91E0AF6FB00750E6E /* dummy.swift */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
 		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
+		7CD83D961E0B427C009BE48F /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D951E0B427C009BE48F /* Header.xib */; };
+		7CD83D981E0B42AD009BE48F /* TextForecastTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D971E0B42AD009BE48F /* TextForecastTopView.xib */; };
+		7CD83D9A1E0B4305009BE48F /* HourlyRowTitles.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */; };
+		7CD83D9C1E0B431B009BE48F /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */; };
+		7CD83DA11E0B43E5009BE48F /* DailyRowTitles.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83DA01E0B43E5009BE48F /* DailyRowTitles.xib */; };
+		7CD83DA31E0B43F1009BE48F /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83DA21E0B43F1009BE48F /* DailyTableViewCell.xib */; };
 		7CF703561E09FEC800354143 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF703551E09FEC800354143 /* LocationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +135,12 @@
 		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
 		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
 		7C008A401E09EA0300040CB9 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		7CD83D951E0B427C009BE48F /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Header.xib; path = ../Header.xib; sourceTree = "<group>"; };
+		7CD83D971E0B42AD009BE48F /* TextForecastTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextForecastTopView.xib; sourceTree = "<group>"; };
+		7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyRowTitles.xib; sourceTree = "<group>"; };
+		7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
+		7CD83DA01E0B43E5009BE48F /* DailyRowTitles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyRowTitles.xib; sourceTree = "<group>"; };
+		7CD83DA21E0B43F1009BE48F /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 		7CF703541E09FEC800354143 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		7CF703551E09FEC800354143 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,13 +241,15 @@
 		555FA2251E0700890036FC1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0197C2531E09E661006D7A29 /* TopTableViewCell.h */,
-				0197C2541E09E661006D7A29 /* TopTableViewCell.m */,
+				7CD83D951E0B427C009BE48F /* Header.xib */,
+				7CD83D9E1E0B4346009BE48F /* TextForecast */,
 				555FA22C1E0701380036FC1E /* About.storyboard */,
 				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
 				555FA2041E06FE680036FC1E /* Main.storyboard */,
 				555FA22A1E0701110036FC1E /* Settings.storyboard */,
 				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
+				0197C2531E09E661006D7A29 /* TopTableViewCell.h */,
+				0197C2541E09E661006D7A29 /* TopTableViewCell.m */,
 				0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */,
 				0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */,
 			);
@@ -275,6 +289,35 @@
 				555CD9BD1E08CAC6002E72DA /* ChartViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7CD83D9D1E0B4331009BE48F /* Hourly */ = {
+			isa = PBXGroup;
+			children = (
+				7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */,
+				7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */,
+			);
+			name = Hourly;
+			sourceTree = "<group>";
+		};
+		7CD83D9E1E0B4346009BE48F /* TextForecast */ = {
+			isa = PBXGroup;
+			children = (
+				7CD83D971E0B42AD009BE48F /* TextForecastTopView.xib */,
+				7CD83D9D1E0B4331009BE48F /* Hourly */,
+				7CD83D9F1E0B438A009BE48F /* Daily */,
+			);
+			name = TextForecast;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7CD83D9F1E0B438A009BE48F /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				7CD83DA01E0B43E5009BE48F /* DailyRowTitles.xib */,
+				7CD83DA21E0B43F1009BE48F /* DailyTableViewCell.xib */,
+			);
+			name = Daily;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,11 +409,17 @@
 			files = (
 				555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */,
 				0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */,
+				7CD83D9C1E0B431B009BE48F /* HourlyTableViewCell.xib in Resources */,
+				7CD83DA11E0B43E5009BE48F /* DailyRowTitles.xib in Resources */,
 				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
+				7CD83D961E0B427C009BE48F /* Header.xib in Resources */,
 				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
 				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
+				7CD83D9A1E0B4305009BE48F /* HourlyRowTitles.xib in Resources */,
+				7CD83DA31E0B43F1009BE48F /* DailyTableViewCell.xib in Resources */,
+				7CD83D981E0B42AD009BE48F /* TextForecastTopView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +621,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
@@ -591,6 +641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
