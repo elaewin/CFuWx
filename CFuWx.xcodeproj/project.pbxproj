@@ -49,6 +49,9 @@
 		55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF0DC91E0AF6FB00750E6E /* dummy.swift */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
 		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
+		7CB9B3211E0C76AC000E1224 /* HamburgerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9B3201E0C76AC000E1224 /* HamburgerView.xib */; };
+		7CB9B3241E0C8208000E1224 /* BurgerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9B3231E0C8208000E1224 /* BurgerMenuViewController.m */; };
+		7CB9B3271E0C84D9000E1224 /* MenuStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9B3261E0C84D9000E1224 /* MenuStackViewController.m */; };
 		7CD83D961E0B427C009BE48F /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D951E0B427C009BE48F /* Header.xib */; };
 		7CD83D9A1E0B4305009BE48F /* HourlyRowTitles.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */; };
 		7CD83D9C1E0B431B009BE48F /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */; };
@@ -139,7 +142,12 @@
 		55EF0DC91E0AF6FB00750E6E /* dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
 		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
-		7C008A401E09EA0300040CB9 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		7C3C1AF21E0C8E0E001BE55E /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		7CB9B3201E0C76AC000E1224 /* HamburgerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerView.xib; sourceTree = "<group>"; };
+		7CB9B3221E0C8208000E1224 /* BurgerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerMenuViewController.h; sourceTree = "<group>"; };
+		7CB9B3231E0C8208000E1224 /* BurgerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerMenuViewController.m; sourceTree = "<group>"; };
+		7CB9B3251E0C84D9000E1224 /* MenuStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuStackViewController.h; sourceTree = "<group>"; };
+		7CB9B3261E0C84D9000E1224 /* MenuStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuStackViewController.m; sourceTree = "<group>"; };
 		7CD83D951E0B427C009BE48F /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Header.xib; path = ../Header.xib; sourceTree = "<group>"; };
 		7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyRowTitles.xib; sourceTree = "<group>"; };
 		7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
@@ -218,9 +226,9 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C3C1AF21E0C8E0E001BE55E /* Credentials.h */,
 				015631E01E0C6A7C009AB385 /* NSString+Validation.h */,
 				015631E11E0C6A7C009AB385 /* NSString+Validation.m */,
-				7C008A401E09EA0300040CB9 /* Credentials.h */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
 				55EF0DC91E0AF6FB00750E6E /* dummy.swift */,
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
@@ -252,6 +260,7 @@
 		555FA2251E0700890036FC1E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7CB9B3201E0C76AC000E1224 /* HamburgerView.xib */,
 				558BE5C01E0C56F6007EC30E /* Storyboards */,
 				7CD83D951E0B427C009BE48F /* Header.xib */,
 				7CD83D9E1E0B4346009BE48F /* TextForecast */,
@@ -284,6 +293,8 @@
 		555FA2271E0700BD0036FC1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7CB9B3251E0C84D9000E1224 /* MenuStackViewController.h */,
+				7CB9B3261E0C84D9000E1224 /* MenuStackViewController.m */,
 				555FA2321E0701BA0036FC1E /* AboutViewController.h */,
 				555FA2331E0701BA0036FC1E /* AboutViewController.m */,
 				555FA2361E0701C40036FC1E /* ForecastViewController.h */,
@@ -294,6 +305,8 @@
 				555FA23B1E0701CF0036FC1E /* SettingsViewController.m */,
 				555CD9BC1E08CAC6002E72DA /* ChartViewController.h */,
 				555CD9BD1E08CAC6002E72DA /* ChartViewController.m */,
+				7CB9B3221E0C8208000E1224 /* BurgerMenuViewController.h */,
+				7CB9B3231E0C8208000E1224 /* BurgerMenuViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -394,7 +407,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4YFWUVNT8L;
+						DevelopmentTeam = HYPCVH7NE6;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -442,6 +455,7 @@
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
 				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
 				7CD83D9A1E0B4305009BE48F /* HourlyRowTitles.xib in Resources */,
+				7CB9B3211E0C76AC000E1224 /* HamburgerView.xib in Resources */,
 				7CD83DA31E0B43F1009BE48F /* DailyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,10 +500,12 @@
 				555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */,
 				0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */,
 				015631DE1E0AFE47009AB385 /* Weather.m in Sources */,
+				7CB9B3241E0C8208000E1224 /* BurgerMenuViewController.m in Sources */,
 				555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */,
 				555FA2341E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				555FA1FD1E06FE680036FC1E /* main.m in Sources */,
 				015631E21E0C6A7C009AB385 /* NSString+Validation.m in Sources */,
+				7CB9B3271E0C84D9000E1224 /* MenuStackViewController.m in Sources */,
 				55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */,
 				7CD83DAB1E0B6CFD009BE48F /* DailyTableViewCell.m in Sources */,
 				555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */,
@@ -647,8 +663,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = HYPCVH7NE6;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -666,8 +683,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = HYPCVH7NE6;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
