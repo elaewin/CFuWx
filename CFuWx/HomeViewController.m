@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
+    [[LocationManager alloc]init];
     
     self.altimeter = [[Altimeter alloc]init];
 //    [self.altimeter getAltitudeChange];
@@ -42,10 +43,9 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    
 }
 
-//Delegate Methods:
+
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
