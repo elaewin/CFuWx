@@ -7,10 +7,18 @@
 //
 
 #import "ForecastViewController.h"
+#import "DarkSkyAPI.h"
+#import "Weather.h"
+#import "HourlyTableViewCell.h"
+#import "DailyTableViewCell.h"
+#import "Conversions.h"
 
 @interface ForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 //properties
+@property(strong, nonatomic) NSArray *hourlyWeatherArray;
+@property(strong, nonatomic) NSArray *dailyWeatherArray;
+@property(strong, nonatomic) NSString *forecastToDisplay;
 @property(strong, nonatomic) HourlyTableViewCell *hourlyTableViewCell;
 @property(strong, nonatomic) DailyTableViewCell *dailyTableViewCell;
 
@@ -25,17 +33,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.forecastToDisplay = @"hourly";
+    
+    [self getWeatherData];
 }
 
+-(void)setHourlyWeather:(NSArray *)hourlyWeather {
+    
+    [self.forecastTableView reloadData];
+    _hourlyWeatherArray = hourlyWeather;
+}
+
+
+-(void)getWeatherData {
+    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
+        self.dailyWeatherArray = weatherArray;
+    }];
+    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
+        self.hourlyWeatherArray = weatherArray;
+    }];
+}
 
 //MARK: TableViewDelegate Methods
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if ([self.forecastToDisplay isEqual: @"hourly"]) {
+        HourlyTableViewCell *hourlyCell = [tableView dequeueReusableCellWithIdentifier:@"HourlyTableViewCell" forIndexPath:indexPath];
+        
+        Weather *forecast = [self.hourlyWeatherArray objectAtIndex:indexPath.row];
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[forecast.time doubleValue]];
+        hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourOnly:date];
+        hourlyCell.hourlyTempLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperature.floatValue]];
+        hourlyCell.hourlyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
+        hourlyCell.hourlyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
+        hourlyCell.hourlyWxLabel.image = forecast.icon;
+        
+        return hourlyCell;
+    } else {
+        return nil;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        return self.hourlyWeatherArray.count;
+    } else {
+        return self.dailyWeatherArray.count;
+    }
 }
 
 

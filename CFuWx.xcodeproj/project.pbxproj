@@ -120,7 +120,7 @@
 		555FA2141E06FE680036FC1E /* CFuWxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFuWxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA2181E06FE680036FC1E /* CFuWxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFuWxTests.m; sourceTree = "<group>"; };
 		555FA21A1E06FE680036FC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		555FA2281E0700E90036FC1E /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Forecast.storyboard; path = CFuWx/Forecast.storyboard; sourceTree = "<group>"; };
+		555FA2281E0700E90036FC1E /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
 		555FA22A1E0701110036FC1E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		555FA22C1E0701380036FC1E /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		555FA22E1E0701A70036FC1E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -252,12 +252,9 @@
 		555FA2251E0700890036FC1E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				558BE5C01E0C56F6007EC30E /* Storyboards */,
 				7CD83D951E0B427C009BE48F /* Header.xib */,
 				7CD83D9E1E0B4346009BE48F /* TextForecast */,
-				555FA22C1E0701380036FC1E /* About.storyboard */,
-				555FA2041E06FE680036FC1E /* Main.storyboard */,
-				555FA22A1E0701110036FC1E /* Settings.storyboard */,
-				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
 				0197C2531E09E661006D7A29 /* TopTableViewCell.h */,
 				0197C2541E09E661006D7A29 /* TopTableViewCell.m */,
 				0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */,
@@ -301,6 +298,18 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		558BE5C01E0C56F6007EC30E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				555FA22C1E0701380036FC1E /* About.storyboard */,
+				555FA2041E06FE680036FC1E /* Main.storyboard */,
+				555FA22A1E0701110036FC1E /* Settings.storyboard */,
+				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
+				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		7CD83D9D1E0B4331009BE48F /* Hourly */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,7 +325,6 @@
 		7CD83D9E1E0B4346009BE48F /* TextForecast */ = {
 			isa = PBXGroup;
 			children = (
-				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
 				7CD83D9D1E0B4331009BE48F /* Hourly */,
 				7CD83D9F1E0B438A009BE48F /* Daily */,
 			);
@@ -386,7 +394,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = HYPCVH7NE6;
+						DevelopmentTeam = 4YFWUVNT8L;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -639,7 +647,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = HYPCVH7NE6;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -658,7 +666,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = HYPCVH7NE6;
+				DEVELOPMENT_TEAM = 4YFWUVNT8L;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;

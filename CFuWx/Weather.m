@@ -19,17 +19,17 @@
     if(self){
         _latitude = jsonDictionary[@"latitude"];
         _longitude = jsonDictionary[@"longitude"];
-        _temperature = [jsonDictionary valueForKey:@"temperature"];
-        _precipProbability = [jsonDictionary valueForKey:@"precipProbability"];
-        _humidity = [jsonDictionary valueForKey:@"humidity"];
-        _windSpeed = [jsonDictionary valueForKey:@"windSpeed"];
-        _windBearing = [jsonDictionary valueForKey:@"windBearing"];
-        _pressure = [jsonDictionary valueForKey:@"pressure"];
-        _time = [jsonDictionary valueForKey:@"time"];
-        _summary = [jsonDictionary valueForKey:@"summary"];
-        _icon = [self getWeatherIcon:[jsonDictionary valueForKey:@"icon"]];
-        _temperatureMax = [jsonDictionary valueForKey:@"temperatureMax"];
-        _temperatureMin = [jsonDictionary valueForKey:@"temperatureMin"];
+        _temperature = jsonDictionary[@"temperature"];
+        _precipProbability = jsonDictionary[@"precipProbability"];
+        _humidity = jsonDictionary[@"humidity"];
+        _windSpeed = jsonDictionary[@"windSpeed"];
+        _windBearing = jsonDictionary[@"windBearing"];
+        _pressure = jsonDictionary[@"pressure"];
+        _time = jsonDictionary[@"time"];
+        _summary = jsonDictionary[@"summary"];
+        _icon = [self getWeatherIcon:jsonDictionary[@"icon"]];
+        _temperatureMax = jsonDictionary[@"temperatureMax"];
+        _temperatureMin = jsonDictionary[@"temperatureMin"];
         }
     return self;
 }
