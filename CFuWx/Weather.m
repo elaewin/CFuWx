@@ -17,8 +17,6 @@
     self = [super init];
     
     if(self){
-        _latitude = jsonDictionary[@"latitude"];
-        _longitude = jsonDictionary[@"longitude"];
         _temperature = jsonDictionary[@"temperature"];
         _precipProbability = jsonDictionary[@"precipProbability"];
         _humidity = jsonDictionary[@"humidity"];

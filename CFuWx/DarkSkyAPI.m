@@ -78,7 +78,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
     [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"Response: %@", response);
         
         if(error) {
             NSLog(@"There was a problem getting current weather data from API - Error: %@", error.localizedDescription);
@@ -90,7 +89,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonParsingError];
-            NSLog(@"JSON!!!!!: %@", json);
+            NSLog(@"JSON LOADS FOR CURRENT WEATHER");
             if (error) {
                 NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
             } else {
@@ -111,7 +110,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
     [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"Response: %@", response);
         
         if(error) {
             NSLog(@"There was a problem getting hourly weather data from API - Error: %@", error.localizedDescription);
@@ -123,7 +121,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:NSJSONReadingMutableContainers
                                                                    error:&jsonParsingError];
-            NSLog(@"JSON!!!!!: %@", json);
+            NSLog(@"JSON LOADS FOR HOURLY WEATHER");
             if (error) {
                 NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
             } else {
@@ -131,7 +129,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                     NSMutableArray *hourlyArray = [[NSMutableArray alloc]init];
                     
                     for (NSDictionary *hourlyForecast in [json valueForKeyPath:@"hourly.data"]) {
-                        NSLog(@"forecast Icon for hourly forecast: %@", hourlyForecast[@"icon"]);
                         Weather *hourlyWeather = [[Weather alloc]initWithDictionary:hourlyForecast];
                         [hourlyArray addObject:hourlyWeather];
                     }

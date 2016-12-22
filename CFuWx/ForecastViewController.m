@@ -34,24 +34,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.forecastToDisplay = @"hourly";
+    self.title = @"Text Forecasts";
     
-    [self getWeatherData];
+    self.forecastToDisplay = @"daily";
+    
+    self.forecastTableView.dataSource = self;
+    
+    UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
+    [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
+    UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
+    [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCell"];
+    
+    [self getDailyWeatherData];
 }
 
--(void)setHourlyWeather:(NSArray *)hourlyWeather {
+-(void)setHourlyWeatherArray:(NSMutableArray *)hourlyWeatherArray {
     
     [self.forecastTableView reloadData];
-    _hourlyWeatherArray = hourlyWeather;
+    _hourlyWeatherArray = hourlyWeatherArray;
 }
 
-
--(void)getWeatherData {
-    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
-        self.dailyWeatherArray = weatherArray;
-    }];
+-(void)getHourlyWeatherData {
     [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.hourlyWeatherArray = weatherArray;
+        [self.forecastTableView reloadData];
+    }];
+}
+
+-(void)getDailyWeatherData {
+    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
+        self.dailyWeatherArray = weatherArray;
+        [self.forecastTableView reloadData];
     }];
 }
 
@@ -72,13 +85,27 @@
         hourlyCell.hourlyWxLabel.image = forecast.icon;
         
         return hourlyCell;
+        
     } else {
-        return nil;
+        DailyTableViewCell *dailyCell = [tableView dequeueReusableCellWithIdentifier:@"DailyTableViewCell" forIndexPath:indexPath];
+        
+        Weather *forecast = [self.dailyWeatherArray objectAtIndex:indexPath.row];
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[forecast.time doubleValue]];
+        dailyCell.dailyDayLabel.text = [Conversions convertToDayOnly:date];
+        dailyCell.dailyHighLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMax.floatValue]];
+        dailyCell.dailyLowLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMin.floatValue]];
+        dailyCell.dailyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
+        dailyCell.dailyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
+        dailyCell.dailyWxLabel.image = forecast.icon;
+        
+        return dailyCell;
     }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        NSLog(@"array count: %lu", (unsigned long)self.hourlyWeatherArray.count);
         return self.hourlyWeatherArray.count;
     } else {
         return self.dailyWeatherArray.count;
