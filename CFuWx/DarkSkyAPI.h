@@ -8,17 +8,19 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "Weather.h"
+@import CoreLocation;
 
-typedef void(^currentWeatherCompletion)(Weather *currentWeather);
+typedef void(^weatherCompletion)(Weather *weather);
 
 @interface DarkSkyAPI : NSObject
 
 +(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem;
++(NSURL *)createAuthURLforLoad:(NSURLQueryItem *)queryItem withCoordinate:(CLLocationCoordinate2D)coordinate;
 +(NSURLQueryItem *)currentlyQuery;
 +(NSURLQueryItem *)hourlyQuery;
 +(NSURLQueryItem *)dailyQuery;
-+(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion;
-
-
++(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchHourlyWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion;
 
 @end

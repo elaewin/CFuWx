@@ -17,6 +17,8 @@
 @property(strong, nonatomic) NSNumber *windSpeed;
 @property(strong, nonatomic) NSNumber *windBearing;
 @property(strong, nonatomic) NSNumber *pressure;
+@property(strong, nonatomic) NSNumber *latitude;
+@property(strong, nonatomic) NSNumber *longitude;
 @property(strong, nonatomic) NSNumber *time;
 
 @property(strong, nonatomic) NSString *summary;

@@ -43,6 +43,7 @@
 +(NSString *)convertToReadableDate:(NSDate *)date;
 
 // Convert Time
++(NSString *)convertToHourOnly:(NSDate *)date;
 +(NSString *)convertToReadableTime:(NSDate *)date;
 
 @end

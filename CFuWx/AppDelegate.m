@@ -10,8 +10,12 @@
 #import "AppDelegate.h"
 #import "Credentials.h"
 #import "DarkSkyAPI.h"
+#import "Weather.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
+
+@property(strong, nonatomic) HomeViewController *homeViewController;
 
 @end
 
@@ -30,44 +34,15 @@
     return YES;
 }
 
-
 -(void)bootstrapApp{
+    self.homeViewController = (HomeViewController *)self.window.rootViewController;
     
-//        NSDictionary *currently = [[NSDictionary alloc]init];
-//        NSDictionary *hourly = [[NSDictionary alloc]init];
-//        NSDictionary *daily = [[NSDictionary alloc]init];
-//        NSDictionary *alerts = [[NSDictionary alloc]init];
-    
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"forecast" ofType:@"JSON"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-    
-    NSError *error;
-    
-    NSDictionary *responseObj = [NSJSONSerialization
-                                 JSONObjectWithData:jsonData
-                                 options:0
-                                 error:&error];
-    
-//    if (!error)
-//    {
-//        NSDictionary *currently = responseObj[@"currently"];
-//        NSNumber *time = currently[@"time"];
-//        NSNumber *latitude = responseObj[@"latitude"];
-//        NSNumber *longitude = responseObj[@"longitude"];
-//        
-////        NSLog(@"Time: %@, Latitude: %f, Longtitude: %f", time, latitude.floatValue, longitude.floatValue);
-//        
-//        //write method to convert time to readable format, write method to retrieve 'TIMEZONE' from json//
-//        
-//    } else
-//        
-//    {
-//        NSLog(@"Error: Cannot Retrieve JSON");
-//    }
-
-
-    
-    
+    __weak typeof(self) bruce = self;
+    [DarkSkyAPI fetchCurrentWeatherOnLoad:^(Weather *currentWeather) {
+        __strong typeof(bruce) hulk = bruce;
+        
+        hulk.homeViewController.currentWeather = currentWeather;
+    }];
 }
 
 
