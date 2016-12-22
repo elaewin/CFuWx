@@ -82,13 +82,9 @@
             CLLocation *location = [[CLLocation alloc]init];
             hulk.currentLocation = location;
         }
-        
-        
-        
+ 
     }];
-
-    
-    
+   
 }
 
 
@@ -125,8 +121,10 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [self setCurrentLocation:locations.lastObject];
     
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
     NSLog(@"%@", self.currentLocation);
+    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *currentWeather) {
+        NSLog(@"%@", currentWeather);
+    }];
     
 }
 

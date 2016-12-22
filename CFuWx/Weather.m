@@ -17,9 +17,6 @@
     self = [super init];
     
     if(self){
-    
-    
-    
         _temperature = [jsonDictionary valueForKeyPath:@"currently.temperature"];
         _precipProbability = [jsonDictionary valueForKeyPath:@"currently.precipProbability"];
         _humidity = [jsonDictionary valueForKeyPath:@"currently.humidity"];
@@ -27,15 +24,13 @@
         _windBearing = [jsonDictionary valueForKeyPath:@"currently.windBearing"];
         _pressure = [jsonDictionary valueForKeyPath:@"currently.pressure"];
         _time = [jsonDictionary valueForKeyPath:@"currently.time"];
-        
         _summary = [jsonDictionary valueForKeyPath:@"currently.summary"];
         _icon = [self getWeatherIcon:@"currently.icon"];
-    
-    
+    }
+
     }
     
     return self;
-    
 }
 
 
