@@ -60,7 +60,7 @@
     self.locationManager.distanceFilter = 500;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager requestLocation];
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
+//    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
 }
 
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
