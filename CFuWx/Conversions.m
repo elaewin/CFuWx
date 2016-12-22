@@ -138,4 +138,12 @@
     return [formatter stringFromDate:date];
 }
 
++(NSString *)convertToHourOnly:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [formatter setLocale:locale];
+    [formatter setDateFormat:@"HH:00"];
+    return [formatter stringFromDate:date];
+}
+
 @end

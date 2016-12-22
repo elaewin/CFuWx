@@ -73,7 +73,7 @@
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
 //            [hulk refreshChart:hulk.values];
-            NSLog(@"pressure: %@", pressure);
+//            NSLog(@"pressure: %@", pressure);
         }];
         
     } else {

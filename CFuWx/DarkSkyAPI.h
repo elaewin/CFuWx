@@ -10,7 +10,7 @@
 #import "Weather.h"
 @import CoreLocation;
 
-typedef void(^currentWeatherCompletion)(Weather *currentWeather);
+typedef void(^weatherCompletion)(Weather *weather);
 
 @interface DarkSkyAPI : NSObject
 
@@ -19,7 +19,8 @@ typedef void(^currentWeatherCompletion)(Weather *currentWeather);
 +(NSURLQueryItem *)currentlyQuery;
 +(NSURLQueryItem *)hourlyQuery;
 +(NSURLQueryItem *)dailyQuery;
-+(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion;
-+(void)fetchCurrentWeatherOnLoad:(currentWeatherCompletion)completion;
++(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchHourlyWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion;
 
 @end

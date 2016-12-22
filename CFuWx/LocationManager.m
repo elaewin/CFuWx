@@ -116,10 +116,11 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self setCurrentLocation:locations.lastObject];
-
+    
+    // Need to refactor for any of the fetch methods.
     NSLog(@"%@", self.currentLocation);
-    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *currentWeather) {
-        NSLog(@"%@", currentWeather);
+    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+        NSLog(@"%@", weather);
     }];
 
 }

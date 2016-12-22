@@ -71,7 +71,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 // API Fetch Methods
-+(void)fetchCurrentWeatherWithCompletion:(currentWeatherCompletion)completion {
++(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion {
     NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
@@ -82,7 +82,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
         NSLog(@"Response: %@", response);
         
         if(error) {
-            NSLog(@"There was a problem getting weather data from API - Error: %@", error.localizedDescription);
+            NSLog(@"There was a problem getting current weather data from API - Error: %@", error.localizedDescription);
         }
         
         if(data) {
@@ -104,8 +104,8 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     }] resume];
 }
 
-+(void)fetchHourlyWeatherWithCompletion:(currentWeatherCompletion)completion {
-    NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
++(void)fetchHourlyWeatherWithCompletion:(weatherCompletion)completion {
+    NSURL *url = [self createDarkSkyAuthURL:[self hourlyQuery]];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
     
@@ -115,7 +115,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
         NSLog(@"Response: %@", response);
         
         if(error) {
-            NSLog(@"There was a problem getting weather data from API - Error: %@", error.localizedDescription);
+            NSLog(@"There was a problem getting hourly weather data from API - Error: %@", error.localizedDescription);
         }
         
         if(data) {
@@ -144,7 +144,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     return coordinate;
 }
 
-+(void)fetchCurrentWeatherOnLoad:(currentWeatherCompletion)completion {
++(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion {
     NSURL *url = [self createAuthURLforLoad:[self currentlyQuery] withCoordinate:[self getOnLoadCoordinate]];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
