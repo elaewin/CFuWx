@@ -38,7 +38,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     components.path = [NSString stringWithFormat:@"/forecast/%@/%f,%f", kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
     components.queryItems = @[queryItem];
     NSURL *url = components.URL;
-    NSLog(@"%@", components.URL);
+    NSLog(@"COMPONENTS URL: %@", components.URL);
     return url;
 
 }
