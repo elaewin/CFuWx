@@ -45,20 +45,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
-        for (Weather *weather in weatherArray) {
-            NSLog(@"Icon: %@", weather.temperature);
-        }
-//        for (Weather *hourlyWeather in weather) {
-//            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[hourlyWeather.time doubleValue]];
-//            cell.time.text = [Conversions convertToHourOnly:date];
-//            cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:hourlyWeather.temperature.floatValue]];
-//            cell.wind.text = hourlyWeather.windSpeed;
-//            cell.precip.text = [NSString stringWithFormat:@"%@\%", hourlyWeather.precipProbability];
-//            cell.icon = hourlyWeather.icon;
-//        }
-    }];
-    
 //    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(Weather *weather) {
 //        NSLog(@"DAILY WEATHER FETCHED!");
 //    }];
