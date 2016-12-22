@@ -87,14 +87,14 @@
 
 -(NSString *)reverseGeocode:(CLLocation *)location {
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-    //CLLocation *location = self.locationManager.location;
 
+    __weak typeof(self) bruce = self;
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
 
+        __strong typeof(bruce) hulk = bruce;
         if (error == nil && [placemarks count] > 0) {
-            _placemark = [placemarks lastObject];
-
+            hulk.placemark = [placemarks lastObject];
+            
             NSLog(@"city: %@", _placemark.locality);                    //city name
             NSLog(@"timeZone: %@", _placemark.timeZone);                //time zone
             NSLog(@"region: %@", _placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
@@ -104,12 +104,17 @@
             NSLog(@"zip: %@", _placemark.postalCode);                   //zip code
         }
     }];
-    return _placemark.locality;
+    return [NSString stringWithFormat:@"%@, %@", self.placemark.locality, self.placemark.administrativeArea];
+}
+
+-(CLLocation *)initialCLLocation {
+    CLLocation *seattle = [[CLLocation alloc]initWithLatitude:47.618335 longitude:-122.352264];
+    return seattle;
 }
 
 //MARK: CLLocationManager Delegate Methods Go Here:
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self setCurrentLocation:locations.lastObject];
 
     NSLog(@"%@", self.currentLocation);
@@ -118,7 +123,6 @@
     }];
 
 }
-
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     if(error){

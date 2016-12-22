@@ -21,4 +21,6 @@
 -(void)getLocationFrom:(NSString *)stringFromUser;
 
 -(NSString *)reverseGeocode:(CLLocation *)location;
+-(CLLocation *)initialCLLocation;
+
 @end

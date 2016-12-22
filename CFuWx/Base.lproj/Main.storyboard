@@ -68,9 +68,9 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120.9°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htT-X5-unD">
-                                                    <rect key="frame" x="16" y="65" width="169" height="54"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="45"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120.9°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="htT-X5-unD">
+                                                    <rect key="frame" x="16" y="57.5" width="169" height="61.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="51"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -98,6 +98,7 @@
                                         <connections>
                                             <outlet property="date" destination="d5T-hO-XNq" id="h6Z-dy-u43"/>
                                             <outlet property="location" destination="e9u-lJ-p74" id="Fam-a2-bfa"/>
+                                            <outlet property="summaryLabel" destination="GyG-Cz-Xbp" id="qh1-U9-CPI"/>
                                             <outlet property="temperature" destination="htT-X5-unD" id="oKf-6l-OhY"/>
                                             <outlet property="time" destination="jX7-Lb-0ux" id="J7z-lT-QBh"/>
                                             <outlet property="weatherIconImage" destination="vzh-eD-yFD" id="u4E-fv-339"/>

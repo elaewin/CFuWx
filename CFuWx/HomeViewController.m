@@ -62,9 +62,11 @@
         
         cell.date.text = [Conversions convertToReadableDate:date];
         cell.time.text = [Conversions convertToReadableTime:date];
-        cell.temperature.text = [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue];
+        cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
+        cell.location.text = [[LocationManager sharedManager] reverseGeocode:[[LocationManager sharedManager] initialCLLocation]];
         cell.weatherIconImage.image = self.currentWeather.icon;
         cell.weatherIconImage.tintColor = [UIColor whiteColor];
+        cell.summaryLabel.text = self.currentWeather.summary;
         return cell;
     }
     

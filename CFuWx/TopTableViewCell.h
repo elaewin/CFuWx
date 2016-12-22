@@ -21,5 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *weatherIconImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 
 @end
