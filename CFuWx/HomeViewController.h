@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TopTableViewCell.h"
 #import "BottomTableViewCell.h"
+#import "Weather.h"
 
 @import CoreLocation;
 
 @interface HomeViewController : UIViewController
 
 @property(strong, nonatomic) NSString *currentCity;
-@property(strong, nonatomic) UITableView *tableView;
-
+@property(strong, nonatomic) Weather *currentWeather;
 
 @end

@@ -40,7 +40,17 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURL *url = components.URL;
     NSLog(@"COMPONENTS URL: %@", components.URL);
     return url;
+}
 
++(NSURL *)createAuthURLforLoad:(NSURLQueryItem *)queryItem withCoordinate:(CLLocationCoordinate2D)coordinate {
+    NSURLComponents *components = [[NSURLComponents alloc]init];
+    components.scheme = @"https";
+    components.host = @"api.darksky.net";
+    components.path = [NSString stringWithFormat:@"/forecast/%@/%f,%f", kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
+    components.queryItems = @[queryItem];
+    NSURL *url = components.URL;
+    NSLog(@"COMPONENTS URL: %@", components.URL);
+    return url;
 }
 
 +(NSURLQueryItem *)currentlyQuery {
@@ -90,8 +100,46 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
             }
         }
     }] resume];
-    
 }
+
++(CLLocationCoordinate2D)getOnLoadCoordinate {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.618335, -122.352264);
+    return coordinate;
+}
+
++(void)fetchCurrentWeatherOnLoad:(currentWeatherCompletion)completion {
+    NSURL *url = [self createAuthURLforLoad:[self currentlyQuery] withCoordinate:[self getOnLoadCoordinate]];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"Response: %@", response);
+        
+        if(error) {
+            NSLog(@"There was a problem getting weather data from API - Error: %@", error.localizedDescription);
+        }
+        
+        if(data) {
+            NSError *jsonParsingError;
+            
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&jsonParsingError];
+            NSLog(@"JSON!!!!!: %@", json);
+            if (error) {
+                NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
+            } else {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    Weather *currentWeather = [[Weather alloc]initWithDictionary:json];
+                    completion(currentWeather);
+                }];
+            }
+        }
+    }] resume];
+}
+
 
 +(void)fetchForecast:(CLLocationCoordinate2D) coordinate{
    

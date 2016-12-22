@@ -11,18 +11,19 @@
 #import "Altimeter.h"
 #import "DarkSkyAPI.h"
 #import "AppDelegate.h"
+#import "Conversions.h"
 
 @import CoreLocation;
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-
 @property(strong, nonatomic) TopTableViewCell *topTableViewCell;
 @property(strong, nonatomic) BottomTableViewCell *bottomTableViewCell;
-
-
-@property(strong, nonatomic)Altimeter *altimeter;
+@property(strong, nonatomic) Altimeter *altimeter;
 @property(strong, nonatomic) LocationManager *locationManager;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -31,40 +32,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
-    [[LocationManager alloc]init];
+//    [[LocationManager alloc]init];
     
     self.altimeter = [[Altimeter alloc]init];
-//    [self.altimeter getAltitudeChange];
     
     // Core Location request permission for user's current location
     [[LocationManager sharedManager] requestPermissions];
     [[LocationManager sharedManager] requestLocation];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
 }
 
-
+-(void)setCurrentWeather:(Weather *)currentWeather {
+    
+    [self.tableView reloadData];
+    _currentWeather = currentWeather;
+    
+}
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if(indexPath == 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
+    if(indexPath.row == 0) {
+        TopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[self.currentWeather.time doubleValue]];
+        
+        cell.date.text = [Conversions convertToReadableDate:date];
+        cell.time.text = [Conversions convertToReadableTime:date];
+        cell.temperature.text = [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue];
         return cell;
     }
     
-    if(indexPath == 1) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomTableViewCell"];
+    if(indexPath.row == 1) {
+        BottomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomTableViewCell"];
+        cell.pressure.text = [Conversions formatToTwoDecimals:self.currentWeather.pressure.floatValue];
         return cell;
     }
     return [[UITableViewCell alloc]init];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return 2;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 195;
+}
 
 @end

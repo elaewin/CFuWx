@@ -25,11 +25,10 @@
         _pressure = [jsonDictionary valueForKeyPath:@"currently.pressure"];
         _time = [jsonDictionary valueForKeyPath:@"currently.time"];
         _summary = [jsonDictionary valueForKeyPath:@"currently.summary"];
-        _icon = [self getWeatherIcon:@"currently.icon"];
+        _icon = [self getWeatherIcon:[jsonDictionary valueForKeyPath:@"currently.icon"]];
+        _latitude = jsonDictionary[@"latitude"];
+        _longitude = jsonDictionary[@"longitude"];
     }
-
-    }
-    
     return self;
 }
 

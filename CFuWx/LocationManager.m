@@ -41,7 +41,6 @@
     }
 
     return self;
-
 }
 
 -(void)requestPermissions {
@@ -81,6 +80,7 @@
         if(placemarks.count > 0) {
             CLLocation *location = [[CLLocation alloc]init];
             hulk.currentLocation = location;
+        }
     }];
 }
 
@@ -107,13 +107,7 @@
     return _placemark.locality;
 }
 
-
-
-
-
 //MARK: CLLocationManager Delegate Methods Go Here:
-
-
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [self setCurrentLocation:locations.lastObject];
