@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ChS-jj-XKG">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ChS-jj-XKG" customClass="DailyTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ChS-jj-XKG" id="25r-i0-xxH">
@@ -68,6 +68,14 @@
                     <constraint firstAttribute="trailing" secondItem="0nz-UW-XVu" secondAttribute="trailing" constant="16" id="oJ4-9a-rnC"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dailyDayLabel" destination="pOZ-xd-Dcf" id="y7Z-bu-sEB"/>
+                <outlet property="dailyHighLabel" destination="xpe-ZC-SG8" id="mCO-xF-z0Q"/>
+                <outlet property="dailyLowLabel" destination="OEa-SV-MGy" id="0c5-M2-e1G"/>
+                <outlet property="dailyPrecipLabel" destination="dgc-YA-tZC" id="mpM-mi-vMf"/>
+                <outlet property="dailyWindLabel" destination="bdF-wp-IYM" id="bEZ-4i-1nq"/>
+                <outlet property="dailyWxLabel" destination="ORu-WI-1WB" id="0kC-wB-Bzw"/>
+            </connections>
             <point key="canvasLocation" x="39" y="42"/>
         </tableViewCell>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OYP-S6-LAY">

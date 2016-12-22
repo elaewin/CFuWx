@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wd2-ow-aKz">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wd2-ow-aKz" customClass="HourlyTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wd2-ow-aKz" id="1sS-3D-lqt">
@@ -66,6 +66,13 @@
                     <constraint firstAttribute="trailing" secondItem="hYG-qv-8iK" secondAttribute="trailing" constant="16" id="zAq-ZD-1Yb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="hourlyPrecipLabel" destination="WPW-lb-k4K" id="w6r-D0-oGZ"/>
+                <outlet property="hourlyTempLabel" destination="2CY-eO-aMq" id="Asx-fa-yWt"/>
+                <outlet property="hourlyTimeLabel" destination="pGh-My-7cH" id="g07-Sy-QWn"/>
+                <outlet property="hourlyWindLabel" destination="Toe-CW-rNF" id="yIh-OD-aVq"/>
+                <outlet property="hourlyWxLabel" destination="VRX-R6-siR" id="G48-T5-e1E"/>
+            </connections>
             <point key="canvasLocation" x="43.5" y="22"/>
         </tableViewCell>
     </objects>
