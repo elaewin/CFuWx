@@ -17,22 +17,20 @@
     self = [super init];
     
     if(self){
-            _temperature = [jsonDictionary valueForKeyPath:@"currently.temperature"];
-            _precipProbability = [jsonDictionary valueForKeyPath:@"currently.precipProbability"];
-            _humidity = [jsonDictionary valueForKeyPath:@"currently.humidity"];
-            _windSpeed = [jsonDictionary valueForKeyPath:@"currently.windSpeed"];
-            _windBearing = [jsonDictionary valueForKeyPath:@"currently.windBearing"];
-            _pressure = [jsonDictionary valueForKeyPath:@"currently.pressure"];
-            _time = [jsonDictionary valueForKeyPath:@"currently.time"];
-            _summary = [jsonDictionary valueForKeyPath:@"currently.summary"];
-            _icon = [self getWeatherIcon:[jsonDictionary valueForKeyPath:@"currently.icon"]];
-            _latitude = jsonDictionary[@"latitude"];
-            _longitude = jsonDictionary[@"longitude"];
-        
-        if ([jsonDictionary objectForKey:@"Hourly"]) {
-            NSLog(@"HOURLY DICTIONARY FOUND.");
+        _latitude = jsonDictionary[@"latitude"];
+        _longitude = jsonDictionary[@"longitude"];
+        _temperature = [jsonDictionary valueForKey:@"temperature"];
+        _precipProbability = [jsonDictionary valueForKey:@"precipProbability"];
+        _humidity = [jsonDictionary valueForKey:@"humidity"];
+        _windSpeed = [jsonDictionary valueForKey:@"windSpeed"];
+        _windBearing = [jsonDictionary valueForKey:@"windBearing"];
+        _pressure = [jsonDictionary valueForKey:@"pressure"];
+        _time = [jsonDictionary valueForKey:@"time"];
+        _summary = [jsonDictionary valueForKey:@"summary"];
+        _icon = [self getWeatherIcon:[jsonDictionary valueForKey:@"icon"]];
+        _temperatureMax = [jsonDictionary valueForKey:@"temperatureMax"];
+        _temperatureMin = [jsonDictionary valueForKey:@"temperatureMin"];
         }
-    }
     return self;
 }
 

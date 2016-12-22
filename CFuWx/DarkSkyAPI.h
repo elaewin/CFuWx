@@ -11,6 +11,8 @@
 @import CoreLocation;
 
 typedef void(^weatherCompletion)(Weather *weather);
+typedef void(^weatherCompletionWithArray)(NSArray *weatherArray);
+
 
 @interface DarkSkyAPI : NSObject
 
@@ -20,7 +22,8 @@ typedef void(^weatherCompletion)(Weather *weather);
 +(NSURLQueryItem *)hourlyQuery;
 +(NSURLQueryItem *)dailyQuery;
 +(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion;
-+(void)fetchHourlyWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchHourlyWeatherWithCompletion:(weatherCompletionWithArray)completion;
++(void)fetchDailyWeatherWithCompletion:(weatherCompletion)completion;
 +(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion;
 
 @end

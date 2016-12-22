@@ -99,12 +99,12 @@
             
 
             NSLog(@"city: %@", hulk.placemark.locality);                    //city name
-            NSLog(@"timeZone: %@", hulk.placemark.timeZone);                //time zone
-            NSLog(@"region: %@", hulk.placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
+//            NSLog(@"timeZone: %@", hulk.placemark.timeZone);                //time zone
+//            NSLog(@"region: %@", hulk.placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
             NSLog(@"state: %@", hulk.placemark.administrativeArea);         //state
-            NSLog(@"county: %@", hulk.placemark.subAdministrativeArea);     //county
-            NSLog(@"country: %@", hulk.placemark.country);                  //country
-            NSLog(@"zip: %@", hulk.placemark.postalCode);                   //zip code
+//            NSLog(@"county: %@", hulk.placemark.subAdministrativeArea);     //county
+//            NSLog(@"country: %@", hulk.placemark.country);                  //country
+//            NSLog(@"zip: %@", hulk.placemark.postalCode);                   //zip code
         }
     }];
     return [NSString stringWithFormat:@"%@, %@", self.placemark.locality, self.placemark.administrativeArea];

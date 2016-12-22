@@ -45,7 +45,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(Weather *weather) {
+    [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
 //        for (Weather *hourlyWeather in weather) {
 //            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[hourlyWeather.time doubleValue]];
 //            cell.time.text = [Conversions convertToHourOnly:date];
@@ -56,6 +56,9 @@
 //        }
     }];
     
+//    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(Weather *weather) {
+//        NSLog(@"DAILY WEATHER FETCHED!");
+//    }];
 }
 
 -(void)setCurrentWeather:(Weather *)currentWeather {

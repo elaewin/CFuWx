@@ -20,6 +20,8 @@
 @property(strong, nonatomic) NSNumber *latitude;
 @property(strong, nonatomic) NSNumber *longitude;
 @property(strong, nonatomic) NSNumber *time;
+@property(strong, nonatomic) NSNumber *temperatureMax;
+@property(strong, nonatomic) NSNumber *temperatureMin;
 
 @property(strong, nonatomic) NSString *summary;
 @property(strong, nonatomic) UIImage *icon;
