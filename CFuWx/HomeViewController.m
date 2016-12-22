@@ -31,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rickykharawala"]];
     [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
 //    [[LocationManager alloc]init];
     
@@ -61,6 +63,8 @@
         cell.date.text = [Conversions convertToReadableDate:date];
         cell.time.text = [Conversions convertToReadableTime:date];
         cell.temperature.text = [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue];
+        cell.weatherIconImage.image = self.currentWeather.icon;
+        cell.weatherIconImage.tintColor = [UIColor whiteColor];
         return cell;
     }
     
