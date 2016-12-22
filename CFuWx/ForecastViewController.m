@@ -8,9 +8,16 @@
 
 #import "ForecastViewController.h"
 
-@interface ForecastViewController ()
+@interface ForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+//properties
+@property(strong, nonatomic) HourlyTableViewCell *hourlyTableViewCell;
+@property(strong, nonatomic) DailyTableViewCell *dailyTableViewCell;
+
+//outlets
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
+@property (weak, nonatomic) IBOutlet UITableView *forecastTableView;
 
 @end
 
@@ -18,6 +25,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+
+//MARK: TableViewDelegate Methods
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
 }
 
 
