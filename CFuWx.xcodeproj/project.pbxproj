@@ -249,13 +249,9 @@
 		555FA2251E0700890036FC1E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				558BE5C01E0C56F6007EC30E /* Storyboards */,
 				7CD83D951E0B427C009BE48F /* Header.xib */,
 				7CD83D9E1E0B4346009BE48F /* TextForecast */,
-				555FA22C1E0701380036FC1E /* About.storyboard */,
-				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
-				555FA2041E06FE680036FC1E /* Main.storyboard */,
-				555FA22A1E0701110036FC1E /* Settings.storyboard */,
-				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
 				0197C2531E09E661006D7A29 /* TopTableViewCell.h */,
 				0197C2541E09E661006D7A29 /* TopTableViewCell.m */,
 				0197C2561E09E66E006D7A29 /* BottomTableViewCell.h */,
@@ -297,6 +293,18 @@
 				555CD9BD1E08CAC6002E72DA /* ChartViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		558BE5C01E0C56F6007EC30E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				555FA22C1E0701380036FC1E /* About.storyboard */,
+				555FA2281E0700E90036FC1E /* Forecast.storyboard */,
+				555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */,
+				555FA2041E06FE680036FC1E /* Main.storyboard */,
+				555FA22A1E0701110036FC1E /* Settings.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		7CD83D9D1E0B4331009BE48F /* Hourly */ = {

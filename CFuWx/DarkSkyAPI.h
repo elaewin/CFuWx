@@ -13,7 +13,6 @@
 typedef void(^weatherCompletion)(Weather *weather);
 typedef void(^weatherCompletionWithArray)(NSArray *weatherArray);
 
-
 @interface DarkSkyAPI : NSObject
 
 +(NSURL *)createDarkSkyAuthURL:(NSURLQueryItem *)queryItem;
@@ -23,7 +22,7 @@ typedef void(^weatherCompletionWithArray)(NSArray *weatherArray);
 +(NSURLQueryItem *)dailyQuery;
 +(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion;
 +(void)fetchHourlyWeatherWithCompletion:(weatherCompletionWithArray)completion;
-+(void)fetchDailyWeatherWithCompletion:(weatherCompletion)completion;
++(void)fetchDailyWeatherWithCompletion:(weatherCompletionWithArray)completion;
 +(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion;
 
 @end

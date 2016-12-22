@@ -19,8 +19,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 @interface DarkSkyAPI()
 
-
-
 @property(nonatomic) CLLocationCoordinate2D coordinate;
 @property(strong, nonatomic) NSMutableData *receivedData;
 @property(strong, nonatomic) NSURLConnection *requestURL;
@@ -134,7 +132,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                     
                     for (NSDictionary *hourlyForecast in [json valueForKeyPath:@"hourly.data"]) {
                         NSLog(@"forecast Icon for hourly forecast: %@", hourlyForecast[@"icon"]);
-                        Weather *hourlyWeather = [[Weather alloc]initWithDictionary:json];
+                        Weather *hourlyWeather = [[Weather alloc]initWithDictionary:hourlyForecast];
                         [hourlyArray addObject:hourlyWeather];
                     }
                     completion(hourlyArray);
@@ -144,7 +142,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     }] resume];
 }
 
-+(void)fetchDailyWeatherWithCompletion:(weatherCompletion)completion {
++(void)fetchDailyWeatherWithCompletion:(weatherCompletionWithArray)completion {
     
     NSURL *url = [self createDarkSkyAuthURL:[self dailyQuery]];
     
@@ -170,8 +168,14 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                 NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    Weather *currentWeather = [[Weather alloc]initWithDictionary:json];
-                    completion(currentWeather);
+                    NSMutableArray *dailyArray = [[NSMutableArray alloc]init];
+                    
+                    for (NSDictionary *dailyForecast in [json valueForKeyPath:@"daily.data"]) {
+                        NSLog(@"forecast Icon for daily forecast: %@", dailyForecast[@"icon"]);
+                        Weather *dailyWeather = [[Weather alloc]initWithDictionary:dailyForecast];
+                        [dailyArray addObject:dailyWeather];
+                    }
+                    completion(dailyArray);
                 }];
             }
         }

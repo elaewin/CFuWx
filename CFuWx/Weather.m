@@ -19,7 +19,7 @@
     if(self){
         _latitude = jsonDictionary[@"latitude"];
         _longitude = jsonDictionary[@"longitude"];
-        _temperature = [jsonDictionary valueForKey:@"temperature"];
+        _temperature = jsonDictionary[@"temperature"];
         _precipProbability = [jsonDictionary valueForKey:@"precipProbability"];
         _humidity = [jsonDictionary valueForKey:@"humidity"];
         _windSpeed = [jsonDictionary valueForKey:@"windSpeed"];

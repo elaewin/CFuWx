@@ -13,7 +13,6 @@
 
 @property(strong, nonatomic)CLLocationManager *locationManager;
 @property(strong, nonatomic)CLPlacemark *placemark;
-
 @property(strong, nonatomic) CLLocation *currentLocation;
 
 @end
@@ -41,7 +40,6 @@
     }
 
     return self;
-
 }
 
 -(void)requestPermissions {
@@ -70,7 +68,6 @@
     return coordinate;
 }
 
-
 -(void)getLocationFrom:(NSString *)stringFromUser{
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
 
@@ -85,7 +82,6 @@
 
     }];
 }
-
 
 -(NSString *)reverseGeocode:(CLLocation *)location {
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
