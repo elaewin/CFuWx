@@ -8,6 +8,12 @@
 
 #import "HourlyTableViewCell.h"
 
+@interface HourlyTableViewCell()
+
+@property(strong, nonatomic) ForecastViewController *forecastViewController;
+
+@end
+
 @implementation HourlyTableViewCell
 
 - (void)awakeFromNib {

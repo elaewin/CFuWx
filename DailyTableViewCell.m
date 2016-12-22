@@ -8,6 +8,12 @@
 
 #import "DailyTableViewCell.h"
 
+@interface DailyTableViewCell()
+
+@property(strong, nonatomic) ForecastViewController *forecastViewController;
+
+@end
+
 @implementation DailyTableViewCell
 
 - (void)awakeFromNib {

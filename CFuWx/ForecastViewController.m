@@ -10,6 +10,13 @@
 
 @interface ForecastViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+//properties
+@property(strong, nonatomic) HourlyTableViewCell *hourlyTableViewCell;
+@property(strong, nonatomic) DailyTableViewCell *dailyTableViewCell;
+
+//outlets
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
 @property (weak, nonatomic) IBOutlet UITableView *forecastTableView;
 
 @end

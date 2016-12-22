@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ForecastViewController.h"
 
 @interface HourlyTableViewCell : UITableViewCell
+
+//outlets
+@property (weak, nonatomic) IBOutlet UILabel *hourlyTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hourlyTempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hourlyWindLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hourlyPrecipLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *hourlyWxLabel;
+
 
 @end
