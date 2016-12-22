@@ -41,6 +41,7 @@
     }
 
     return self;
+
 }
 
 -(void)requestPermissions {
@@ -81,6 +82,7 @@
             CLLocation *location = [[CLLocation alloc]init];
             hulk.currentLocation = location;
         }
+
     }];
 }
 
@@ -95,13 +97,14 @@
         if (error == nil && [placemarks count] > 0) {
             hulk.placemark = [placemarks lastObject];
             
-            NSLog(@"city: %@", _placemark.locality);                    //city name
-            NSLog(@"timeZone: %@", _placemark.timeZone);                //time zone
-            NSLog(@"region: %@", _placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
-            NSLog(@"state: %@", _placemark.administrativeArea);         //state
-            NSLog(@"county: %@", _placemark.subAdministrativeArea);     //county
-            NSLog(@"country: %@", _placemark.country);                  //country
-            NSLog(@"zip: %@", _placemark.postalCode);                   //zip code
+
+            NSLog(@"city: %@", hulk.placemark.locality);                    //city name
+            NSLog(@"timeZone: %@", hulk.placemark.timeZone);                //time zone
+            NSLog(@"region: %@", hulk.placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
+            NSLog(@"state: %@", hulk.placemark.administrativeArea);         //state
+            NSLog(@"county: %@", hulk.placemark.subAdministrativeArea);     //county
+            NSLog(@"country: %@", hulk.placemark.country);                  //country
+            NSLog(@"zip: %@", hulk.placemark.postalCode);                   //zip code
         }
     }];
     return [NSString stringWithFormat:@"%@, %@", self.placemark.locality, self.placemark.administrativeArea];
@@ -116,6 +119,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self setCurrentLocation:locations.lastObject];
+
     
     // Need to refactor for any of the fetch methods.
     NSLog(@"%@", self.currentLocation);

@@ -72,6 +72,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 
 // API Fetch Methods
 +(void)fetchCurrentWeatherWithCompletion:(weatherCompletion)completion {
+
     NSURL *url = [self createDarkSkyAuthURL:[self currentlyQuery]];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
@@ -144,6 +145,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     return coordinate;
 }
 
+
 +(void)fetchCurrentWeatherOnLoad:(weatherCompletion)completion {
     NSURL *url = [self createAuthURLforLoad:[self currentlyQuery] withCoordinate:[self getOnLoadCoordinate]];
     
@@ -178,23 +180,3 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
