@@ -12,6 +12,9 @@
 #import "DarkSkyAPI.h"
 #import "Weather.h"
 #import "HomeViewController.h"
+#import "SettingsViewController.h"
+#import "LocationManager.h"
+#import "Location+CoreDataClass.h"
 
 @interface AppDelegate ()
 
@@ -43,6 +46,34 @@
         
         hulk.homeViewController.currentWeather = currentWeather;
     }];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
+    
+    NSError *error;
+    NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request error:&error];
+    
+    if(error){
+        NSLog(@"Error Fetching Locations From Core Data");
+    }
+    
+    if(count == 0){
+        
+        Location *startLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.persistentContainer.viewContext];
+        
+        startLocation.locationName = @"Seattle";
+        startLocation.latitude = 47.618335;
+        startLocation.longitude = -122.352264;
+        
+    }
+    
+    NSError *saveError;
+    BOOL isSaved = [self.persistentContainer.viewContext save:&saveError];
+    
+    if(isSaved){
+        NSLog(@"Saved Successfully To Core Data");
+    } else {
+        NSLog(@"Save Unsuccessful - Save Error: %@", saveError.localizedDescription);
+    }
 }
 
 

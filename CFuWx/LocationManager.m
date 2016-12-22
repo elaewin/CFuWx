@@ -110,6 +110,8 @@
     return [NSString stringWithFormat:@"%@, %@", self.placemark.locality, self.placemark.administrativeArea];
 }
 
+//MARK: SEATTLE COORDINATES
+
 -(CLLocation *)initialCLLocation {
     CLLocation *seattle = [[CLLocation alloc]initWithLatitude:47.618335 longitude:-122.352264];
     return seattle;
