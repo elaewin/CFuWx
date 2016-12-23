@@ -1,3 +1,7 @@
+# CFuWx
+----
+iOS version of uWx Android app (unofficial)
+
 ## Curious about the science behind uWx?
 
 Check out these publications to learn more about how pressure observations from smartphones could improve weather forecasting.
