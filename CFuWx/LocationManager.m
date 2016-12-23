@@ -14,6 +14,7 @@
 @property(strong, nonatomic)CLLocationManager *locationManager;
 @property(strong, nonatomic)CLPlacemark *placemark;
 
+
 @end
 
 
@@ -39,6 +40,11 @@
     }
 
     return self;
+}
+
+-(void)setCurrentLocation:(CLLocation *)currentLocation {
+    [self setTextLocation:[self reverseGeocode:currentLocation]];
+    _currentLocation = currentLocation;
 }
 
 -(void)requestPermissions {

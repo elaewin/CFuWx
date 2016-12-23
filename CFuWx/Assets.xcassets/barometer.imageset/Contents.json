@@ -1,8 +1,10 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
-      "filename" : "barometer.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +13,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "barometer.png",
       "scale" : "3x"
     }
   ],

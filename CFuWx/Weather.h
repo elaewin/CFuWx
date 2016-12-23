@@ -26,6 +26,8 @@
 
 @property(strong, nonatomic) NSString *summary;
 @property(strong, nonatomic) UIImage *icon;
+@property(strong, nonatomic) UIImage *backgroundImage;
+
 
 @property(strong, nonatomic) NSDictionary *iconDictionary;
 

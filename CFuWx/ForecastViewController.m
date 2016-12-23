@@ -12,6 +12,7 @@
 #import "HourlyTableViewCell.h"
 #import "DailyTableViewCell.h"
 #import "Conversions.h"
+#import "LocationManager.h"
 
 @interface ForecastViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -80,6 +81,7 @@
 -(void)getHourlyWeatherData {
     [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.hourlyWeatherArray = weatherArray;
+        self.timeDateLabel.text = [[LocationManager sharedManager] currentLocation];
         [self.forecastTableView reloadData];
     }];
 }

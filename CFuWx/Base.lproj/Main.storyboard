@@ -23,8 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HomeViewBackgroundImage" image="rickykharawala" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-8t-O7a">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HomeViewBackgroundImage" image="joy-stamp" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-8t-O7a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ciq-OY-ANU">
                                 <rect key="frame" x="0.0" y="20" width="375" height="400"/>
@@ -227,7 +229,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P2N-8t-O7a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Ya-At-fmW"/>
                             <constraint firstAttribute="trailing" secondItem="2mH-Ni-r75" secondAttribute="trailing" id="69a-ka-b58"/>
@@ -373,9 +375,9 @@
         <image name="barometer" width="1200" height="1200"/>
         <image name="burger" width="512" height="512"/>
         <image name="home-page" width="64" height="64"/>
+        <image name="joy-stamp" width="2132" height="1200"/>
         <image name="menu" width="64" height="64"/>
         <image name="rh" width="256" height="256"/>
-        <image name="rickykharawala" width="861" height="575"/>
         <image name="settings-work-tool" width="64" height="64"/>
         <image name="windspeed" width="256" height="256"/>
     </resources>

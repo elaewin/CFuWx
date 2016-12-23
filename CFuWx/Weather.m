@@ -29,6 +29,7 @@
         _temperatureMin = jsonDictionary[@"temperatureMin"];
         _latitude = latitude;
         _longitude = longitude;
+        _backgroundImage = [self getBackgroundImage:jsonDictionary[@"icon"]];
         }
     return self;
 }
@@ -42,7 +43,11 @@
 
 }
 
-
+-(UIImage *)getBackgroundImage:(NSString *)iconName {
+    NSDictionary *imageDictionary = @{@"clear-day": [UIImage imageNamed:@"clear-day"], @"clear-night": [UIImage imageNamed:@"clear-night"], @"rain": [UIImage imageNamed:@"rain"], @"snow": [UIImage imageNamed:@"snow"], @"sleet": [UIImage imageNamed:@"sleet"], @"wind": [UIImage imageNamed:@"wind"], @"fog": [UIImage imageNamed:@"fog"], @"cloudy": [UIImage imageNamed:@"cloudy"], @"partly-cloudy-day": [UIImage imageNamed:@"partly-cloudy-day"], @"partly-cloudy-night": [UIImage imageNamed:@"partly-cloudy-night"]};
+    
+    return [imageDictionary objectForKey:iconName];
+}
 
 
 

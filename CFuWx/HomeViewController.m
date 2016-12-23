@@ -44,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rickykharawala"]];
+    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"joy-stamp"]];
     
     self.altimeter = [[Altimeter alloc]init];
     
