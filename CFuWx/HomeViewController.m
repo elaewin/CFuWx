@@ -44,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rickykharawala"]];
+    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"joy-stamp"]];
     
     self.altimeter = [[Altimeter alloc]init];
     
@@ -78,8 +78,8 @@
         TopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[self.currentWeather.time doubleValue]];
         
+        cell.time.text = [NSString stringWithFormat:@"Forecast at %@", [Conversions convertToReadableTime:date]];
         cell.date.text = [Conversions convertToReadableDate:date];
-        cell.time.text = [Conversions convertToReadableTime:date];
         cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
         cell.location.text = [self getLocationText];
         [cell.weatherIconImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -92,6 +92,16 @@
     if(indexPath.row == 1) {
         BottomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BottomTableViewCell"];
         cell.pressure.text = [Conversions formatToTwoDecimals:self.currentWeather.pressure.floatValue];
+        NSString *rH = [Conversions convertToPercentage: self.currentWeather.humidity.floatValue];
+        cell.relativeHumidity.text = [NSString stringWithFormat:@"%@%%", rH];
+        cell.apparentTemperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.apparentTemperature.floatValue]];
+        if (![self.currentWeather.windSpeed isKindOfClass:[NSNumber class]]) {
+            cell.windSpeed.text = @"Calm";
+            cell.windDirection.text = @"";
+        } else {
+            cell.windSpeed.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:self.currentWeather.windSpeed.floatValue]];
+            cell.windDirection.text = [NSString stringWithFormat:@"(%@)", [Conversions windDirectionFromDegrees:self.currentWeather.windBearing.floatValue]];
+        }
         return cell;
     }
     return [[UITableViewCell alloc]init];

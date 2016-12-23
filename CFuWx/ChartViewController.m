@@ -7,6 +7,7 @@
 //
 
 #import "ChartViewController.h"
+#import "Conversions.h"
 //#import "CFuWx-Swift.h"
 
 @import Charts;
@@ -20,11 +21,15 @@
 @property(nonatomic) double chartLowerLimit;
 
 @property (strong, nonatomic) IBOutlet LineChartView *chartView;
+@property (weak, nonatomic) IBOutlet UILabel *pressureReadingLabel;
 
 
 @end
 
 @implementation ChartViewController
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,7 +78,8 @@
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
 //            [hulk refreshChart:hulk.values];
-//            NSLog(@"pressure: %@", pressure);
+            NSString *convertedPressure = [Conversions convertToHectoPascal:pressure.floatValue];
+            hulk.pressureReadingLabel.text = [NSString stringWithFormat:@"%@ hPa",convertedPressure];
         }];
         
     } else {
@@ -97,10 +103,10 @@
     ChartYAxis *leftAxis = self.chartView.leftAxis;
     leftAxis.labelCount = 4;
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
-    leftAxis.labelFont = [UIFont fontWithName:@"Arial" size:9.0];
-    leftAxis.labelTextColor = [UIColor magentaColor];
+    leftAxis.labelFont = [UIFont fontWithName:@"Menlo" size:9.0];
+    leftAxis.labelTextColor = [UIColor darkGrayColor];
     leftAxis.drawAxisLineEnabled = YES;
-    leftAxis.axisMaximum = 1000.01;
+    leftAxis.axisMaximum = 1030.01;
     leftAxis.axisMinimum = 900.50;
     leftAxis.drawZeroLineEnabled = NO;
 }
@@ -142,7 +148,7 @@
         
         LineChartData *data = [[LineChartData alloc] initWithDataSets:dataSets];
         [data setValueTextColor:[UIColor blackColor]];
-        [data setValueFont:[UIFont fontWithName:@"Arial" size:9.0]];
+        [data setValueFont:[UIFont fontWithName:@"Menlo" size:9.0]];
         
         self.chartView.data = data;
     }

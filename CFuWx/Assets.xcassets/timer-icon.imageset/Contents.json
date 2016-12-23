@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "timer-icon.png",
       "scale" : "1x"
     },
     {
@@ -10,12 +11,14 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "settings-work-tool.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }

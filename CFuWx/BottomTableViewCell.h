@@ -13,6 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pressure;
 
+@property (weak, nonatomic) IBOutlet UILabel *relativeHumidity;
+@property (weak, nonatomic) IBOutlet UILabel *windDirection;
 
+@property (weak, nonatomic) IBOutlet UILabel *windSpeed;
+@property (weak, nonatomic) IBOutlet UILabel *apparentTemperature;
 
 @end

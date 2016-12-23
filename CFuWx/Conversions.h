@@ -46,4 +46,10 @@
 +(NSString *)convertToHourOnly:(NSDate *)date;
 +(NSString *)convertToReadableTime:(NSDate *)date;
 
+// Convert degrees to bearing
++(NSString *)windDirectionFromDegrees:(double)degrees;
+
+// Convert decimal number into percentage
++(NSString *)convertToPercentage:(double)decimal;
+
 @end
