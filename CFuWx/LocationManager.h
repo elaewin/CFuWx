@@ -22,5 +22,6 @@
 
 -(NSString *)reverseGeocode:(CLLocation *)location;
 -(CLLocation *)initialCLLocation;
+-(CLLocation *)getLocationForLatitude:(double)latitude andLongitude:(double)longitude;
 
 @end

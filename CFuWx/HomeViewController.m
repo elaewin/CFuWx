@@ -41,13 +41,10 @@
 
 }
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rickykharawala"]];
-    [DarkSkyAPI createDarkSkyAuthURL:[DarkSkyAPI currentlyQuery]];
 //    [[LocationManager alloc]init];
     
     self.altimeter = [[Altimeter alloc]init];
@@ -58,24 +55,16 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    
-    
-    
 }
-
--(void)setupStoryboards {
-    UIStoryboard *forecastSB = [UIStoryboard storyboardWithName:@"Forecast" bundle:nil];
-    
-    ForecastViewController *forecastVC = [forecastSB instantiateViewControllerWithIdentifier:@"Forecast"];
-}
-
 
 -(void)setCurrentWeather:(Weather *)currentWeather {
-    
-    [self.tableView reloadData];
     _currentWeather = currentWeather;
-    
+    [self.tableView reloadData];
+}
+
+-(NSString *)getLocationText {
+    CLLocation *location = [[LocationManager sharedManager] getLocationForLatitude:self.currentWeather.latitude.floatValue andLongitude:self.currentWeather.longitude.floatValue];
+    return [[LocationManager sharedManager] reverseGeocode:location];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -87,7 +76,7 @@
         cell.date.text = [Conversions convertToReadableDate:date];
         cell.time.text = [Conversions convertToReadableTime:date];
         cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
-        cell.location.text = [[LocationManager sharedManager] reverseGeocode:[[LocationManager sharedManager] initialCLLocation]];
+        cell.location.text = [self getLocationText];
         [cell.weatherIconImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         cell.weatherIconImage.tintColor = [UIColor whiteColor];
         cell.weatherIconImage.image = self.currentWeather.icon;

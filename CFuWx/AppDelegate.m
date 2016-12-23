@@ -61,6 +61,7 @@
     
     if(count == 0){
         
+        NSLog(@"COUNT = ZERO!!");
         Location *startLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.persistentContainer.viewContext];
         
         startLocation.locationName = @"Seattle";
