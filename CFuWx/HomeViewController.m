@@ -12,6 +12,7 @@
 #import "DarkSkyAPI.h"
 #import "AppDelegate.h"
 #import "Conversions.h"
+#import "BurgerMenuViewController.h"
 #import "ForecastViewController.h"
 
 @import CoreLocation;

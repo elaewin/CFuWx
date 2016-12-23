@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                                 <sections/>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mH-Ni-r75">
-                                <rect key="frame" x="0.0" y="472" width="375" height="195"/>
+                                <rect key="frame" x="0.0" y="472" width="375" height="146"/>
                                 <connections>
                                     <segue destination="dOx-FF-clu" kind="embed" id="xwI-sx-jJk"/>
                                 </connections>
@@ -175,13 +175,86 @@
                             <constraint firstItem="hjg-gg-Tuw" firstAttribute="top" secondItem="Ciq-OY-ANU" secondAttribute="bottom" constant="8" id="xla-VH-ZMD"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-page" id="6Ph-Oa-Sqs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Ciq-OY-ANU" id="xUD-m0-sQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+            <point key="canvasLocation" x="972" y="-18.440779610194905"/>
+        </scene>
+        <!--Menu Stack View Controller-->
+        <scene sceneID="9y3-HL-IeL">
+            <objects>
+                <viewController storyboardIdentifier="MenuStack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tvo-92-Wjw" customClass="MenuStackViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5a6-ei-7Er" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="-723"/>
+        </scene>
+        <!--Burger Menu View Controller-->
+        <scene sceneID="QQE-DB-bNF">
+            <objects>
+                <viewController id="DK2-18-ept" customClass="BurgerMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="opu-HC-rJY"/>
+                        <viewControllerLayoutGuide type="bottom" id="XVe-IY-A3o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l91-8c-ZuZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-va-WNP">
+                                <rect key="frame" x="28" y="28" width="92" height="631"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-0i-9TV">
+                                        <rect key="frame" x="14" y="0.0" width="64" height="158"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="settings-work-tool"/>
+                                        <connections>
+                                            <action selector="settingsPressed:" destination="DK2-18-ept" eventType="touchUpInside" id="Nax-1S-cbs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-XK-IO3">
+                                        <rect key="frame" x="14" y="158" width="64" height="157.5"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="forecastPressed:" destination="DK2-18-ept" eventType="touchUpInside" id="q4t-aR-UkR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4V-uE-PNz">
+                                        <rect key="frame" x="14" y="315.5" width="64" height="158"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="home-page"/>
+                                        <connections>
+                                            <action selector="homePressed:" destination="DK2-18-ept" eventType="touchUpInside" id="bIg-tg-ZfJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW0-U9-CpI">
+                                        <rect key="frame" x="0.0" y="473.5" width="92" height="157.5"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button" image="burger"/>
+                                        <connections>
+                                            <action selector="burgerPressed:" destination="DK2-18-ept" eventType="touchUpInside" id="O05-Xc-GaF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AQ4-va-WNP" firstAttribute="leading" secondItem="l91-8c-ZuZ" secondAttribute="leadingMargin" constant="12" id="44g-Ls-X1b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AQ4-va-WNP" secondAttribute="trailing" constant="239" id="6po-45-LTt"/>
+                            <constraint firstItem="XVe-IY-A3o" firstAttribute="top" secondItem="AQ4-va-WNP" secondAttribute="bottom" constant="8" id="beM-gH-PDc"/>
+                            <constraint firstItem="AQ4-va-WNP" firstAttribute="top" secondItem="opu-HC-rJY" secondAttribute="bottom" constant="8" id="ofF-0F-8yC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiR-Gh-rkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="-719.19040479760122"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="ePn-dN-5vE">
@@ -192,7 +265,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xIC-hh-41W"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleAspectFill" id="K2I-Na-AT9" customClass="LineChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -206,6 +279,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="burger" width="512" height="512"/>
+        <image name="home-page" width="64" height="64"/>
+        <image name="menu" width="64" height="64"/>
         <image name="rickykharawala" width="861" height="575"/>
+        <image name="settings-work-tool" width="64" height="64"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@
 @interface SettingsViewController ()<UISearchBarDelegate>
 
 @property(strong, nonatomic) NSMutableArray* searchedLocation;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
 @end
@@ -24,16 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.searchBar.delegate = self;
 }
 
 
--(void)searchButtonClicked:(UISearchBar *)searchBar {
+-(void)searchButtonClicked:(UISearchBar *)keySearchBar {
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
-    request.predicate = [NSPredicate predicateWithFormat:@"Location.locationName == %@", searchBar.text];
+    request.predicate = [NSPredicate predicateWithFormat:@"Location.locationName == %@", _searchBar.text];
     
     NSError *error;
     NSArray *results = [context executeFetchRequest:request error:&error];
@@ -42,7 +44,20 @@
         NSLog(@"RESULTS: %@", results);
     }
 
-    
+}
+
+
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    [self.view endEditing:YES];
+}
+
+
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 
