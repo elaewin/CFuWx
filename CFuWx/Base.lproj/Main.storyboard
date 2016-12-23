@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HomeViewBackgroundImage" image="joy-stamp" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-8t-O7a">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HomeViewBackgroundImage" image="quino-al" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-8t-O7a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -375,8 +375,8 @@
         <image name="barometer" width="1200" height="1200"/>
         <image name="burger" width="512" height="512"/>
         <image name="home-page" width="64" height="64"/>
-        <image name="joy-stamp" width="2132" height="1200"/>
         <image name="menu" width="64" height="64"/>
+        <image name="quino-al" width="1800" height="1200"/>
         <image name="rh" width="214" height="256"/>
         <image name="settings-work-tool" width="64" height="64"/>
         <image name="windspeed" width="256" height="256"/>

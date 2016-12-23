@@ -78,8 +78,12 @@
             // convert pressure from kPa to hPa!
             [hulk.values addObject:pressure];
 //            [hulk refreshChart:hulk.values];
-            NSString *convertedPressure = [Conversions convertToHectoPascal:pressure.floatValue];
-            hulk.pressureReadingLabel.text = [NSString stringWithFormat:@"%@ hPa",convertedPressure];
+            NSLog(@"%@", pressure);
+
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                NSString *convertedPressure = [Conversions convertToHectoPascal:pressure.floatValue];
+                hulk.pressureReadingLabel.text = [NSString stringWithFormat:@"%@ hPa",convertedPressure];
+            }];
         }];
         
     } else {

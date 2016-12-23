@@ -10,6 +10,19 @@
 
 @implementation Conversions
 
++(NSString *)formatToZeroDecimal:(double)numberToFormat {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter = [[NSNumberFormatter alloc]init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.allowsFloats = YES;
+    formatter.usesSignificantDigits = NO;
+    formatter.minimumFractionDigits = 0;
+    formatter.maximumFractionDigits = 0;
+    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
+    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
+    return [formatter stringFromNumber:number];
+}
+
 +(NSString *)formatToOneDecimal:(double)numberToFormat {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     formatter = [[NSNumberFormatter alloc]init];
@@ -31,6 +44,19 @@
     formatter.usesSignificantDigits = NO;
     formatter.minimumFractionDigits = 2;
     formatter.maximumFractionDigits = 2;
+    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
+    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
+    return [formatter stringFromNumber:number];
+}
+
++(NSString *)formatToFourDecimals:(double)numberToFormat {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    formatter = [[NSNumberFormatter alloc]init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    formatter.allowsFloats = YES;
+    formatter.usesSignificantDigits = NO;
+    formatter.minimumFractionDigits = 4;
+    formatter.maximumFractionDigits = 4;
     formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
     NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
     return [formatter stringFromNumber:number];
@@ -66,7 +92,7 @@
 
 +(NSString *)convertToHectoPascal:(double)pressure {
     double hPa = (pressure * 10);
-    return [Conversions formatToTwoDecimals:hPa];
+    return [Conversions formatToFourDecimals:hPa];
 }
 
 // Height Conversions from Meters
