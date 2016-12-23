@@ -80,12 +80,15 @@
 
     [geocoder geocodeAddressString:stringFromUser completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         __strong typeof(bruce) hulk = bruce;
-        if(placemarks.count > 0) {
-            CLLocation *location = [[CLLocation alloc]init];
-            hulk.currentLocation = location;
-        }
 
-    }];
+        if (placemarks > 0) {
+            hulk.currentLocation = placemarks[0].location;
+            }
+        
+        if (error) {
+            NSLog(@"Error in getLocationFrom - ERROR: %@", error.localizedDescription);
+        }
+        }];
 }
 
 -(NSString *)reverseGeocode:(CLLocation *)location {
