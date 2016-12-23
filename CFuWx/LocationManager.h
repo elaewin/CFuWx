@@ -12,6 +12,8 @@
 
 @interface LocationManager : NSObject
 
+@property(strong, nonatomic) CLLocation *currentLocation;
+
 +(instancetype)sharedManager;
 
 -(void)requestPermissions;

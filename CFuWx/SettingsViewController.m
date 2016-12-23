@@ -38,11 +38,12 @@
     [[LocationManager sharedManager] getLocationFrom:searchBar.text];
     [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
         __strong typeof(bruce) hulk = bruce;
+        CLLocation *newLocation = [[LocationManager sharedManager] getLocationForLatitude:weather.latitude.floatValue andLongitude:weather.longitude.floatValue];
+        [[LocationManager sharedManager] setCurrentLocation:newLocation];
         NSArray *viewControllers = [hulk.tabBarController viewControllers];
         HomeViewController *homeView = (HomeViewController *)viewControllers[0];
         homeView.currentWeather = weather;
         [self.tabBarController setSelectedIndex:0];
-    
     }];
     
     

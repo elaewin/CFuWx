@@ -68,16 +68,16 @@
         startLocation.latitude = 47.618335;
         startLocation.longitude = -122.352264;
         
+        NSError *saveError;
+        BOOL isSaved = [self.persistentContainer.viewContext save:&saveError];
+        
+        if(isSaved){
+            NSLog(@"Saved Successfully To Core Data");
+        } else {
+            NSLog(@"Save Unsuccessful - Save Error: %@", saveError.localizedDescription);
+        }
     }
     
-    NSError *saveError;
-    BOOL isSaved = [self.persistentContainer.viewContext save:&saveError];
-    
-    if(isSaved){
-        NSLog(@"Saved Successfully To Core Data");
-    } else {
-        NSLog(@"Save Unsuccessful - Save Error: %@", saveError.localizedDescription);
-    }
 }
 
 
@@ -97,18 +97,20 @@
     
     rootController.viewControllers = @[homeViewController, forecastViewController, settingsViewController];
     
+    UIImage *homeTabImage = [UIImage imageNamed:@"home-page"];
+    [[rootController.tabBar.items objectAtIndex:0] setImage:homeTabImage];
+    UIImage *textMenuImage = [UIImage imageNamed:@"menu"];
+    [[rootController.tabBar.items objectAtIndex:1] setImage:textMenuImage];
+    UIImage *settingsGearImage = [UIImage imageNamed:@"settings-work-tool"];
+    [[rootController.tabBar.items objectAtIndex:2] setImage:settingsGearImage];
+    
+    rootController.tabBar.backgroundColor = [UIColor clearColor];
+    rootController.tabBar.tintColor = [UIColor whiteColor];
+    
     self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
     
 }
-
-
-
-
-
-
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
