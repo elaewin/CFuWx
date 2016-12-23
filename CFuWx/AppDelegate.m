@@ -19,7 +19,7 @@
 
 @interface AppDelegate ()
 
-@property(strong, nonatomic) HomeViewController *homeViewController;
+@property(strong, nonatomic) UITabBarController *homeViewController;
 
 @end
 
@@ -34,19 +34,20 @@
         configuration.server =  kServerURL;
     }]];
 
-    [self bootstrapApp];
     [self setUpTabBarControllerAsRoot];
+    [self bootstrapApp];
     return YES;
 }
 
 -(void)bootstrapApp{
-    self.homeViewController = (HomeViewController *)self.window.rootViewController;
+    self.homeViewController = (UITabBarController *)self.window.rootViewController;
     
     __weak typeof(self) bruce = self;
     [DarkSkyAPI fetchCurrentWeatherOnLoad:^(Weather *currentWeather) {
         __strong typeof(bruce) hulk = bruce;
         
-        hulk.homeViewController.currentWeather = currentWeather;
+        HomeViewController *homeController = hulk.homeViewController.viewControllers.firstObject;
+        homeController.currentWeather = currentWeather;
     }];
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
