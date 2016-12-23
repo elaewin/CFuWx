@@ -43,48 +43,62 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pqf-6v-JqH">
-                                        <rect key="frame" x="49.5" y="25" width="102.5" height="102.5"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pqf-6v-JqH">
+                                        <rect key="frame" x="60.5" y="29" width="81" height="80.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pqf-6v-JqH" secondAttribute="height" multiplier="1:1" id="isV-fy-lQE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <state key="normal" title="HOURLY" image="clock">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <state key="normal" title="HOURLY" image="timer-icon"/>
                                         <connections>
                                             <action selector="hourlyForecastButtonPressed:" destination="PR9-Na-xwU" eventType="touchUpInside" id="aMd-ZZ-aUE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-hh-cEB">
-                                        <rect key="frame" x="190.5" y="25" width="168.5" height="117"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-hh-cEB">
+                                        <rect key="frame" x="238.5" y="29" width="74" height="73.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <state key="normal" title="DAILY">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gln-hh-cEB" secondAttribute="height" multiplier="1:1" id="03V-RV-mlB"/>
+                                        </constraints>
+                                        <state key="normal" title="DAILY" image="calendar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="dailyForecastButtonPressed:" destination="PR9-Na-xwU" eventType="touchUpInside" id="TQi-tu-f8P"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G74-Od-CJG">
+                                        <rect key="frame" x="63" y="115.5" width="74.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAILY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc9-6l-vIA">
+                                        <rect key="frame" x="249" y="115.5" width="53" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="k9N-Ep-b2e" secondAttribute="trailing" constant="16" id="3c3-E6-Fcy"/>
                                     <constraint firstItem="364-DQ-n94" firstAttribute="leading" secondItem="fMK-Qh-XVs" secondAttribute="leading" constant="16" id="96b-kG-A0e"/>
+                                    <constraint firstItem="oc9-6l-vIA" firstAttribute="centerX" secondItem="k9N-Ep-b2e" secondAttribute="centerX" id="9tQ-Jg-RBw"/>
                                     <constraint firstItem="k9N-Ep-b2e" firstAttribute="top" secondItem="fMK-Qh-XVs" secondAttribute="top" id="AsB-0Z-KPg"/>
-                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="leading" secondItem="fMK-Qh-XVs" secondAttribute="leading" constant="16" id="C9v-y4-2FH"/>
                                     <constraint firstItem="364-DQ-n94" firstAttribute="top" secondItem="fMK-Qh-XVs" secondAttribute="top" id="EOB-cJ-IPD"/>
                                     <constraint firstItem="pqf-6v-JqH" firstAttribute="centerX" secondItem="364-DQ-n94" secondAttribute="centerX" id="G4F-Xj-dOD"/>
-                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="top" secondItem="364-DQ-n94" secondAttribute="bottom" constant="4" id="P6X-Rh-zRW"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gln-hh-cEB" secondAttribute="trailing" constant="16" id="UEe-Kt-I6g"/>
+                                    <constraint firstItem="G74-Od-CJG" firstAttribute="centerX" secondItem="364-DQ-n94" secondAttribute="centerX" id="IY6-7m-flT"/>
+                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="centerX" secondItem="k9N-Ep-b2e" secondAttribute="centerX" id="Ijz-x0-J5m"/>
+                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="top" secondItem="364-DQ-n94" secondAttribute="bottom" constant="8" id="P6X-Rh-zRW"/>
+                                    <constraint firstItem="G74-Od-CJG" firstAttribute="top" secondItem="pqf-6v-JqH" secondAttribute="bottom" constant="6" id="cTV-2p-z2U"/>
                                     <constraint firstItem="k9N-Ep-b2e" firstAttribute="width" secondItem="fMK-Qh-XVs" secondAttribute="width" multiplier="0.45" id="cvo-Po-DL8"/>
-                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="top" secondItem="k9N-Ep-b2e" secondAttribute="bottom" constant="4" id="gf0-NM-tUE"/>
-                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="width" secondItem="fMK-Qh-XVs" secondAttribute="width" multiplier="0.45" id="goC-bP-SzW"/>
                                     <constraint firstItem="364-DQ-n94" firstAttribute="width" secondItem="fMK-Qh-XVs" secondAttribute="width" multiplier="0.45" id="hkw-dI-bsx"/>
-                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.7" id="uTb-XV-Gwh"/>
-                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.8" id="wA7-f6-Gra"/>
+                                    <constraint firstItem="oc9-6l-vIA" firstAttribute="top" secondItem="G74-Od-CJG" secondAttribute="top" id="ole-RA-MMd"/>
+                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="top" secondItem="pqf-6v-JqH" secondAttribute="top" id="uFI-LT-5G1"/>
+                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.55" id="uTb-XV-Gwh"/>
+                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.5" id="wA7-f6-Gra"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0h-z0-3dG" userLabel="ForecastTableView">
@@ -123,7 +137,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clock" width="1920" height="1916"/>
+        <image name="calendar" width="256" height="256"/>
         <image name="ivan-vranic" width="1920" height="1200"/>
+        <image name="timer-icon" width="1920" height="1916"/>
     </resources>
 </document>
