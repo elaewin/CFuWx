@@ -94,7 +94,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                 NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    Weather *currentWeather = [[Weather alloc]initWithDictionary:[json valueForKey:@"currently"]];
+                    Weather *currentWeather = [[Weather alloc]initWithDictionary:[json valueForKey:@"currently"] andLatitude:json[@"latitude"] andLongitude:json[@"longitude"]];
                     completion(currentWeather);
                 }];
             }
@@ -129,7 +129,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                     NSMutableArray *hourlyArray = [[NSMutableArray alloc]init];
                     
                     for (NSDictionary *hourlyForecast in [json valueForKeyPath:@"hourly.data"]) {
-                        Weather *hourlyWeather = [[Weather alloc]initWithDictionary:hourlyForecast];
+                        Weather *hourlyWeather = [[Weather alloc]initWithDictionary:hourlyForecast andLatitude:json[@"latitude"] andLongitude:json[@"longitude"]];
                         [hourlyArray addObject:hourlyWeather];
                     }
                     completion(hourlyArray);
@@ -169,7 +169,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                     
                     for (NSDictionary *dailyForecast in [json valueForKeyPath:@"daily.data"]) {
                         NSLog(@"forecast Icon for daily forecast: %@", dailyForecast[@"icon"]);
-                        Weather *dailyWeather = [[Weather alloc]initWithDictionary:dailyForecast];
+                        Weather *dailyWeather = [[Weather alloc]initWithDictionary:dailyForecast andLatitude:json[@"latitude"] andLongitude:json[@"longitude"]];
                         [dailyArray addObject:dailyWeather];
                     }
                     completion(dailyArray);
@@ -212,7 +212,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
                 NSLog(@"Error Parsing JSON - Error: %@", jsonParsingError.localizedDescription);
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    Weather *currentWeather = [[Weather alloc]initWithDictionary:[json valueForKey:@"currently"]];
+                     Weather *currentWeather = [[Weather alloc]initWithDictionary:[json valueForKey:@"currently"] andLatitude:json[@"latitude"] andLongitude:json[@"longitude"]];
                     completion(currentWeather);
                 }];
             }

@@ -62,11 +62,11 @@
     UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCell"];
     
-    UINib *hourlyHeader = [UINib nibWithNibName:@"HourlyTableViewCellHeader" bundle:nil];
+    UINib *hourlyHeader = [UINib nibWithNibName:@"HourlyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:hourlyHeader forCellReuseIdentifier:@"HourlyTableViewCellHeader"];
     
-    UINib *dailyHeader = [UINib nibWithNibName:@"DailyTableViewCellHeader" bundle:nil];
-    [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCellHeader"];
+    UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
+    [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
     [self getDailyWeatherData];
 }
@@ -128,7 +128,6 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
-        NSLog(@"array count: %lu", (unsigned long)self.hourlyWeatherArray.count);
         return self.hourlyWeatherArray.count;
     } else {
         return self.dailyWeatherArray.count;
@@ -139,8 +138,22 @@
     return 1;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+        
+    } else {
+        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+    }
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 65;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 45;
 }
 
 
