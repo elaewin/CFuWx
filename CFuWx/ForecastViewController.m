@@ -31,27 +31,63 @@
 
 @implementation ForecastViewController
 
+- (IBAction)hourlyForecastButtonPressed:(UIButton *)sender {
+    if([self.forecastToDisplay isEqualToString:@"daily"]) {
+        self.forecastToDisplay = @"hourly";
+        [self getHourlyWeatherData];
+    }
+}
+
+- (IBAction)dailyForecastButtonPressed:(UIButton *)sender {
+    if([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        self.forecastToDisplay = @"daily";
+        [self getDailyWeatherData];
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.forecastToDisplay = @"hourly";
+    self.title = @"Text Forecasts";
     
-    [self getWeatherData];
+    self.forecastToDisplay = @"daily";
+    
+    self.forecastTableView.dataSource = self;
+    self.forecastTableView.delegate = self;
+    
+    
+    UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
+    [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
+    UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
+    [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCell"];
+    
+    UINib *hourlyHeader = [UINib nibWithNibName:@"HourlyRowTitles" bundle:nil];
+    [self.forecastTableView registerNib:hourlyHeader forCellReuseIdentifier:@"HourlyTableViewCellHeader"];
+    
+    UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
+    [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
+    
+    [self getDailyWeatherData];
 }
 
--(void)setHourlyWeather:(NSArray *)hourlyWeather {
+-(void)setHourlyWeatherArray:(NSMutableArray *)hourlyWeatherArray {
     
     [self.forecastTableView reloadData];
-    _hourlyWeatherArray = hourlyWeather;
+    _hourlyWeatherArray = hourlyWeatherArray;
 }
 
-
--(void)getWeatherData {
-    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
-        self.dailyWeatherArray = weatherArray;
-    }];
+-(void)getHourlyWeatherData {
     [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.hourlyWeatherArray = weatherArray;
+        [self.forecastTableView reloadData];
+    }];
+}
+
+-(void)getDailyWeatherData {
+    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
+        self.dailyWeatherArray = weatherArray;
+        [self.forecastTableView reloadData];
     }];
 }
 
@@ -72,8 +108,21 @@
         hourlyCell.hourlyWxLabel.image = forecast.icon;
         
         return hourlyCell;
+        
     } else {
-        return nil;
+        DailyTableViewCell *dailyCell = [tableView dequeueReusableCellWithIdentifier:@"DailyTableViewCell" forIndexPath:indexPath];
+        
+        Weather *forecast = [self.dailyWeatherArray objectAtIndex:indexPath.row];
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[forecast.time doubleValue]];
+        dailyCell.dailyDayLabel.text = [Conversions convertToDayOnly:date];
+        dailyCell.dailyHighLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMax.floatValue]];
+        dailyCell.dailyLowLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMin.floatValue]];
+        dailyCell.dailyWindLabel.text = [NSString stringWithFormat:@"%ld mph", (long)forecast.windSpeed.integerValue];
+        dailyCell.dailyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
+        dailyCell.dailyWxLabel.image = forecast.icon;
+        
+        return dailyCell;
     }
 }
 
@@ -83,6 +132,28 @@
     } else {
         return self.dailyWeatherArray.count;
     }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+        
+    } else {
+        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+    }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 45;
 }
 
 

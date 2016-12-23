@@ -12,6 +12,7 @@
 #import "DarkSkyAPI.h"
 #import "AppDelegate.h"
 #import "Conversions.h"
+#import "ForecastViewController.h"
 
 @import CoreLocation;
 
@@ -29,6 +30,17 @@
 
 @implementation HomeViewController
 
+- (IBAction)forecastButtonPressed:(UIButton *)sender {
+    UIStoryboard *forecastSB = [UIStoryboard storyboardWithName:@"Forecast" bundle:nil];
+    
+    ForecastViewController *forecastVC = [forecastSB instantiateViewControllerWithIdentifier:@"Forecast"];
+    
+    [self presentViewController:forecastVC animated:YES completion:nil];
+
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,10 +57,17 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-//    [DarkSkyAPI fetchDailyWeatherWithCompletion:^(Weather *weather) {
-//        NSLog(@"DAILY WEATHER FETCHED!");
-//    }];
+    
+    
+    
 }
+
+-(void)setupStoryboards {
+    UIStoryboard *forecastSB = [UIStoryboard storyboardWithName:@"Forecast" bundle:nil];
+    
+    ForecastViewController *forecastVC = [forecastSB instantiateViewControllerWithIdentifier:@"Forecast"];
+}
+
 
 -(void)setCurrentWeather:(Weather *)currentWeather {
     

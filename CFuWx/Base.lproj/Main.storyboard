@@ -144,6 +144,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ForecastButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-ZR-e7Q">
+                                <rect key="frame" x="154.5" y="28" width="65" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Forecast">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forecastButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLS-Jj-aGj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,10 +164,12 @@
                             <constraint firstItem="hjg-gg-Tuw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FR3-fs-faq"/>
                             <constraint firstItem="Ciq-OY-ANU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J9s-fg-YeP"/>
                             <constraint firstItem="2mH-Ni-r75" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kz1-uS-RSs"/>
+                            <constraint firstItem="w0L-ZR-e7Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OEk-Q2-X6P"/>
                             <constraint firstItem="P2N-8t-O7a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S08-wG-wk0"/>
                             <constraint firstItem="P2N-8t-O7a" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="UUS-tD-fU3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2mH-Ni-r75" secondAttribute="bottom" id="amh-Fj-OEA"/>
                             <constraint firstItem="Ciq-OY-ANU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="flQ-rr-aTn"/>
+                            <constraint firstItem="w0L-ZR-e7Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="p4U-HL-G0C"/>
                             <constraint firstAttribute="trailing" secondItem="Ciq-OY-ANU" secondAttribute="trailing" id="pvS-uy-HnQ"/>
                             <constraint firstItem="P2N-8t-O7a" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="v7i-GZ-ztw"/>
                             <constraint firstItem="hjg-gg-Tuw" firstAttribute="top" secondItem="Ciq-OY-ANU" secondAttribute="bottom" constant="8" id="xla-VH-ZMD"/>

@@ -11,14 +11,10 @@
 
 @implementation Weather
 
-
-
--(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary{
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude {
     self = [super init];
     
     if(self){
-        _latitude = jsonDictionary[@"latitude"];
-        _longitude = jsonDictionary[@"longitude"];
         _temperature = jsonDictionary[@"temperature"];
         _precipProbability = jsonDictionary[@"precipProbability"];
         _humidity = jsonDictionary[@"humidity"];
@@ -30,6 +26,8 @@
         _icon = [self getWeatherIcon:jsonDictionary[@"icon"]];
         _temperatureMax = jsonDictionary[@"temperatureMax"];
         _temperatureMin = jsonDictionary[@"temperatureMin"];
+        _latitude = latitude;
+        _longitude = longitude;
         }
     return self;
 }
