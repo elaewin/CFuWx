@@ -30,72 +30,43 @@
     self.searchBar.delegate = self;
 }
 
-
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"%@", self.tabBarController.viewControllers.firstObject);
     __weak typeof(self) bruce = self;
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     
-    [[LocationManager sharedManager] getLocationFrom:searchBar.text];
-    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         __strong typeof(bruce) hulk = bruce;
-        CLLocation *newLocation = [[LocationManager sharedManager] getLocationForLatitude:weather.latitude.floatValue andLongitude:weather.longitude.floatValue];
-        [[LocationManager sharedManager] setCurrentLocation:newLocation];
-        NSArray *viewControllers = [hulk.tabBarController viewControllers];
-        HomeViewController *homeView = (HomeViewController *)viewControllers[0];
-        homeView.currentWeather = weather;
-        [self.tabBarController setSelectedIndex:0];
+        if(placemarks.count > 0) {
+            CLLocation *location = placemarks.lastObject.location;
+            CLLocation *newLocation = location;
+            NSLog(@"newLocation %@",newLocation);
+            [[LocationManager sharedManager] setCurrentLocation:newLocation];
+            NSArray *viewControllers = [hulk.tabBarController viewControllers];
+            
+            NSLog(@"The location is %@",location);
+            [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+                __strong typeof(bruce) hulk = bruce;
+                NSLog(@"the weather is %@",weather);
+                
+                HomeViewController *homeView = (HomeViewController *)viewControllers[0];
+                homeView.currentWeather = weather;
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"WeBeFinished"
+                 object:hulk];
+                NSLog(@"The weather is %@",weather.temperature);
+                [hulk.tabBarController setSelectedIndex:0];
+            }];
+            
+        }
+        
     }];
-    
-    
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-//    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
-//    
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
-//    request.predicate = [NSPredicate predicateWithFormat:@"Location.locationName == %@", _searchBar.text];
-//    
-//    NSError *error;
-//    NSArray *results = [context executeFetchRequest:request error:&error];
-//    
-//    if(!error){
-//        NSLog(@"RESULTS: %@", results);
-//    }
-
 }
-
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
 //    [self.view endEditing:YES];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

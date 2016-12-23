@@ -42,26 +42,22 @@
 -(void)bootstrapApp{
     self.homeViewController = (UITabBarController *)self.window.rootViewController;
     
-    __weak typeof(self) bruce = self;
-    [DarkSkyAPI fetchCurrentWeatherOnLoad:^(Weather *currentWeather) {
-        __strong typeof(bruce) hulk = bruce;
-        
-        HomeViewController *homeController = hulk.homeViewController.viewControllers.firstObject;
-        homeController.currentWeather = currentWeather;
-    }];
+    NSManagedObjectContext *context = self.persistentContainer.viewContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
     
     NSError *error;
     NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request error:&error];
+    NSLog(@"NUMBER OF LOCATION ITEMS IN CORE DATA: %ld", (long)count);
     
     if(error){
         NSLog(@"Error Fetching Locations From Core Data");
     }
     
-    if(count == 0){
+    if(count == 0) {
         
         NSLog(@"COUNT = ZERO!!");
+        
         Location *startLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.persistentContainer.viewContext];
         
         startLocation.locationName = @"Seattle";
@@ -76,8 +72,40 @@
         } else {
             NSLog(@"Save Unsuccessful - Save Error: %@", saveError.localizedDescription);
         }
+        
+        CLLocation *startingLocation = [[CLLocation alloc]initWithLatitude:47.618335 longitude:-122.352264];
+        [[LocationManager sharedManager] setCurrentLocation:startingLocation];
+        
+        __weak typeof(self) bruce = self;
+        [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+            __strong typeof(bruce) hulk = bruce;
+            
+            HomeViewController *homeController = hulk.homeViewController.viewControllers.firstObject;
+            homeController.currentWeather = weather;
+            
+        }];
+    } else {
+        
+        NSLog(@"CORE DATA EXISTS!");
+        NSLog(@"%@", request);
+        
+        NSError *fetchError;
+        NSArray *results = [self.persistentContainer.viewContext executeFetchRequest:request error:&fetchError];
+        
+        Location *storedLocation = results.firstObject;
+        
+        CLLocation *startingLocation = [[CLLocation alloc]initWithLatitude:storedLocation.latitude longitude:storedLocation.longitude];
+        [[LocationManager sharedManager] setCurrentLocation:startingLocation];
+        
+        __weak typeof(self) bruce = self;
+        
+        [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+            __strong typeof(bruce) hulk = bruce;
+            
+            HomeViewController *homeController = hulk.homeViewController.viewControllers.firstObject;
+            homeController.currentWeather = weather;
+        }];
     }
-    
 }
 
 

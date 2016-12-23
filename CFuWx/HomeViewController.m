@@ -64,6 +64,7 @@
 
 -(void)setCurrentWeather:(Weather *)currentWeather {
     _currentWeather = currentWeather;
+    NSLog(@"CURRENT WEATHER UPDATE LOCATION: %@, %@", currentWeather.latitude, currentWeather.longitude);
     [self.tableView reloadData];
 }
 
