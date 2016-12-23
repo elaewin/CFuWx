@@ -72,6 +72,13 @@
     UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
+    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+        
+    } else {
+        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+    }
+    
     [self getDailyWeatherData];
 }
 
@@ -113,7 +120,7 @@
         hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourOnly:date];
         hourlyCell.hourlyTempLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperature.floatValue]];
         hourlyCell.hourlyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
-        hourlyCell.hourlyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
+        hourlyCell.hourlyPrecipLabel.text = [NSString stringWithFormat:@"%@%%", [Conversions convertToPercentage:forecast.precipProbability.floatValue]];
         hourlyCell.hourlyWxLabel.image = forecast.icon;
         
         return hourlyCell;
@@ -128,7 +135,7 @@
         dailyCell.dailyHighLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMax.floatValue]];
         dailyCell.dailyLowLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperatureMin.floatValue]];
         dailyCell.dailyWindLabel.text = [NSString stringWithFormat:@"%ld mph", (long)forecast.windSpeed.integerValue];
-        dailyCell.dailyPrecipLabel.text = [NSString stringWithFormat:@"%ld\%%", (long)forecast.precipProbability.integerValue];
+        dailyCell.dailyPrecipLabel.text = [NSString stringWithFormat:@"%@%%", [Conversions convertToPercentage:forecast.precipProbability.floatValue]];
         dailyCell.dailyWxLabel.image = forecast.icon;
         
         return dailyCell;
@@ -147,23 +154,24 @@
     return 1;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
-        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
-        
-    } else {
-        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
-    }
-}
+
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    
+//    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+//        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+//        
+//    } else {
+//        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+//    }
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 65;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 45;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 45;
+//}
 
 
 @end

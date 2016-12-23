@@ -104,7 +104,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0h-z0-3dG" userLabel="ForecastTableView">
-                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -118,7 +118,7 @@
                             <constraint firstItem="fMK-Qh-XVs" firstAttribute="leading" secondItem="T7e-dU-IZB" secondAttribute="leading" id="KKb-cf-djG"/>
                             <constraint firstItem="RGt-RF-Gwa" firstAttribute="top" secondItem="U0h-z0-3dG" secondAttribute="bottom" id="Ulb-x9-MvU"/>
                             <constraint firstItem="FVi-m5-ciH" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" id="XfM-tZ-7pz"/>
-                            <constraint firstItem="U0h-z0-3dG" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" multiplier="0.75" id="aHh-oN-t8u"/>
+                            <constraint firstItem="U0h-z0-3dG" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" multiplier="0.7" id="aHh-oN-t8u"/>
                             <constraint firstItem="U0h-z0-3dG" firstAttribute="centerX" secondItem="T7e-dU-IZB" secondAttribute="centerX" id="c19-Yt-R5b"/>
                             <constraint firstAttribute="trailing" secondItem="fMK-Qh-XVs" secondAttribute="trailing" id="hDW-Y8-Cdh"/>
                             <constraint firstItem="fMK-Qh-XVs" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" multiplier="0.22" id="jBl-Ql-Q2D"/>
