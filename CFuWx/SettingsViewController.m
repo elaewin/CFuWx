@@ -34,6 +34,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"%@", self.tabBarController.viewControllers.firstObject);
     __weak typeof(self) bruce = self;
+    
     [[LocationManager sharedManager] getLocationFrom:searchBar.text];
     [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
         __strong typeof(bruce) hulk = bruce;
