@@ -39,6 +39,7 @@
     [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
         __strong typeof(bruce) hulk = bruce;
         CLLocation *newLocation = [[LocationManager sharedManager] getLocationForLatitude:weather.latitude.floatValue andLongitude:weather.longitude.floatValue];
+        NSLog(@"CURRENT WEATHER TEMP: %@", weather.temperature);
         [[LocationManager sharedManager] setCurrentLocation:newLocation];
         NSArray *viewControllers = [hulk.tabBarController viewControllers];
         HomeViewController *homeView = (HomeViewController *)viewControllers[0];
@@ -67,35 +68,6 @@
     [searchBar resignFirstResponder];
 //    [self.view endEditing:YES];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
