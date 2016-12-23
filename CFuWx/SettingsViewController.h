@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LocationManager.h"
 
 @interface SettingsViewController : UIViewController
-
-
-
--(void)searchButtonClicked:(UISearchBar *)searchBar;
-
 
 
 @end
