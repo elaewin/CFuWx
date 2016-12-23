@@ -13,7 +13,6 @@
 
 @property(strong, nonatomic)CLLocationManager *locationManager;
 @property(strong, nonatomic)CLPlacemark *placemark;
-@property(strong, nonatomic) CLLocation *currentLocation;
 
 @end
 

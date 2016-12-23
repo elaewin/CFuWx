@@ -45,7 +45,6 @@
     [super viewDidLoad];
     
     self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rickykharawala"]];
-//    [[LocationManager alloc]init];
     
     self.altimeter = [[Altimeter alloc]init];
     
@@ -69,7 +68,7 @@
 }
 
 -(NSString *)getLocationText {
-    CLLocation *location = [[LocationManager sharedManager] getLocationForLatitude:self.currentWeather.latitude.floatValue andLongitude:self.currentWeather.longitude.floatValue];
+    CLLocation *location = [[LocationManager sharedManager] currentLocation];
     return [[LocationManager sharedManager] reverseGeocode:location];
 }
 
