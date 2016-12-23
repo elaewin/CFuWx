@@ -113,6 +113,12 @@
     return seattle;
 }
 
+-(CLLocation *)getLocationForLatitude:(double)latitude andLongitude:(double)longitude{
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+    return location;
+}
+
+
 //MARK: CLLocationManager Delegate Methods Go Here:
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
