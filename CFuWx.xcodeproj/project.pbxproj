@@ -59,7 +59,6 @@
 		7CD83DA31E0B43F1009BE48F /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83DA21E0B43F1009BE48F /* DailyTableViewCell.xib */; };
 		7CD83DA81E0B6CCA009BE48F /* HourlyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD83DA71E0B6CCA009BE48F /* HourlyTableViewCell.m */; };
 		7CD83DAB1E0B6CFD009BE48F /* DailyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD83DAA1E0B6CFD009BE48F /* DailyTableViewCell.m */; };
-		7CD83DAF1E0B893D009BE48F /* HourlyBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD83DAE1E0B893D009BE48F /* HourlyBackground.xib */; };
 		7CF703561E09FEC800354143 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF703551E09FEC800354143 /* LocationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -157,7 +156,6 @@
 		7CD83DA71E0B6CCA009BE48F /* HourlyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyTableViewCell.m; sourceTree = "<group>"; };
 		7CD83DA91E0B6CFD009BE48F /* DailyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTableViewCell.h; sourceTree = "<group>"; };
 		7CD83DAA1E0B6CFD009BE48F /* DailyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTableViewCell.m; sourceTree = "<group>"; };
-		7CD83DAE1E0B893D009BE48F /* HourlyBackground.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyBackground.xib; sourceTree = "<group>"; };
 		7CF703541E09FEC800354143 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		7CF703551E09FEC800354143 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,7 +326,6 @@
 			children = (
 				7CD83DA61E0B6CCA009BE48F /* HourlyTableViewCell.h */,
 				7CD83DA71E0B6CCA009BE48F /* HourlyTableViewCell.m */,
-				7CD83DAE1E0B893D009BE48F /* HourlyBackground.xib */,
 				7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */,
 				7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */,
 			);
@@ -447,7 +444,6 @@
 				0180B82C1E088C5E00B63BE8 /* forecast.JSON in Resources */,
 				7CD83D9C1E0B431B009BE48F /* HourlyTableViewCell.xib in Resources */,
 				7CD83DA11E0B43E5009BE48F /* DailyRowTitles.xib in Resources */,
-				7CD83DAF1E0B893D009BE48F /* HourlyBackground.xib in Resources */,
 				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
 				7CD83D961E0B427C009BE48F /* Header.xib in Resources */,

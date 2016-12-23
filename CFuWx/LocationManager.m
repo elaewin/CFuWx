@@ -63,7 +63,7 @@
 -(CLLocationCoordinate2D)returnCurrentCoordinate {
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
 
-    NSLog(@"CURRENT COORDINATE: %@", self.currentLocation);
+//    NSLog(@"CURRENT COORDINATE: %@", self.currentLocation);
 
     return coordinate;
 }
@@ -94,10 +94,10 @@
             hulk.placemark = [placemarks lastObject];
             
 
-            NSLog(@"city: %@", hulk.placemark.locality);                    //city name
+//            NSLog(@"city: %@", hulk.placemark.locality);                    //city name
 //            NSLog(@"timeZone: %@", hulk.placemark.timeZone);                //time zone
 //            NSLog(@"region: %@", hulk.placemark.region);                    //CLCircularRegion(lat, long, radius(of region))
-            NSLog(@"state: %@", hulk.placemark.administrativeArea);         //state
+//            NSLog(@"state: %@", hulk.placemark.administrativeArea);         //state
 //            NSLog(@"county: %@", hulk.placemark.subAdministrativeArea);     //county
 //            NSLog(@"country: %@", hulk.placemark.country);                  //country
 //            NSLog(@"zip: %@", hulk.placemark.postalCode);                   //zip code
@@ -120,7 +120,7 @@
 
     
     // Need to refactor for any of the fetch methods.
-    NSLog(@"%@", self.currentLocation);
+//    NSLog(@"%@", self.currentLocation);
     [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
         NSLog(@"%@", weather);
     }];

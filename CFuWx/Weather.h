@@ -30,5 +30,5 @@
 
 
 -(UIImage *)getWeatherIcon:(NSString *)iconName;
--(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary;
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude;
 @end
