@@ -10,6 +10,8 @@
 #import "HomeViewController.h"
 #import "AppDelegate.h"
 #import "Location+CoreDataClass.h"
+#import "LocationManager.h"
+#import "DarkSkyAPI.h"
 
 
 @interface SettingsViewController ()<UISearchBarDelegate>
@@ -29,7 +31,14 @@
 }
 
 
--(void)searchButtonClicked:(UISearchBar *)keySearchBar {
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    __weak typeof(self) bruce = self;
+    [[LocationManager sharedManager] getLocationFrom:searchBar.text];
+    [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
+        __strong typeof(bruce) hulk = bruce;
+        hulk.tabBarController.
+    }];
+    
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
@@ -47,17 +56,9 @@
 }
 
 
-
--(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
-    [searchBar resignFirstResponder];
-    [self.view endEditing:YES];
-}
-
-
-
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-    [self.view endEditing:YES];
+//    [self.view endEditing:YES];
 }
 
 
