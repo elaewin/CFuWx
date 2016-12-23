@@ -99,10 +99,14 @@
     
     UIImage *homeTabImage = [UIImage imageNamed:@"home-page"];
     [[rootController.tabBar.items objectAtIndex:0] setImage:homeTabImage];
+    
     UIImage *textMenuImage = [UIImage imageNamed:@"menu"];
     [[rootController.tabBar.items objectAtIndex:1] setImage:textMenuImage];
+    [[rootController.tabBar.items objectAtIndex:1] setTitle:@"Text Forecasts"];
+    
     UIImage *settingsGearImage = [UIImage imageNamed:@"settings-work-tool"];
     [[rootController.tabBar.items objectAtIndex:2] setImage:settingsGearImage];
+    [[rootController.tabBar.items objectAtIndex:2] setTitle:@"Settings"];
     
     rootController.tabBar.backgroundColor = [UIColor clearColor];
     rootController.tabBar.tintColor = [UIColor whiteColor];

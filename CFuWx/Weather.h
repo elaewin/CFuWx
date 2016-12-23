@@ -12,6 +12,7 @@
 @interface Weather : NSObject
 
 @property(strong, nonatomic) NSNumber *temperature;
+@property(strong, nonatomic) NSNumber *apparentTemperature;
 @property(strong, nonatomic) NSNumber *precipProbability;
 @property(strong, nonatomic) NSNumber *humidity;
 @property(strong, nonatomic) NSNumber *windSpeed;

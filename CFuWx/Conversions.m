@@ -146,4 +146,21 @@
     return [formatter stringFromDate:date];
 }
 
+// Convert degrees to bearing
++(NSString *)windDirectionFromDegrees:(double)degrees {
+    NSArray *directions = @[@"N", @"NNE", @"NE", @"ENE", @"E", @"ESE", @"SE", @"SSE", @"S", @"SSW", @"SW", @"WSW", @"W", @"WNW", @"NW", @"NNW"];
+    
+    int i = (degrees + 11.25)/22.5;
+    return directions[i % 16];
+}
+
+// Convert decimal number into percentage
++(NSString *)convertToPercentage:(double)decimal {
+    double percentage = (decimal * 100);
+    return [Conversions formatToOneDecimal:percentage];
+}
+
+
+
+
 @end

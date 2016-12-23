@@ -16,6 +16,7 @@
     
     if(self){
         _temperature = jsonDictionary[@"temperature"];
+        _apparentTemperature = jsonDictionary[@"apparentTemperature"];
         _precipProbability = jsonDictionary[@"precipProbability"];
         _humidity = jsonDictionary[@"humidity"];
         _windSpeed = jsonDictionary[@"windSpeed"];
