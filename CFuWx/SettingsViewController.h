@@ -11,8 +11,10 @@
 
 @interface SettingsViewController : UIViewController
 
-@property(strong, nonatomic) UISearchBar *searchBar;
+
 
 -(void)searchButtonClicked:(UISearchBar *)searchBar;
+
+
 
 @end

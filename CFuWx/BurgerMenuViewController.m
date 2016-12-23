@@ -57,7 +57,8 @@ NSTimeInterval kMenuShowHideItemsDuration = 0.3;
     }];
 }
 
-- (IBAction)burgerButtonPressed:(UIButton *)sender {
+- (IBAction)burgerPressed:(id)sender {
+
     NSLog(@"Burger pressed");
     for (UIView *stackItem in self.stackViews) {
         if (stackItem.hidden) {
@@ -66,7 +67,43 @@ NSTimeInterval kMenuShowHideItemsDuration = 0.3;
             [stackItem setHidden:YES];
         }
     }
-    // show all of the other buttons here.
 }
+
+
+- (IBAction)homePressed:(id)sender {
+    NSLog(@"Home Button Pressed");
+    
+    
+    
+}
+
+
+- (IBAction)forecastPressed:(id)sender {
+    
+    
+    
+}
+
+
+- (IBAction)settingsPressed:(id)sender {
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

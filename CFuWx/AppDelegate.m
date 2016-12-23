@@ -13,6 +13,7 @@
 #import "Weather.h"
 #import "HomeViewController.h"
 #import "SettingsViewController.h"
+#import "ForecastViewController.h"
 #import "LocationManager.h"
 #import "Location+CoreDataClass.h"
 
@@ -34,6 +35,7 @@
     }]];
 
     [self bootstrapApp];
+    [self setUpTabBarControllerAsRoot];
     return YES;
 }
 
@@ -75,6 +77,34 @@
         NSLog(@"Save Unsuccessful - Save Error: %@", saveError.localizedDescription);
     }
 }
+
+
+-(void)setUpTabBarControllerAsRoot {
+    
+    self.window = [[UIWindow alloc]init];
+    
+    UITabBarController *rootController = [[UITabBarController alloc]init];
+    
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *settingsStoryBoard = [UIStoryboard storyboardWithName:@"Settings" bundle:nil];
+    UIStoryboard *forecastStoryBoard = [UIStoryboard storyboardWithName:@"Forecast" bundle:nil];
+    
+    UIViewController *homeViewController = [mainStoryBoard instantiateInitialViewController];
+    UIViewController *settingsViewController = [settingsStoryBoard instantiateInitialViewController];
+    UIViewController *forecastViewController = [forecastStoryBoard instantiateInitialViewController];
+    
+    rootController.viewControllers = @[homeViewController, forecastViewController, settingsViewController];
+    
+    self.window.rootViewController = rootController;
+    [self.window makeKeyAndVisible];
+    
+}
+
+
+
+
+
+
 
 
 
