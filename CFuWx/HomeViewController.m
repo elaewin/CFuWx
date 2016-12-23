@@ -76,7 +76,7 @@
     
     if(indexPath.row == 0) {
         TopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[self.currentWeather.time doubleValue]];
+        NSDate *date = [NSDate date];
         
         cell.time.text = [NSString stringWithFormat:@"Forecast at %@", [Conversions convertToReadableTime:date]];
         cell.date.text = [Conversions convertToReadableDate:date];

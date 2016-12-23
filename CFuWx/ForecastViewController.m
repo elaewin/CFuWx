@@ -57,6 +57,8 @@
     self.forecastTableView.dataSource = self;
     self.forecastTableView.delegate = self;
     
+    NSDate *date = [NSDate date];
+    self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
     
     UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
@@ -158,31 +160,31 @@
     return 45;
 }
 
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    for (UITableViewCell *cell in self.forecastTableView.visibleCells) {
-        CGFloat hiddenFrameHeight = scrollView.contentOffset.y + self.navigationController.navigationBar.frame.size.height - cell.frame.origin.y;
-        if (hiddenFrameHeight >= 0 || hiddenFrameHeight <= cell.frame.size.height) {
-            [self maskCell:cell fromTopWithMargin:hiddenFrameHeight];
-        }
-    }
-}
-
-- (void)maskCell:(UITableViewCell *)cell fromTopWithMargin:(CGFloat)margin
-{
-    cell.layer.mask = [self visibilityMaskForCell:cell withLocation:margin/cell.frame.size.height];
-    cell.layer.masksToBounds = YES;
-}
-
-- (CAGradientLayer *)visibilityMaskForCell:(UITableViewCell *)cell withLocation:(CGFloat)location
-{
-    CAGradientLayer *mask = [CAGradientLayer layer];
-    mask.frame = cell.bounds;
-    mask.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:1 alpha:0] CGColor], (id)[[UIColor colorWithWhite:1 alpha:1] CGColor], nil];
-    mask.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:location], [NSNumber numberWithFloat:location], nil];
-    return mask;
-}
+//#pragma mark - UIScrollViewDelegate
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    for (UITableViewCell *cell in self.forecastTableView.visibleCells) {
+//        CGFloat hiddenFrameHeight = scrollView.contentOffset.y + self.navigationController.navigationBar.frame.size.height - cell.frame.origin.y;
+//        if (hiddenFrameHeight >= 0 || hiddenFrameHeight <= cell.frame.size.height) {
+//            [self maskCell:cell fromTopWithMargin:hiddenFrameHeight];
+//        }
+//    }
+//}
+//
+//- (void)maskCell:(UITableViewCell *)cell fromTopWithMargin:(CGFloat)margin
+//{
+//    cell.layer.mask = [self visibilityMaskForCell:cell withLocation:margin/cell.frame.size.height];
+//    cell.layer.masksToBounds = YES;
+//}
+//
+//- (CAGradientLayer *)visibilityMaskForCell:(UITableViewCell *)cell withLocation:(CGFloat)location
+//{
+//    CAGradientLayer *mask = [CAGradientLayer layer];
+//    mask.frame = cell.bounds;
+//    mask.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithWhite:1 alpha:0] CGColor], (id)[[UIColor colorWithWhite:1 alpha:1] CGColor], nil];
+//    mask.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:location], [NSNumber numberWithFloat:location], nil];
+//    return mask;
+//}
 @end
 
 

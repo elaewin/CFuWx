@@ -19,7 +19,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _location.text = _homeViewController.currentCity;
+    self.location.text = _homeViewController.currentCity;
+    
     
     NSLog(@"AWAKE FROM NIB: %@", _homeViewController.currentCity);
 }
