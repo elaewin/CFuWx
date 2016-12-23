@@ -32,26 +32,31 @@
 
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%@", self.tabBarController.viewControllers.firstObject);
     __weak typeof(self) bruce = self;
     [[LocationManager sharedManager] getLocationFrom:searchBar.text];
     [DarkSkyAPI fetchCurrentWeatherWithCompletion:^(Weather *weather) {
         __strong typeof(bruce) hulk = bruce;
-        hulk.tabBarController.
+        NSArray *viewControllers = [hulk.tabBarController viewControllers];
+        HomeViewController *homeView = (HomeViewController *)viewControllers[0];
+        homeView.currentWeather = weather;
+        [self.tabBarController setSelectedIndex:0];
+    
     }];
     
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
-    request.predicate = [NSPredicate predicateWithFormat:@"Location.locationName == %@", _searchBar.text];
-    
-    NSError *error;
-    NSArray *results = [context executeFetchRequest:request error:&error];
-    
-    if(!error){
-        NSLog(@"RESULTS: %@", results);
-    }
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+//    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+//    
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
+//    request.predicate = [NSPredicate predicateWithFormat:@"Location.locationName == %@", _searchBar.text];
+//    
+//    NSError *error;
+//    NSArray *results = [context executeFetchRequest:request error:&error];
+//    
+//    if(!error){
+//        NSLog(@"RESULTS: %@", results);
+//    }
 
 }
 

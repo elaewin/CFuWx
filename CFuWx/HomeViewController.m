@@ -14,6 +14,7 @@
 #import "Conversions.h"
 #import "BurgerMenuViewController.h"
 #import "ForecastViewController.h"
+#import "SettingsViewController.h"
 
 @import CoreLocation;
 
