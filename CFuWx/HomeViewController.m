@@ -57,6 +57,12 @@
     self.tableView.dataSource = self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 -(void)setCurrentWeather:(Weather *)currentWeather {
     _currentWeather = currentWeather;
     [self.tableView reloadData];
