@@ -46,6 +46,9 @@
                                         <state key="normal" title="HOURLY">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="hourlyForecastButtonPressed:" destination="PR9-Na-xwU" eventType="touchUpInside" id="aMd-ZZ-aUE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-hh-cEB">
                                         <rect key="frame" x="190.5" y="25" width="168.5" height="117"/>
@@ -54,6 +57,9 @@
                                         <state key="normal" title="DAILY">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dailyForecastButtonPressed:" destination="PR9-Na-xwU" eventType="touchUpInside" id="TQi-tu-f8P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

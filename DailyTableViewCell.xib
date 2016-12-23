@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,41 +19,41 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0nz-UW-XVu">
-                        <rect key="frame" x="8" y="0.0" width="383" height="54.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="0nz-UW-XVu">
+                        <rect key="frame" x="16" y="5.5" width="343" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-xd-Dcf">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="54.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44dF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-ZC-SG8">
-                                <rect key="frame" x="64" y="0.0" width="63.5" height="54.5"/>
+                                <rect key="frame" x="58" y="0.0" width="52.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33dF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OEa-SV-MGy">
-                                <rect key="frame" x="127.5" y="0.0" width="64" height="54.5"/>
+                                <rect key="frame" x="116" y="0.0" width="52.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bdF-wp-IYM">
-                                <rect key="frame" x="191.5" y="0.0" width="64" height="54.5"/>
+                                <rect key="frame" x="174.5" y="0.0" width="52.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-YA-tZC">
-                                <rect key="frame" x="255.5" y="0.0" width="63.5" height="54.5"/>
+                                <rect key="frame" x="232.5" y="0.0" width="52.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="ORu-WI-1WB">
-                                <rect key="frame" x="319" y="0.0" width="64" height="54.5"/>
+                                <rect key="frame" x="290.5" y="0.0" width="52.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -60,13 +61,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="0nz-UW-XVu" firstAttribute="height" secondItem="25r-i0-xxH" secondAttribute="height" id="6Ki-mJ-Bms"/>
-                    <constraint firstItem="0nz-UW-XVu" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" constant="8" id="8gJ-Wi-VCR"/>
+                    <constraint firstItem="xpe-ZC-SG8" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="09W-OF-RUP"/>
+                    <constraint firstItem="dgc-YA-tZC" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="0tZ-5t-Azz"/>
+                    <constraint firstItem="0nz-UW-XVu" firstAttribute="leading" secondItem="25r-i0-xxH" secondAttribute="leading" constant="16" id="56u-nj-Qxm"/>
+                    <constraint firstItem="bdF-wp-IYM" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="9eI-de-QEb"/>
                     <constraint firstItem="0nz-UW-XVu" firstAttribute="centerY" secondItem="25r-i0-xxH" secondAttribute="centerY" id="DVN-EJ-tiB"/>
-                    <constraint firstItem="0nz-UW-XVu" firstAttribute="leading" secondItem="25r-i0-xxH" secondAttribute="leading" constant="8" id="mOf-cU-5ch"/>
-                    <constraint firstAttribute="trailing" secondItem="0nz-UW-XVu" secondAttribute="trailing" constant="8" id="oJ4-9a-rnC"/>
+                    <constraint firstItem="ORu-WI-1WB" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="GJL-rY-1Xd"/>
+                    <constraint firstItem="OEa-SV-MGy" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="PIL-eW-ikp"/>
+                    <constraint firstItem="0nz-UW-XVu" firstAttribute="centerX" secondItem="25r-i0-xxH" secondAttribute="centerX" id="mMh-sc-1vN"/>
+                    <constraint firstAttribute="trailing" secondItem="0nz-UW-XVu" secondAttribute="trailing" constant="16" id="oJ4-9a-rnC"/>
+                    <constraint firstItem="ORu-WI-1WB" firstAttribute="height" secondItem="25r-i0-xxH" secondAttribute="height" multiplier="0.8" id="tYW-fa-cjo"/>
+                    <constraint firstItem="pOZ-xd-Dcf" firstAttribute="width" secondItem="25r-i0-xxH" secondAttribute="width" multiplier="0.14" id="xiP-xm-kyb"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

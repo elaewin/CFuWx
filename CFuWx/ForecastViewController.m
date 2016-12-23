@@ -31,6 +31,21 @@
 
 @implementation ForecastViewController
 
+- (IBAction)hourlyForecastButtonPressed:(UIButton *)sender {
+    if([self.forecastToDisplay isEqualToString:@"daily"]) {
+        self.forecastToDisplay = @"hourly";
+        [self getHourlyWeatherData];
+    }
+}
+
+- (IBAction)dailyForecastButtonPressed:(UIButton *)sender {
+    if([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        self.forecastToDisplay = @"daily";
+        [self getDailyWeatherData];
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,12 +54,19 @@
     self.forecastToDisplay = @"daily";
     
     self.forecastTableView.dataSource = self;
+    self.forecastTableView.delegate = self;
     
     
     UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
     UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCell"];
+    
+    UINib *hourlyHeader = [UINib nibWithNibName:@"HourlyTableViewCellHeader" bundle:nil];
+    [self.forecastTableView registerNib:hourlyHeader forCellReuseIdentifier:@"HourlyTableViewCellHeader"];
+    
+    UINib *dailyHeader = [UINib nibWithNibName:@"DailyTableViewCellHeader" bundle:nil];
+    [self.forecastTableView registerNib:dailyNib forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
     [self getDailyWeatherData];
 }
@@ -111,6 +133,14 @@
     } else {
         return self.dailyWeatherArray.count;
     }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65;
 }
 
 
