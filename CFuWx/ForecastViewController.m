@@ -59,6 +59,7 @@
     
     NSDate *date = [NSDate date];
     self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
+    self.locationLabel.text = [self getLocationText];
     
     UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
@@ -92,6 +93,11 @@
         self.dailyWeatherArray = weatherArray;
         [self.forecastTableView reloadData];
     }];
+}
+
+-(NSString *)getLocationText {
+    CLLocation *location = [[LocationManager sharedManager] currentLocation];
+    return [[LocationManager sharedManager] reverseGeocode:location];
 }
 
 //MARK: TableViewDelegate Methods
