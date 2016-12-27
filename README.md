@@ -33,7 +33,8 @@ Function to convert degrees to compass bearings from [this question on Stack Ove
 
 Background images from [Unsplash](https://unsplash.com/)
 
-Weather forecast data from the [https://darksky.net/dev/](Dark Sky API).
+Weather forecast data from the [Dark Sky API](https://darksky.net/dev/).
+
 ---
 
 ## Group Process
