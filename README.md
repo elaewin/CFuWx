@@ -2,6 +2,11 @@
 ----
 iOS version of uWx Android app (unofficial)
 
+## User Stories
+
+(Will be included soon!)
+----
+
 ## Curious about the science behind uWx?
 
 Check out these publications to learn more about how pressure observations from smartphones could improve weather forecasting.
@@ -19,10 +24,15 @@ This project is based on [uWx](https://www.cmetwx.com/), an Andriod app develope
 
 Weather icons from [Daniel Vierich](http://www.danvierich.de/weather/). Other icons from [PixelKit](http://www.iconarchive.com/show/swanky-outlines-icons-by-pixelkit/15-Light-Bulb-icon.html), [thenounproject](https://thenounproject.com/term/barometer/1841/), [Rami McMin](http://www.flaticon.com/free-icon/winds-symbol_53372), [freeicons](http://www.freeiconspng.com/free-images/timer-icon-7808), [Vectorgraphit](http://www.flaticon.com/free-icon/2-drops_15553), and [Freepik](http://www.flaticon.com/authors/freepik).
 
-Charts creates using [Charts](https://github.com/danielgindi/Charts).
+Charts will be created using [Charts](https://github.com/danielgindi/Charts).
 
 Pressure conversion formulae from [weather.gov](https://www.weather.gov/media/epz/wxcalc/pressureConversion.pdf).
 
+Function to convert degrees to compass bearings from [this question on Stack Overflow](http://stackoverflow.com/questions/13220367/cardinal-wind-direction-from-degrees).
+
+Background images from [Unsplash](https://unsplash.com/)
+
+Weather forecast data from the [https://darksky.net/dev/](Dark Sky API).
 ---
 
 ## Group Process
