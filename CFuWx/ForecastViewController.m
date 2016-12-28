@@ -80,10 +80,11 @@
     if ([self.forecastToDisplay isEqualToString:@"daily"]) {
         [self getDailyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
-        
+        [self.forecastTableView reloadData];
     } else {
         [self getHourlyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+        [self.forecastTableView reloadData];
     }
 }
 
@@ -158,7 +159,7 @@
     return 1;
 }
 
-
+// still need to fix getting headers to display properly.
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    
 //    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
