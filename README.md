@@ -31,6 +31,8 @@ Pressure conversion formulae from [weather.gov](https://www.weather.gov/media/ep
 
 Function to convert degrees to compass bearings from [this question on Stack Overflow](http://stackoverflow.com/questions/13220367/cardinal-wind-direction-from-degrees).
 
+HUGE thanks to Alex Gibson for his help in sorting out what was wrong with our search function!
+
 Background images from [Unsplash](https://unsplash.com/)
 
 Weather forecast data from the [Dark Sky API](https://darksky.net/dev/).
