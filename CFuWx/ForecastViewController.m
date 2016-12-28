@@ -68,7 +68,6 @@
     UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
-    [self getDailyWeatherData];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -79,15 +78,16 @@
     self.locationLabel.text = [self getLocationText];
     
     if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+        [self getDailyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
         
     } else {
+        [self getHourlyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
     }
 }
 
 -(void)setHourlyWeatherArray:(NSMutableArray *)hourlyWeatherArray {
-    
     [self.forecastTableView reloadData];
     _hourlyWeatherArray = hourlyWeatherArray;
 }
