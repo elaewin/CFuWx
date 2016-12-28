@@ -19,6 +19,7 @@
 		0197C2521E09CE79006D7A29 /* DarkSkyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2511E09CE79006D7A29 /* DarkSkyAPI.m */; };
 		0197C2551E09E661006D7A29 /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2541E09E661006D7A29 /* TopTableViewCell.m */; };
 		0197C2581E09E66E006D7A29 /* BottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */; };
+		550903DB1E0DB0D9009A3FA3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
@@ -38,7 +39,6 @@
 		555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
-		555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
 		55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; };
 		55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; };
 		55DC16561E09C70800E5A8A6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; };
@@ -119,7 +119,7 @@
 		555FA20A1E06FE680036FC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		555FA20D1E06FE680036FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		555FA20F1E06FE680036FC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		555FA2141E06FE680036FC1E /* CFuWxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFuWxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		555FA2141E06FE680036FC1E /* CFuWxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; includeInIndex = 0; path = CFuWxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		555FA2181E06FE680036FC1E /* CFuWxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFuWxTests.m; sourceTree = "<group>"; };
 		555FA21A1E06FE680036FC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		555FA2281E0700E90036FC1E /* Forecast.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
@@ -521,11 +521,11 @@
 				0180B8321E08F47600B63BE8 /* AboutViewTest.m in Sources */,
 				555FA2351E0701BA0036FC1E /* AboutViewController.m in Sources */,
 				0180B8341E08F48D00B63BE8 /* ForecastViewTest.m in Sources */,
+				550903DB1E0DB0D9009A3FA3 /* SettingsViewController.m in Sources */,
 				0180B8361E08F4B000B63BE8 /* HomeViewTest.m in Sources */,
 				0180B82E1E089B1F00B63BE8 /* DarkSkyTest.m in Sources */,
 				0180B8301E08F45300B63BE8 /* AltimeterTest.m in Sources */,
 				555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */,
-				555FA23D1E0701CF0036FC1E /* SettingsViewController.m in Sources */,
 				555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */,
 				55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */,
 				555FA2311E0701A70036FC1E /* HomeViewController.m in Sources */,
