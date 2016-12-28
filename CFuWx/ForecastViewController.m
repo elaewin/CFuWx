@@ -57,10 +57,6 @@
     self.forecastTableView.dataSource = self;
     self.forecastTableView.delegate = self;
     
-    NSDate *date = [NSDate date];
-    self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
-    self.locationLabel.text = [self getLocationText];
-    
     UINib *hourlyNib = [UINib nibWithNibName:@"HourlyTableViewCell" bundle:nil];
     [self.forecastTableView registerNib:hourlyNib forCellReuseIdentifier:@"HourlyTableViewCell"];
     UINib *dailyNib = [UINib nibWithNibName:@"DailyTableViewCell" bundle:nil];
@@ -72,18 +68,27 @@
     UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
-    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
-        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
-        
-    } else {
-        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
-    }
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    [self getDailyWeatherData];
+    NSDate *date = [NSDate date];
+    self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
+    self.locationLabel.text = [self getLocationText];
+    
+    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
+        [self getDailyWeatherData];
+        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+        [self.forecastTableView reloadData];
+    } else {
+        [self getHourlyWeatherData];
+        self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+        [self.forecastTableView reloadData];
+    }
 }
 
 -(void)setHourlyWeatherArray:(NSMutableArray *)hourlyWeatherArray {
-    
     [self.forecastTableView reloadData];
     _hourlyWeatherArray = hourlyWeatherArray;
 }
@@ -154,7 +159,7 @@
     return 1;
 }
 
-
+// still need to fix getting headers to display properly.
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    
 //    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
