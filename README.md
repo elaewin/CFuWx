@@ -4,7 +4,25 @@ iOS version of uWx Android app (unofficial)
 
 ## User Stories
 
-(Will be included soon!)
+#### User
+
+* I want to participate in crowd sourced weather data collection using my phone.
+* I want to check my local weather, storm warnings. 
+* I want to see current weather as well weekly forecasts for my location. 
+* I want to see the actual data that my phone is collecting. (like a chart)
+
+
+#### Developer
+
+* I want to successfully access the Dark Sky Weather API to provide my user with accurate weather data for their location. 
+* I want to create an iOS version of the uWx Android application.
+* I want to use Core Data to persist collected data on Barometric pressure via Core Motion and Core Location frameworks. 
+* I want to create an app that the UW Department of Atmospheric Sciences could potentially use.
+* I want to use Test Driven Development as I create my app.
+
+##### Stretch Goals
+* I want to provide my user with the option of changing the language that the data is displayed in.
+* I want to provide my user with the option of changing the unit of measurement that data is displayed in (F/C).
 
 ----
 
