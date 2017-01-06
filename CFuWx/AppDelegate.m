@@ -5,10 +5,10 @@
 //  Created by Erica Winberry on 12/18/16.
 //  Copyright © 2016 Erica Winberry. All rights reserved.
 //
-@import Parse;
+//@import Parse;
 
 #import "AppDelegate.h"
-#import "Credentials.h"
+//#import "Credentials.h"
 #import "DarkSkyAPI.h"
 #import "Weather.h"
 #import "HomeViewController.h"
@@ -28,11 +28,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
-        configuration.applicationId = kApplicationID;
-        configuration.clientKey =  kMasterKey;
-        configuration.server =  kServerURL;
-    }]];
+//    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+//        configuration.applicationId = kApplicationID;
+//        configuration.clientKey =  kMasterKey;
+//        configuration.server =  kServerURL;
+//    }]];
 
     [self setUpTabBarControllerAsRoot];
     [self bootstrapApp];
