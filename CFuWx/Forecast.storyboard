@@ -127,6 +127,7 @@
                             <constraint firstItem="FVi-m5-ciH" firstAttribute="centerY" secondItem="T7e-dU-IZB" secondAttribute="centerY" id="ydT-dZ-YEd"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="forecastTableView" destination="U0h-z0-3dG" id="Apn-Lr-nLt"/>
                         <outlet property="locationLabel" destination="364-DQ-n94" id="d75-hN-G12"/>
