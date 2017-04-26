@@ -20,6 +20,12 @@
 		0197C2551E09E661006D7A29 /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2541E09E661006D7A29 /* TopTableViewCell.m */; };
 		0197C2581E09E66E006D7A29 /* BottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0197C2571E09E66E006D7A29 /* BottomTableViewCell.m */; };
 		550903DB1E0DB0D9009A3FA3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
+		551C41CA1EB1487900662287 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; };
+		551C41CB1EB1487900662287 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; };
+		551C41CC1EB1487900662287 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; };
+		551C41CE1EB1488F00662287 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		551C41CF1EB1488F00662287 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		551C41D01EB1488F00662287 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		555CD9BF1E08CAC6002E72DA /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9BD1E08CAC6002E72DA /* ChartViewController.m */; };
 		555CD9C31E08CE2F002E72DA /* Altimeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555CD9C21E08CE2F002E72DA /* Altimeter.m */; };
 		555FA1FD1E06FE680036FC1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FC1E06FE680036FC1E /* main.m */; };
@@ -39,12 +45,6 @@
 		555FA2381E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA2391E0701C40036FC1E /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2371E0701C40036FC1E /* ForecastViewController.m */; };
 		555FA23C1E0701CF0036FC1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA23B1E0701CF0036FC1E /* SettingsViewController.m */; };
-		55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; };
-		55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; };
-		55DC16561E09C70800E5A8A6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; };
-		55DC16571E09C71200E5A8A6 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16511E09C70800E5A8A6 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16521E09C70800E5A8A6 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 55DC16531E09C70800E5A8A6 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55DC16601E09E37D00E5A8A6 /* Conversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DC165F1E09E37D00E5A8A6 /* Conversions.m */; };
 		55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF0DC91E0AF6FB00750E6E /* dummy.swift */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
@@ -73,15 +73,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		555CD9981E087FFC002E72DA /* CopyFiles */ = {
+		551C41CD1EB1488400662287 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55DC16591E09C71D00E5A8A6 /* Parse.framework in CopyFiles */,
-				55DC16581E09C71700E5A8A6 /* Charts.framework in CopyFiles */,
-				55DC16571E09C71200E5A8A6 /* Bolts.framework in CopyFiles */,
+				551C41CE1EB1488F00662287 /* Bolts.framework in CopyFiles */,
+				551C41CF1EB1488F00662287 /* Charts.framework in CopyFiles */,
+				551C41D01EB1488F00662287 /* Parse.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +165,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55DC16541E09C70800E5A8A6 /* Bolts.framework in Frameworks */,
-				55DC16551E09C70800E5A8A6 /* Charts.framework in Frameworks */,
-				55DC16561E09C70800E5A8A6 /* Parse.framework in Frameworks */,
+				551C41CA1EB1487900662287 /* Parse.framework in Frameworks */,
+				551C41CB1EB1487900662287 /* Charts.framework in Frameworks */,
+				551C41CC1EB1487900662287 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +363,7 @@
 				555FA1F41E06FE680036FC1E /* Sources */,
 				555FA1F51E06FE680036FC1E /* Frameworks */,
 				555FA1F61E06FE680036FC1E /* Resources */,
-				555CD9981E087FFC002E72DA /* CopyFiles */,
-				555CD99B1E0881DD002E72DA /* ShellScript */,
+				551C41CD1EB1488400662287 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -464,25 +463,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		555CD99B1E0881DD002E72DA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		555FA1F41E06FE680036FC1E /* Sources */ = {
@@ -660,7 +640,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS/",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -680,7 +663,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4YFWUVNT8L;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS/";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS/",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = CFuWx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;

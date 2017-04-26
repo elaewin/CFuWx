@@ -8,7 +8,7 @@
 //@import Parse;
 
 #import "AppDelegate.h"
-//#import "Credentials.h"
+#import "Credentials.h"
 #import "DarkSkyAPI.h"
 #import "Weather.h"
 #import "HomeViewController.h"
