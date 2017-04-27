@@ -35,7 +35,7 @@
 - (IBAction)hourlyForecastButtonPressed:(UIButton *)sender {
     if([self.forecastToDisplay isEqualToString:@"daily"]) {
         self.forecastToDisplay = @"hourly";
-        [self getHourlyWeatherData];
+        [self displayCorrectHeaders];
         [self.forecastTableView reloadData];
     }
 }
@@ -43,7 +43,7 @@
 - (IBAction)dailyForecastButtonPressed:(UIButton *)sender {
     if([self.forecastToDisplay isEqualToString:@"hourly"]) {
         self.forecastToDisplay = @"daily";
-        [self getDailyWeatherData];
+        [self displayCorrectHeaders];
         [self.forecastTableView reloadData];
     }
 }
@@ -77,9 +77,12 @@
     [super viewDidAppear:animated];
     
     NSDate *date = [NSDate date];
-    self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
+    self.timeDateLabel.text = [NSString stringWithFormat:@"%@", [Conversions convertToReadableDate:date]];
     self.locationLabel.text = [self getLocationText];
-    
+    [self displayCorrectHeaders];
+}
+
+-(void)displayCorrectHeaders {
     if ([self.forecastToDisplay isEqualToString:@"daily"]) {
         [self getDailyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
@@ -189,28 +192,24 @@
 @end
 
 
-/*
- code for background images from storm collection via unsplash
- 
- -(UIImage *)getBackgroundImage {
- //setting background to image grabbed from "Storms" collection in unsplash.com
- NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/274155"];
- 
- dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
- NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
- 
- dispatch_async(dispatch_get_main_queue(), ^{
- // Update the UI
- self.backgroundImageView.image = [UIImage imageWithData:imageData];
- });
- });
- return self.backgroundImageView.image;
- }
- 
- 
- 
- 
- */
+
+// code for background images from storm collection via unsplash
+
+//-(UIImage *)getBackgroundImage {
+////    setting background to image grabbed from "Storms" collection in unsplash.com
+//    NSURL *imageURL = [NSURL URLWithString:@"https:source.unsplash.com/collection/274155"];
+//    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+////            Update the UI
+//            self.backgroundImageView.image = [UIImage imageWithData:imageData];
+//        });
+//    });
+//    return self.backgroundImageView.image;
+//}
+//
 
 
 
