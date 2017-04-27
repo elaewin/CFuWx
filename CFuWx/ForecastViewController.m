@@ -36,6 +36,7 @@
     if([self.forecastToDisplay isEqualToString:@"daily"]) {
         self.forecastToDisplay = @"hourly";
         [self getHourlyWeatherData];
+        [self.forecastTableView reloadData];
     }
 }
 
@@ -43,6 +44,7 @@
     if([self.forecastToDisplay isEqualToString:@"hourly"]) {
         self.forecastToDisplay = @"daily";
         [self getDailyWeatherData];
+        [self.forecastTableView reloadData];
     }
 }
 
@@ -68,6 +70,7 @@
     UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -110,6 +113,10 @@
 -(NSString *)getLocationText {
     CLLocation *location = [[LocationManager sharedManager] currentLocation];
     return [[LocationManager sharedManager] reverseGeocode:location];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 //MARK: TableViewDelegate Methods
@@ -160,15 +167,15 @@
 }
 
 // still need to fix getting headers to display properly.
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
-//        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
-//        
-//    } else {
-//        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
-//    }
-//}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+        
+    } else {
+        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+    }
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 65;

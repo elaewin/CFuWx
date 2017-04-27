@@ -54,6 +54,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -72,6 +74,12 @@
     CLLocation *location = [[LocationManager sharedManager] currentLocation];
     return [[LocationManager sharedManager] reverseGeocode:location];
 }
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+//MARK: TableViewDataSource Methods
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -111,6 +119,8 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }
+
+//MARK: TableViewDelegate Methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 195;
