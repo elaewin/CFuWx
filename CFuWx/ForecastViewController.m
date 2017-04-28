@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
 @property (weak, nonatomic) IBOutlet UITableView *forecastTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -102,6 +103,7 @@
 -(void)getHourlyWeatherData {
     [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.hourlyWeatherArray = weatherArray;
+        [self getBackgroundImage];
         [self.forecastTableView reloadData];
     }];
 }
@@ -109,6 +111,7 @@
 -(void)getDailyWeatherData {
     [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.dailyWeatherArray = weatherArray;
+        [self getBackgroundImage];
         [self.forecastTableView reloadData];
     }];
 }
@@ -188,28 +191,28 @@
 //    return 45;
 //}
 
+// code for background images from collection via unsplash
+
+-(UIImage *)getBackgroundImage {
+    //    setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
+    NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            Update the UI
+            self.backgroundImageView.image = [UIImage imageWithData:imageData];
+        });
+    });
+    return self.backgroundImageView.image;
+}
+//
+
 
 @end
 
 
-
-// code for background images from storm collection via unsplash
-
-//-(UIImage *)getBackgroundImage {
-////    setting background to image grabbed from "Storms" collection in unsplash.com
-//    NSURL *imageURL = [NSURL URLWithString:@"https:source.unsplash.com/collection/274155"];
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-////            Update the UI
-//            self.backgroundImageView.image = [UIImage imageWithData:imageData];
-//        });
-//    });
-//    return self.backgroundImageView.image;
-//}
-//
 
 
 

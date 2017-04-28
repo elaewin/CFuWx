@@ -8,63 +8,45 @@
 
 #import "Conversions.h"
 
+@interface Conversions()
+
+@property(strong, nonatomic) NSDictionary *dateFormats;
+
+@end
+
 @implementation Conversions
 
-+(NSString *)formatToZeroDecimal:(double)numberToFormat {
++(NSString *)getStringFormatFrom:(double)rawDouble toPlaces:(int)decimal {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     formatter = [[NSNumberFormatter alloc]init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     formatter.allowsFloats = YES;
     formatter.usesSignificantDigits = NO;
-    formatter.minimumFractionDigits = 0;
-    formatter.maximumFractionDigits = 0;
+    formatter.minimumFractionDigits = decimal;
+    formatter.maximumFractionDigits = decimal;
     formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
+    NSNumber *number = [NSNumber numberWithDouble:rawDouble];
     return [formatter stringFromNumber:number];
+}
+
++(NSString *)formatToZeroDecimal:(double)numberToFormat {
+    return [self getStringFormatFrom:numberToFormat toPlaces:0];
 }
 
 +(NSString *)formatToOneDecimal:(double)numberToFormat {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    formatter = [[NSNumberFormatter alloc]init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    formatter.allowsFloats = YES;
-    formatter.usesSignificantDigits = NO;
-    formatter.minimumFractionDigits = 1;
-    formatter.maximumFractionDigits = 1;
-    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
-    return [formatter stringFromNumber:number];
+    return [self getStringFormatFrom:numberToFormat toPlaces:1];
 }
 
 +(NSString *)formatToTwoDecimals:(double)numberToFormat {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    formatter = [[NSNumberFormatter alloc]init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    formatter.allowsFloats = YES;
-    formatter.usesSignificantDigits = NO;
-    formatter.minimumFractionDigits = 2;
-    formatter.maximumFractionDigits = 2;
-    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
-    return [formatter stringFromNumber:number];
+    return [self getStringFormatFrom:numberToFormat toPlaces:2];
 }
 
 +(NSString *)formatToFourDecimals:(double)numberToFormat {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    formatter = [[NSNumberFormatter alloc]init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    formatter.allowsFloats = YES;
-    formatter.usesSignificantDigits = NO;
-    formatter.minimumFractionDigits = 4;
-    formatter.maximumFractionDigits = 4;
-    formatter.groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-    NSNumber *number = [NSNumber numberWithDouble:numberToFormat];
-    return [formatter stringFromNumber:number];
+    return [self getStringFormatFrom:numberToFormat toPlaces:4];
 }
 
 // Temperature Conversions from degrees Fahrenheit
 +(NSString *) convertToCelsius:(double)tempFahrenheit {
-//    double multiplier = (
     double tempCelsius = ((tempFahrenheit - 32) * 5) / 9;
     return [Conversions formatToOneDecimal:tempCelsius];
 }
@@ -138,38 +120,35 @@
     return [Conversions formatToTwoDecimals:knots];
 }
 
-// Convert Dates
-+(NSString *)convertToDayOnly:(NSDate *)date  {
+// Convert Dates & Times
++(NSString *)convertToFormattedDateOrTimeFrom:(NSDate *)date
+                       withCustomFormat:(NSString *)format {
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     [formatter setLocale:locale];
-    [formatter setDateFormat:@"EEE"];
+    [formatter setDateFormat:format];
     return [formatter stringFromDate:date];
 }
 
++(NSString *)convertToDayOnly:(NSDate *)date  {
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"EEE"];
+}
+
 +(NSString *)convertToReadableDate:(NSDate *)date  {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    [formatter setLocale:locale];
-    [formatter setDateFormat:@"EEE, MMM dd"];
-    return [formatter stringFromDate:date];
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"EEE, MMM dd"];
 }
 
 // Convert Time
 +(NSString *)convertToReadableTime:(NSDate *)date  {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    [formatter setLocale:locale];
-    [formatter setDateFormat:@"HH:mm a"];
-    return [formatter stringFromDate:date];
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"HH:mm a"];
 }
 
 +(NSString *)convertToHourOnly:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    [formatter setLocale:locale];
-    [formatter setDateFormat:@"HH:00"];
-    return [formatter stringFromDate:date];
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"HH:00"];
 }
 
 // Convert degrees to bearing
