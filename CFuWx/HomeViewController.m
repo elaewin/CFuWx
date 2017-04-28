@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -44,8 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"joy-stamp"]];
-    
     self.altimeter = [[Altimeter alloc]init];
     
     // Core Location request permission for user's current location
@@ -60,13 +59,18 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self.tableView reloadData];
 }
 
 -(void)setCurrentWeather:(Weather *)currentWeather {
     _currentWeather = currentWeather;
+    
     NSLog(@"CURRENT WEATHER UPDATE LOCATION: %@, %@", currentWeather.latitude, currentWeather.longitude);
+    
+    UIImage *backgroundImage = self.currentWeather.backgroundImage;
+    NSLog(@"background image: %@", backgroundImage.description);
+    
+    self.backgroundImageView.image = backgroundImage;
     [self.tableView reloadData];
 }
 
