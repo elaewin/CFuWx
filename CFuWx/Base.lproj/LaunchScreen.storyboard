@@ -18,12 +18,12 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleAspectFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barometer" translatesAutoresizingMaskIntoConstraints="NO" id="6J5-X7-gl0">
-                                <rect key="frame" x="37" y="20" width="300" height="467"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cfuwx-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6J5-X7-gl0">
+                                <rect key="frame" x="18.5" y="20" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -34,12 +34,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0072500552050769329" green="0.49597853422164917" blue="0.99889200925827026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6J5-X7-gl0" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.7" id="0GI-kk-OfN"/>
                             <constraint firstAttribute="trailing" secondItem="swC-bn-djX" secondAttribute="trailing" constant="16" id="2pv-pc-9IL"/>
                             <constraint firstItem="6J5-X7-gl0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="67H-iL-7I7"/>
-                            <constraint firstItem="6J5-X7-gl0" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.8" id="7Py-Mw-wj1"/>
+                            <constraint firstItem="6J5-X7-gl0" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.9" id="7Py-Mw-wj1"/>
                             <constraint firstItem="swC-bn-djX" firstAttribute="bottom" secondItem="6J5-X7-gl0" secondAttribute="bottom" id="GZp-6W-axH"/>
                             <constraint firstItem="swC-bn-djX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="d6p-5r-7lk"/>
                             <constraint firstItem="6J5-X7-gl0" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="jvl-Bm-mMX"/>
@@ -52,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barometer" width="1200" height="1200"/>
+        <image name="cfuwx-icon" width="433" height="433"/>
     </resources>
 </document>

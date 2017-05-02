@@ -128,7 +128,7 @@
 }
 
 
-//MARK: CLLocationManager Delegate Methods Go Here:
+//MARK: CLLocationManager Delegate Methods:
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self setCurrentLocation:locations.lastObject];

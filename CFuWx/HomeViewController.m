@@ -60,6 +60,9 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.tableView reloadData];
+    NSTimeInterval interval = self.currentWeather.time.floatValue;
+    NSDate *time = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSLog(@"LOCAL TIME: %@", [Conversions convertToHourAndMinutes:time]);
 }
 
 -(void)setCurrentWeather:(Weather *)currentWeather {

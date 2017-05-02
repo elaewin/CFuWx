@@ -135,7 +135,7 @@
         Weather *forecast = [self.hourlyWeatherArray objectAtIndex:indexPath.row];
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[forecast.time doubleValue]];
-        hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourOnly:date];
+        hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourAndMinutes:date];
         hourlyCell.hourlyTempLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperature.floatValue]];
         hourlyCell.hourlyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
         hourlyCell.hourlyPrecipLabel.text = [NSString stringWithFormat:@"%@%%", [Conversions convertToPercentage:forecast.precipProbability.floatValue]];
@@ -191,11 +191,28 @@
 //    return 45;
 //}
 
-// code for background images from collection via unsplash
+// code for background images from collections via unsplash
+//-(NSURL *)getURLForLocalTimeOfForecast {
+//    return [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+//}
+
 
 -(UIImage *)getBackgroundImage {
     //    setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
-    NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+    
+    NSURL *imageURL = [[NSURL alloc] init];
+    NSDate *date = [NSDate date];
+    NSString *time = [Conversions convertToHourOnly:date];
+    
+    if (time.integerValue > 6 && time.integerValue < 18) {
+        NSURL *dayURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+        imageURL = dayURL;
+    } else {
+        NSURL *nightURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/791499"];
+        imageURL = nightURL;
+    }
+
+//    NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];

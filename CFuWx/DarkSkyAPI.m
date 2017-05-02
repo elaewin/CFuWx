@@ -35,7 +35,6 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURLComponents *components = [[NSURLComponents alloc]init];
     components.scheme = @"https";
     components.host = @"api.darksky.net";
-//    components.path = [NSString stringWithFormat:@"/forecast/%@/%f,%f", @"key", coordinate.latitude, coordinate.longitude];
     components.path = [NSString stringWithFormat:@"/forecast/%@/%f,%f", kDarkSkyAPIKey, coordinate.latitude, coordinate.longitude];
     components.queryItems = @[queryItem];
     NSURL *url = components.URL;
@@ -148,7 +147,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
     [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        NSLog(@"Response: %@", response);
+        NSLog(@"Response: %@", response);
         
         if(error) {
             NSLog(@"There was a problem getting current weather data from API - Error: %@", error.localizedDescription);

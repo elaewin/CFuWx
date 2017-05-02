@@ -146,9 +146,14 @@
                                  withCustomFormat:@"HH:mm a"];
 }
 
-+(NSString *)convertToHourOnly:(NSDate *)date {
++(NSString *)convertToHourAndMinutes:(NSDate *)date {
     return [self convertToFormattedDateOrTimeFrom:date
                                  withCustomFormat:@"HH:00"];
+}
+
++(NSString *)convertToHourOnly:(NSDate *)date {
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"HH"];
 }
 
 // Convert degrees to bearing
