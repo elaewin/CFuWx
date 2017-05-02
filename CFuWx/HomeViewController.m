@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -44,8 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"joy-stamp"]];
-    
     self.altimeter = [[Altimeter alloc]init];
     
     // Core Location request permission for user's current location
@@ -54,17 +53,24 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self.tableView reloadData];
 }
 
 -(void)setCurrentWeather:(Weather *)currentWeather {
     _currentWeather = currentWeather;
+    
     NSLog(@"CURRENT WEATHER UPDATE LOCATION: %@, %@", currentWeather.latitude, currentWeather.longitude);
+    
+    UIImage *backgroundImage = self.currentWeather.backgroundImage;
+    NSLog(@"background image: %@", backgroundImage.description);
+    
+    self.backgroundImageView.image = backgroundImage;
     [self.tableView reloadData];
 }
 
@@ -72,6 +78,12 @@
     CLLocation *location = [[LocationManager sharedManager] currentLocation];
     return [[LocationManager sharedManager] reverseGeocode:location];
 }
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+//MARK: TableViewDataSource Methods
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -111,6 +123,8 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }
+
+//MARK: TableViewDelegate Methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 195;

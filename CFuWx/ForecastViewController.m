@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeDateLabel;
 @property (weak, nonatomic) IBOutlet UITableView *forecastTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -35,14 +36,16 @@
 - (IBAction)hourlyForecastButtonPressed:(UIButton *)sender {
     if([self.forecastToDisplay isEqualToString:@"daily"]) {
         self.forecastToDisplay = @"hourly";
-        [self getHourlyWeatherData];
+        [self displayCorrectHeaders];
+        [self.forecastTableView reloadData];
     }
 }
 
 - (IBAction)dailyForecastButtonPressed:(UIButton *)sender {
     if([self.forecastToDisplay isEqualToString:@"hourly"]) {
         self.forecastToDisplay = @"daily";
-        [self getDailyWeatherData];
+        [self displayCorrectHeaders];
+        [self.forecastTableView reloadData];
     }
 }
 
@@ -68,15 +71,19 @@
     UINib *dailyHeader = [UINib nibWithNibName:@"DailyRowTitles" bundle:nil];
     [self.forecastTableView registerNib:dailyHeader forCellReuseIdentifier:@"DailyTableViewCellHeader"];
     
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     NSDate *date = [NSDate date];
-    self.timeDateLabel.text = [NSString stringWithFormat:@"%@ | %@", [Conversions convertToReadableTime:date], [Conversions convertToReadableDate:date]];
+    self.timeDateLabel.text = [NSString stringWithFormat:@"%@", [Conversions convertToReadableDate:date]];
     self.locationLabel.text = [self getLocationText];
-    
+    [self displayCorrectHeaders];
+}
+
+-(void)displayCorrectHeaders {
     if ([self.forecastToDisplay isEqualToString:@"daily"]) {
         [self getDailyWeatherData];
         self.forecastTableView.tableHeaderView = [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
@@ -96,6 +103,7 @@
 -(void)getHourlyWeatherData {
     [DarkSkyAPI fetchHourlyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.hourlyWeatherArray = weatherArray;
+        [self getBackgroundImage];
         [self.forecastTableView reloadData];
     }];
 }
@@ -103,6 +111,7 @@
 -(void)getDailyWeatherData {
     [DarkSkyAPI fetchDailyWeatherWithCompletion:^(NSArray *weatherArray) {
         self.dailyWeatherArray = weatherArray;
+        [self getBackgroundImage];
         [self.forecastTableView reloadData];
     }];
 }
@@ -110,6 +119,10 @@
 -(NSString *)getLocationText {
     CLLocation *location = [[LocationManager sharedManager] currentLocation];
     return [[LocationManager sharedManager] reverseGeocode:location];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 //MARK: TableViewDelegate Methods
@@ -160,15 +173,15 @@
 }
 
 // still need to fix getting headers to display properly.
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//    if ([self.forecastToDisplay isEqualToString:@"daily"]) {
-//        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
-//        
-//    } else {
-//        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
-//    }
-//}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
+        return [[NSBundle mainBundle] loadNibNamed:@"HourlyRowTitles" owner:self options:nil].firstObject;
+        
+    } else {
+        return [[NSBundle mainBundle] loadNibNamed:@"DailyRowTitles" owner:self options:nil].firstObject;
+    }
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 65;
@@ -178,32 +191,28 @@
 //    return 45;
 //}
 
+// code for background images from collection via unsplash
+
+-(UIImage *)getBackgroundImage {
+    //    setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
+    NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            Update the UI
+            self.backgroundImageView.image = [UIImage imageWithData:imageData];
+        });
+    });
+    return self.backgroundImageView.image;
+}
+//
+
 
 @end
 
 
-/*
- code for background images from storm collection via unsplash
- 
- -(UIImage *)getBackgroundImage {
- //setting background to image grabbed from "Storms" collection in unsplash.com
- NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/274155"];
- 
- dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
- NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
- 
- dispatch_async(dispatch_get_main_queue(), ^{
- // Update the UI
- self.backgroundImageView.image = [UIImage imageWithData:imageData];
- });
- });
- return self.backgroundImageView.image;
- }
- 
- 
- 
- 
- */
 
 
 

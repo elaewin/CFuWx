@@ -44,15 +44,10 @@
 }
 
 -(UIImage *)getBackgroundImage:(NSString *)iconName {
-    NSDictionary *imageDictionary = @{@"clear-day": [UIImage imageNamed:@"clear-day"], @"clear-night": [UIImage imageNamed:@"clear-night"], @"rain": [UIImage imageNamed:@"rain"], @"snow": [UIImage imageNamed:@"snow"], @"sleet": [UIImage imageNamed:@"sleet"], @"wind": [UIImage imageNamed:@"wind"], @"fog": [UIImage imageNamed:@"fog"], @"cloudy": [UIImage imageNamed:@"cloudy"], @"partly-cloudy-day": [UIImage imageNamed:@"partly-cloudy-day"], @"partly-cloudy-night": [UIImage imageNamed:@"partly-cloudy-night"]};
+    NSDictionary *imageDictionary = @{@"clear-day": [UIImage imageNamed:@"clear-day-photo"], @"clear-night": [UIImage imageNamed:@"clear-night-photo"], @"rain": [UIImage imageNamed:@"rain-photo"], @"snow": [UIImage imageNamed:@"snow-photo"], @"sleet": [UIImage imageNamed:@"sleet-photo"], @"wind": [UIImage imageNamed:@"wind-photo"], @"fog": [UIImage imageNamed:@"fog-photo"], @"cloudy": [UIImage imageNamed:@"cloudy-photo"], @"partly-cloudy-day": [UIImage imageNamed:@"partly-cloudy-day-photo"], @"partly-cloudy-night": [UIImage imageNamed:@"partly-cloudy-night-photo"]};
     
     return [imageDictionary objectForKey:iconName];
 }
-
-
-
-
-
 
 
 @end
