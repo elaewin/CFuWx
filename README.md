@@ -5,15 +5,12 @@ iOS version of uWx Android app (unofficial)
 ## User Stories
 
 #### User
-
 * I want to participate in crowd sourced weather data collection using my phone.
 * I want to check my local weather, storm warnings. 
 * I want to see current weather as well weekly forecasts for my location. 
 * I want to see the actual data that my phone is collecting. (like a chart)
 
-
 #### Developer
-
 * I want to successfully access the Dark Sky Weather API to provide my user with accurate weather data for their location. 
 * I want to create an iOS version of the uWx Android application.
 * I want to use Core Data to persist collected data on Barometric pressure via Core Motion and Core Location frameworks. 
@@ -51,9 +48,21 @@ Function to convert degrees to compass bearings from [this question on Stack Ove
 
 HUGE thanks to Alex Gibson for his help in sorting out what was wrong with our search function!
 
-Background images from [Unsplash](https://unsplash.com/)
+Background images from [Unsplash](https://unsplash.com/), from the following photographers:
 
-Weather forecast data from the [Dark Sky API](https://darksky.net/dev/).
+* clear day - [Stephan Jola](https://unsplash.com/@beverin)
+* clear night - [Teddy Kelley](https://unsplash.com/@teddykelley)
+* rain - [Joy Stamp](https://unsplash.com/@joyfulphotos)
+* snow -  [Aaron Wilson](https://unsplash.com/@aaronwilson)
+* sleet - [Jordan Andrews](https://unsplash.com/@exit)
+* wind - [Joshua Fuller](https://unsplash.com/@joshuafuller)
+* fog - [Annie Spratt](https://unsplash.com/@anniespratt)
+* cloudy - [Anastasia Petrova](https://unsplash.com/@anastasia_p)
+* partly cloudy day - [Luca Baggio](https://unsplash.com/@luca42)
+* partly cloudy night - [Taylor Durrer](https://unsplash.com/@insrtclevrname00)
+* Daily/Hourly background images by [Alan Chen](https://unsplash.com/@chzenan), [Alessio Lin](https://unsplash.com/@paradox_zer0), [Alex Rodríguez Santibáñez](https://unsplash.com/@alexrds), [Andrew Ruiz](https://unsplash.com/@andrewruiz), [Apostol Voicu](https://unsplash.com/@cerpow), [Artem Sapegin](https://unsplash.com/@sapegin), [Brent Cox](https://unsplash.com/@brentcox), [Conrad Ziebland](https://unsplash.com/@conradz), [Crawford Ifland](https://unsplash.com/@crawfordifland), [Elena Ferrer](https://unsplash.com/@meisi_style), [Eugene Triguba](https://unsplash.com/@eugenetriguba), [Frantzou Fleurine](https://unsplash.com/@frantzou), [freestocks.org](https://unsplash.com/@freestocks), [Ivan Vranić](https://unsplash.com/@hvranic), [Jacob Dyer](https://unsplash.com/@jacobdyer), [Jamie Street](https://unsplash.com/@jamie452), [Jimmy Chang](https://unsplash.com/@photohunter), [Jonatan Pie](https://unsplash.com/@r3dmax), [Jordan Stewart](https://unsplash.com/@jordan_stewart), [Joshua K. Jackson](https://unsplash.com/@joshua), [Karsten Würth](https://unsplash.com/@inf1783), [kazuend](https://unsplash.com/@kazuend), [Kyle Gregory Devaras](https://unsplash.com/@kyledevaras), [Luca Bravo](https://unsplash.com/@lucabravo), [Marc Wieland](https://unsplash.com/@marcwieland95), [Matthew Kane](https://unsplash.com/@matthewkane), [Mike Kotsch](https://unsplash.com/@mike), [Nathan Anderson](https://unsplash.com/@nathananderson), [Neven Krcmarek](https://unsplash.com/@nevenkrcmarek), [Noah Silliman](https://unsplash.com/@noahsilliman), [Piyanut Suntaranil](https://unsplash.com/@npiyanut), [robertdb](https://unsplash.com/@robbertdb), [Seth Schwiet](https://unsplash.com/@schwiet), [Sven Scheuermeier](https://unsplash.com/@sveninho), [Tamar Waskey](https://unsplash.com/@truth99), [Vincent Guth](https://unsplash.com/@vingtcent), [Yosh Ginsu](https://unsplash.com/@yoshginsu), [Yun Xu](https://unsplash.com/@nightmare), [Zachary Young](https://unsplash.com/@mrtwisty)
+
+Powered by the [Dark Sky API](https://darksky.net/dev/).
 
 ---
 
