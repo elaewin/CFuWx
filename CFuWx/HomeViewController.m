@@ -59,6 +59,8 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"TIMEZONE: %@", [self.currentWeather timezone]);
+
     [self.tableView reloadData];
 }
 
@@ -71,6 +73,7 @@
     NSLog(@"background image: %@", backgroundImage.description);
     
     self.backgroundImageView.image = backgroundImage;
+
     [self.tableView reloadData];
 }
 

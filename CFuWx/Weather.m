@@ -11,7 +11,7 @@
 
 @implementation Weather
 
--(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude {
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude andTimezone:(NSString *)timezone {
     self = [super init];
     
     if(self){
@@ -29,6 +29,7 @@
         _temperatureMin = jsonDictionary[@"temperatureMin"];
         _sunriseTime = jsonDictionary[@"sunriseTime"];
         _sunsetTime = jsonDictionary[@"sunsetTime"];
+        _timezone = timezone;
         _latitude = latitude;
         _longitude = longitude;
         _backgroundImage = [self getBackgroundImage:jsonDictionary[@"icon"]];
