@@ -23,6 +23,8 @@
 @property(strong, nonatomic) NSNumber *time;
 @property(strong, nonatomic) NSNumber *temperatureMax;
 @property(strong, nonatomic) NSNumber *temperatureMin;
+@property(strong, nonatomic) NSNumber *sunriseTime;
+@property(strong, nonatomic) NSNumber *sunsetTime;
 
 @property(strong, nonatomic) NSString *summary;
 @property(strong, nonatomic) UIImage *icon;

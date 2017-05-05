@@ -47,8 +47,9 @@
 
 // Convert Time
 +(NSString *)convertToReadableTime:(NSDate *)date;
-+(NSString *)convertToHourAndMinutes:(NSDate *)date;
 +(NSString *)convertToHourOnly:(NSDate *)date;
++(NSString *)convertToHourAndMinutes:(NSDate *)date;
++(NSString *)convertToDetailedDateAndTime:(NSDate *)date;
 
 // Convert degrees to bearing
 +(NSString *)windDirectionFromDegrees:(double)degrees;

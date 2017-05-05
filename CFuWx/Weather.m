@@ -27,6 +27,8 @@
         _icon = [self getWeatherIcon:jsonDictionary[@"icon"]];
         _temperatureMax = jsonDictionary[@"temperatureMax"];
         _temperatureMin = jsonDictionary[@"temperatureMin"];
+        _sunriseTime = jsonDictionary[@"sunriseTime"];
+        _sunsetTime = jsonDictionary[@"sunsetTime"];
         _latitude = latitude;
         _longitude = longitude;
         _backgroundImage = [self getBackgroundImage:jsonDictionary[@"icon"]];

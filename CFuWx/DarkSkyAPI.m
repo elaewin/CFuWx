@@ -147,7 +147,7 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
     [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"Response: %@", response);
+//        NSLog(@"Response: %@", response);
         
         if(error) {
             NSLog(@"There was a problem getting current weather data from API - Error: %@", error.localizedDescription);

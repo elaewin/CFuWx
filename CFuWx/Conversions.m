@@ -146,14 +146,19 @@
                                  withCustomFormat:@"HH:mm a"];
 }
 
++(NSString *)convertToHourOnly:(NSDate *)date {
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"HH"];
+}
+
 +(NSString *)convertToHourAndMinutes:(NSDate *)date {
     return [self convertToFormattedDateOrTimeFrom:date
                                  withCustomFormat:@"HH:00"];
 }
 
-+(NSString *)convertToHourOnly:(NSDate *)date {
++(NSString *)convertToDetailedDateAndTime:(NSDate *)date {
     return [self convertToFormattedDateOrTimeFrom:date
-                                 withCustomFormat:@"HH"];
+                                 withCustomFormat:@"E, d MMM yyyy HH:mm:ss Z"];
 }
 
 // Convert degrees to bearing
