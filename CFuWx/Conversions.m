@@ -121,6 +121,12 @@
 }
 
 // Convert Dates & Times
++(NSString *)getTimeZoneDataVersion {
+    NSTimeZone *timezone = [NSTimeZone timeZoneWithName:[[LocationManager sharedManager] timezone]];
+    NSString *localeTimeZone = [timezone abbreviation];
+    return localeTimeZone;
+}
+
 +(NSString *)convertToFormattedDateOrTimeFrom:(NSDate *)date
                        withCustomFormat:(NSString *)format {
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -129,6 +135,7 @@
     [formatter setDateFormat:format];
     return [formatter stringFromDate:date];
 }
+
 
 +(NSString *)convertToDayOnly:(NSDate *)date  {
     return [self convertToFormattedDateOrTimeFrom:date

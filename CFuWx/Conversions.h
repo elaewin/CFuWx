@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocationManager.h"
 
 @interface Conversions : NSObject
 
@@ -42,6 +43,7 @@
 +(NSString *)convertToKnots:(double)miles;
 
 // Convert Dates
++(NSString *)getTimeZoneDataVersion;
 +(NSString *)convertToDayOnly:(NSDate *)date;
 +(NSString *)convertToReadableDate:(NSDate *)date;
 
