@@ -23,6 +23,9 @@
 @property(strong, nonatomic) NSNumber *time;
 @property(strong, nonatomic) NSNumber *temperatureMax;
 @property(strong, nonatomic) NSNumber *temperatureMin;
+@property(strong, nonatomic) NSNumber *sunriseTime;
+@property(strong, nonatomic) NSNumber *sunsetTime;
+@property(strong, nonatomic) NSString *timezone;
 
 @property(strong, nonatomic) NSString *summary;
 @property(strong, nonatomic) UIImage *icon;
@@ -33,5 +36,5 @@
 
 
 -(UIImage *)getWeatherIcon:(NSString *)iconName;
--(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude;
+-(instancetype)initWithDictionary:(NSDictionary *)jsonDictionary andLatitude:(NSNumber *)latitude andLongitude:(NSNumber *)longitude andTimezone:(NSString *)timezone;
 @end

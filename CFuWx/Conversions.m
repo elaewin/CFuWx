@@ -121,14 +121,23 @@
 }
 
 // Convert Dates & Times
++(NSString *)getTimeZoneDataVersion {
+    NSTimeZone *timezone = [NSTimeZone timeZoneWithName:[[LocationManager sharedManager] timezone]];
+    NSString *localTimeZone = [timezone abbreviation];
+    [NSTimeZone localTimeZone];
+    return localTimeZone;
+}
+
 +(NSString *)convertToFormattedDateOrTimeFrom:(NSDate *)date
                        withCustomFormat:(NSString *)format {
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     [formatter setLocale:locale];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:[[LocationManager sharedManager] timezone]];
     [formatter setDateFormat:format];
     return [formatter stringFromDate:date];
 }
+
 
 +(NSString *)convertToDayOnly:(NSDate *)date  {
     return [self convertToFormattedDateOrTimeFrom:date
@@ -143,12 +152,22 @@
 // Convert Time
 +(NSString *)convertToReadableTime:(NSDate *)date  {
     return [self convertToFormattedDateOrTimeFrom:date
-                                 withCustomFormat:@"HH:mm a"];
+                                 withCustomFormat:@"HH:mm"];
 }
 
 +(NSString *)convertToHourOnly:(NSDate *)date {
     return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"HH"];
+}
+
++(NSString *)convertToHourAndMinutes:(NSDate *)date {
+    return [self convertToFormattedDateOrTimeFrom:date
                                  withCustomFormat:@"HH:00"];
+}
+
++(NSString *)convertToDetailedDateAndTime:(NSDate *)date {
+    return [self convertToFormattedDateOrTimeFrom:date
+                                 withCustomFormat:@"E, d MMM yyyy HH:mm:ss Z"];
 }
 
 // Convert degrees to bearing

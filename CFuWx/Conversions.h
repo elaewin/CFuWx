@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocationManager.h"
 
 @interface Conversions : NSObject
 
@@ -42,12 +43,15 @@
 +(NSString *)convertToKnots:(double)miles;
 
 // Convert Dates
++(NSString *)getTimeZoneDataVersion;
 +(NSString *)convertToDayOnly:(NSDate *)date;
 +(NSString *)convertToReadableDate:(NSDate *)date;
 
 // Convert Time
-+(NSString *)convertToHourOnly:(NSDate *)date;
 +(NSString *)convertToReadableTime:(NSDate *)date;
++(NSString *)convertToHourOnly:(NSDate *)date;
++(NSString *)convertToHourAndMinutes:(NSDate *)date;
++(NSString *)convertToDetailedDateAndTime:(NSDate *)date;
 
 // Convert degrees to bearing
 +(NSString *)windDirectionFromDegrees:(double)degrees;

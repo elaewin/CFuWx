@@ -13,6 +13,7 @@
 @interface LocationManager : NSObject
 
 @property(strong, nonatomic) CLLocation *currentLocation;
+@property(strong, nonatomic) NSString *timezone;
 @property(strong, nonatomic) NSString *textLocation;
 
 +(instancetype)sharedManager;

@@ -38,6 +38,7 @@
         _locationManager.delegate = self;
         [self requestPermissions];
         _currentLocation = [[CLLocation alloc]initWithLatitude:47.618335 longitude:-122.352264];
+        _timezone = @"America/Los_Angeles";
     }
 
     return self;
@@ -128,7 +129,7 @@
 }
 
 
-//MARK: CLLocationManager Delegate Methods Go Here:
+//MARK: CLLocationManager Delegate Methods:
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     [self setCurrentLocation:locations.lastObject];

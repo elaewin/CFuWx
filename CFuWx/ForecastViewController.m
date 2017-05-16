@@ -13,6 +13,7 @@
 #import "DailyTableViewCell.h"
 #import "Conversions.h"
 #import "LocationManager.h"
+#import "HomeViewController.h"
 
 @interface ForecastViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -135,7 +136,7 @@
         Weather *forecast = [self.hourlyWeatherArray objectAtIndex:indexPath.row];
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[forecast.time doubleValue]];
-        hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourOnly:date];
+        hourlyCell.hourlyTimeLabel.text = [Conversions convertToHourAndMinutes:date];
         hourlyCell.hourlyTempLabel.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:forecast.temperature.floatValue]];
         hourlyCell.hourlyWindLabel.text = [NSString stringWithFormat:@"%@ mph", [Conversions formatToOneDecimal:forecast.windSpeed.floatValue]];
         hourlyCell.hourlyPrecipLabel.text = [NSString stringWithFormat:@"%@%%", [Conversions convertToPercentage:forecast.precipProbability.floatValue]];
@@ -191,18 +192,52 @@
 //    return 45;
 //}
 
-// code for background images from collection via unsplash
+// code for background images from collections via unsplash
+//-(NSURL *)getURLForLocalTimeOfForecast {
+//    return [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+//}
+-(BOOL)isItCurrentlyDaytime {
+    NSTimeInterval sunriseInterval = [self.dailyWeatherArray[0] sunriseTime].doubleValue;
+    NSTimeInterval sunsetInterval = [self.dailyWeatherArray[0] sunsetTime].doubleValue;
+    NSDate *sunriseTime = [NSDate dateWithTimeIntervalSince1970:sunriseInterval];
+    NSDate *sunsetTime = [NSDate dateWithTimeIntervalSince1970:sunsetInterval];
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"E, d MMM yyyy HH:mm:ss Z"];
+    
+    NSLog(@"Date is: %@. Sunrise is at: %@. Sunset is at: %@.", [formatter stringFromDate:date], [formatter stringFromDate:sunriseTime], [formatter stringFromDate:sunsetTime]);
+    
+    if (([date compare:sunriseTime] == NSOrderedAscending) || ([date compare:sunsetTime] == NSOrderedDescending)) {
+        NSLog(@"It's night.");
+        return NO;
+    } else {
+        NSLog(@"It's day.");
+        return YES;
+    }
+}
 
 -(UIImage *)getBackgroundImage {
     //    setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
-    NSURL *imageURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
     
+    NSURL *imageURL = [[NSURL alloc] init];
+    
+    if ([self isItCurrentlyDaytime]) {
+        NSURL *dayURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
+        imageURL = dayURL;
+    } else {
+        NSURL *nightURL = [NSURL URLWithString:@"https://source.unsplash.com/collection/791499"];
+        imageURL = nightURL;
+    }
+    
+    __weak typeof(self) bruce = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         
+        __strong typeof(bruce) hulk = bruce;
         dispatch_async(dispatch_get_main_queue(), ^{
             //            Update the UI
-            self.backgroundImageView.image = [UIImage imageWithData:imageData];
+            hulk.backgroundImageView.image = [UIImage imageWithData:imageData];
         });
     });
     return self.backgroundImageView.image;

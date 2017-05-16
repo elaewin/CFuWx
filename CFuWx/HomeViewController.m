@@ -59,6 +59,8 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"TIMEZONE: %@ - ABBREVIATION: %@", [self.currentWeather timezone], [Conversions getTimeZoneDataVersion]);
+
     [self.tableView reloadData];
 }
 
@@ -68,9 +70,9 @@
     NSLog(@"CURRENT WEATHER UPDATE LOCATION: %@, %@", currentWeather.latitude, currentWeather.longitude);
     
     UIImage *backgroundImage = self.currentWeather.backgroundImage;
-    NSLog(@"background image: %@", backgroundImage.description);
     
     self.backgroundImageView.image = backgroundImage;
+
     [self.tableView reloadData];
 }
 
@@ -91,8 +93,8 @@
         TopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
         NSDate *date = [NSDate date];
         
-        cell.time.text = [NSString stringWithFormat:@"Forecast at %@", [Conversions convertToReadableTime:date]];
-        cell.date.text = [Conversions convertToReadableDate:date];
+        NSString *time = [Conversions convertToReadableTime:date];
+        cell.date.text = [NSString stringWithFormat:@"%@ at %@", [Conversions convertToReadableDate:date], time];
         cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
         cell.location.text = [self getLocationText];
         [cell.weatherIconImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
