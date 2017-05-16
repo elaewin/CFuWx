@@ -94,6 +94,8 @@ NSString *kBaseURL = @"https://api.darkysky.net/forecast/";
             } else {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     Weather *currentWeather = [[Weather alloc]initWithDictionary:[json valueForKey:@"currently"] andLatitude:json[@"latitude"] andLongitude:json[@"longitude"] andTimezone:json[@"timezone"]];
+                    [[LocationManager sharedManager] setTimezone:currentWeather.timezone];
+                    NSLog(@"TIMEZONE FROM DARK SKY API CALL: %@", [[LocationManager sharedManager] timezone]);
                     completion(currentWeather);
                 }];
             }

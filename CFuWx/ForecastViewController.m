@@ -230,12 +230,14 @@
         imageURL = nightURL;
     }
     
+    __weak typeof(self) bruce = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         
+        __strong typeof(bruce) hulk = bruce;
         dispatch_async(dispatch_get_main_queue(), ^{
             //            Update the UI
-            self.backgroundImageView.image = [UIImage imageWithData:imageData];
+            hulk.backgroundImageView.image = [UIImage imageWithData:imageData];
         });
     });
     return self.backgroundImageView.image;

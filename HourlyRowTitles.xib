@@ -23,37 +23,37 @@
                         <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ss3-4d-ywK">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="43.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="afa-d3-U0C">
-                                <rect key="frame" x="71" y="0.0" width="60" height="43.5"/>
+                                <rect key="frame" x="69" y="0.0" width="67.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="kbC-Lx-8Nf">
-                                <rect key="frame" x="141.5" y="0.0" width="60" height="43.5"/>
+                                <rect key="frame" x="138" y="0.0" width="67.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tle-b9-Vxn">
-                                <rect key="frame" x="212.5" y="0.0" width="60" height="43.5"/>
+                                <rect key="frame" x="206.5" y="0.0" width="67.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ecM-ZM-4Cg">
-                                <rect key="frame" x="283" y="0.0" width="60" height="43.5"/>
+                                <rect key="frame" x="275.5" y="0.0" width="67.5" height="43.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,13 +65,13 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="fNb-98-ReC" secondAttribute="bottom" id="0mQ-HJ-t5z"/>
                     <constraint firstItem="fNb-98-ReC" firstAttribute="leading" secondItem="7bA-ye-ueg" secondAttribute="leading" constant="16" id="2xt-f0-kpb"/>
-                    <constraint firstItem="kbC-Lx-8Nf" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.16" id="4d1-3r-2gF"/>
-                    <constraint firstItem="afa-d3-U0C" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.16" id="IyQ-dv-aRD"/>
-                    <constraint firstItem="tle-b9-Vxn" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.16" id="YhU-rA-Mzw"/>
+                    <constraint firstItem="kbC-Lx-8Nf" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.18" id="4d1-3r-2gF"/>
+                    <constraint firstItem="afa-d3-U0C" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.18" id="IyQ-dv-aRD"/>
+                    <constraint firstItem="tle-b9-Vxn" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.18" id="YhU-rA-Mzw"/>
                     <constraint firstItem="fNb-98-ReC" firstAttribute="top" secondItem="7bA-ye-ueg" secondAttribute="top" id="jRy-i0-Vj4"/>
-                    <constraint firstItem="ecM-ZM-4Cg" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.16" id="lq7-dd-JjH"/>
+                    <constraint firstItem="ecM-ZM-4Cg" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.18" id="lq7-dd-JjH"/>
                     <constraint firstAttribute="trailing" secondItem="fNb-98-ReC" secondAttribute="trailing" constant="16" id="rxd-7H-s2E"/>
-                    <constraint firstItem="ss3-4d-ywK" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.16" id="yvq-7s-xcC"/>
+                    <constraint firstItem="ss3-4d-ywK" firstAttribute="width" secondItem="7bA-ye-ueg" secondAttribute="width" multiplier="0.18" id="yvq-7s-xcC"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
