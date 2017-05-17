@@ -32,7 +32,6 @@
 		555FA2001E06FE680036FC1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA1FF1E06FE680036FC1E /* AppDelegate.m */; };
 		555FA2061E06FE680036FC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2041E06FE680036FC1E /* Main.storyboard */; };
 		555FA2091E06FE680036FC1E /* CFuWx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2071E06FE680036FC1E /* CFuWx.xcdatamodeld */; };
-		555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555FA20A1E06FE680036FC1E /* Assets.xcassets */; };
 		555FA20E1E06FE680036FC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA20C1E06FE680036FC1E /* LaunchScreen.storyboard */; };
 		555FA2191E06FE680036FC1E /* CFuWxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 555FA2181E06FE680036FC1E /* CFuWxTests.m */; };
 		555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 555FA2281E0700E90036FC1E /* Forecast.storyboard */; };
@@ -49,6 +48,7 @@
 		55EF0DCA1E0AF6FB00750E6E /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF0DC91E0AF6FB00750E6E /* dummy.swift */; };
 		55F25CA71E09F1C900BAF2FA /* garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA61E09F1C900BAF2FA /* garbage.swift */; };
 		55F25CA91E09F24D00BAF2FA /* ConversionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */; };
+		7C06AFD71ECBC43A00CBEE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C06AFD61ECBC43A00CBEE39 /* Assets.xcassets */; };
 		7CB9B3211E0C76AC000E1224 /* HamburgerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9B3201E0C76AC000E1224 /* HamburgerView.xib */; };
 		7CB9B3241E0C8208000E1224 /* BurgerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9B3231E0C8208000E1224 /* BurgerMenuViewController.m */; };
 		7CB9B3271E0C84D9000E1224 /* MenuStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9B3261E0C84D9000E1224 /* MenuStackViewController.m */; };
@@ -116,7 +116,6 @@
 		555FA1FF1E06FE680036FC1E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		555FA2051E06FE680036FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		555FA2081E06FE680036FC1E /* CFuWx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CFuWx.xcdatamodel; sourceTree = "<group>"; };
-		555FA20A1E06FE680036FC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/elaewin/codefellows/401/CFuWx/CFuWx/Assets.xcassets; sourceTree = "<absolute>"; };
 		555FA20D1E06FE680036FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		555FA20F1E06FE680036FC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		555FA2141E06FE680036FC1E /* CFuWxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; includeInIndex = 0; path = CFuWxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,12 +140,13 @@
 		55EF0DC91E0AF6FB00750E6E /* dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		55F25CA61E09F1C900BAF2FA /* garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garbage.swift; sourceTree = "<group>"; };
 		55F25CA81E09F24D00BAF2FA /* ConversionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversionsTest.m; sourceTree = "<group>"; };
+		7C06AFD11ECBC30200CBEE39 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		7C06AFD61ECBC43A00CBEE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB9B3201E0C76AC000E1224 /* HamburgerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerView.xib; sourceTree = "<group>"; };
 		7CB9B3221E0C8208000E1224 /* BurgerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerMenuViewController.h; sourceTree = "<group>"; };
 		7CB9B3231E0C8208000E1224 /* BurgerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerMenuViewController.m; sourceTree = "<group>"; };
 		7CB9B3251E0C84D9000E1224 /* MenuStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuStackViewController.h; sourceTree = "<group>"; };
 		7CB9B3261E0C84D9000E1224 /* MenuStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuStackViewController.m; sourceTree = "<group>"; };
-		7CD1DDC21E1F11F20019AF98 /* Credentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		7CD83D951E0B427C009BE48F /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Header.xib; path = ../Header.xib; sourceTree = "<group>"; };
 		7CD83D991E0B4305009BE48F /* HourlyRowTitles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyRowTitles.xib; sourceTree = "<group>"; };
 		7CD83D9B1E0B431B009BE48F /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		555FA1FB1E06FE680036FC1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7CD1DDC21E1F11F20019AF98 /* Credentials.h */,
+				7C06AFD11ECBC30200CBEE39 /* Credentials.h */,
 				015631E01E0C6A7C009AB385 /* NSString+Validation.h */,
 				015631E11E0C6A7C009AB385 /* NSString+Validation.m */,
 				555CD9B81E08C4DE002E72DA /* CFuWx-Bridging-Header.h */,
@@ -232,9 +232,9 @@
 				0180B82B1E088C5E00B63BE8 /* forecast.JSON */,
 				555FA1FE1E06FE680036FC1E /* AppDelegate.h */,
 				555FA1FF1E06FE680036FC1E /* AppDelegate.m */,
-				555FA20A1E06FE680036FC1E /* Assets.xcassets */,
 				555FA20F1E06FE680036FC1E /* Info.plist */,
 				555FA1FC1E06FE680036FC1E /* main.m */,
+				7C06AFD61ECBC43A00CBEE39 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				TargetAttributes = {
 					555FA1F71E06FE680036FC1E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4YFWUVNT8L;
+						DevelopmentTeam = HYPCVH7NE6;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -445,8 +445,8 @@
 				7CD83DA11E0B43E5009BE48F /* DailyRowTitles.xib in Resources */,
 				555FA2291E0700E90036FC1E /* Forecast.storyboard in Resources */,
 				555FA22D1E0701380036FC1E /* About.storyboard in Resources */,
+				7C06AFD71ECBC43A00CBEE39 /* Assets.xcassets in Resources */,
 				7CD83D961E0B427C009BE48F /* Header.xib in Resources */,
-				555FA20B1E06FE680036FC1E /* Assets.xcassets in Resources */,
 				555FA2061E06FE680036FC1E /* Main.storyboard in Resources */,
 				555FA22B1E0701110036FC1E /* Settings.storyboard in Resources */,
 				7CD83D9A1E0B4305009BE48F /* HourlyRowTitles.xib in Resources */,
@@ -640,7 +640,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = HYPCVH7NE6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Carthage/Build/iOS/",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -663,7 +663,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 4YFWUVNT8L;
+				DEVELOPMENT_TEAM = HYPCVH7NE6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/Carthage/Build/iOS/",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
