@@ -93,8 +93,8 @@
         TopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopTableViewCell"];
         NSDate *date = [NSDate date];
         
-        NSString *time = [Conversions convertToReadableTime:date];
-        cell.date.text = [NSString stringWithFormat:@"%@ at %@", [Conversions convertToReadableDate:date], time];
+        cell.time.text = [NSString stringWithFormat:@"%@ Local Time",[Conversions convertToReadableTime:date]];
+        cell.date.text = [Conversions convertToReadableDate:date];
         cell.temperature.text = [NSString stringWithFormat:@"%@°F", [Conversions formatToOneDecimal:self.currentWeather.temperature.floatValue]];
         cell.location.text = [self getLocationText];
         [cell.weatherIconImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

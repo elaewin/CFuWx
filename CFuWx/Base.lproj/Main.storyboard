@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,7 +49,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="WeatherIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vzh-eD-yFD">
-                                                    <rect key="frame" x="201" y="48" width="150" height="114"/>
+                                                    <rect key="frame" x="201" y="52" width="150" height="110"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyG-Cz-Xbp">
@@ -70,11 +70,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHI-gL-gCY">
+                                                    <rect key="frame" x="201" y="26" width="150" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="vzh-eD-yFD" secondAttribute="trailing" constant="24" id="578-xv-rah"/>
                                                 <constraint firstItem="htT-X5-unD" firstAttribute="leading" secondItem="uEV-Dx-GAt" secondAttribute="leading" constant="16" id="Dff-18-w34"/>
-                                                <constraint firstItem="vzh-eD-yFD" firstAttribute="top" secondItem="d5T-hO-XNq" secondAttribute="bottom" constant="22" id="Dnh-gC-dP4"/>
+                                                <constraint firstItem="nHI-gL-gCY" firstAttribute="width" secondItem="d5T-hO-XNq" secondAttribute="width" id="EEj-WU-xTy"/>
                                                 <constraint firstItem="e9u-lJ-p74" firstAttribute="leading" secondItem="uEV-Dx-GAt" secondAttribute="leading" constant="16" id="EnB-oF-Q93"/>
                                                 <constraint firstItem="GyG-Cz-Xbp" firstAttribute="leading" secondItem="uEV-Dx-GAt" secondAttribute="leading" constant="16" id="MHk-ZL-muq"/>
                                                 <constraint firstAttribute="bottom" secondItem="vzh-eD-yFD" secondAttribute="bottom" constant="4" id="PpP-yU-4nN"/>
@@ -84,10 +90,13 @@
                                                 <constraint firstItem="e9u-lJ-p74" firstAttribute="top" secondItem="uEV-Dx-GAt" secondAttribute="top" constant="4" id="bEv-fT-w33"/>
                                                 <constraint firstItem="d5T-hO-XNq" firstAttribute="trailing" secondItem="vzh-eD-yFD" secondAttribute="trailing" id="beu-1M-BV3"/>
                                                 <constraint firstAttribute="bottom" secondItem="GyG-Cz-Xbp" secondAttribute="bottom" constant="20" id="br5-mO-bOc"/>
+                                                <constraint firstItem="nHI-gL-gCY" firstAttribute="trailing" secondItem="d5T-hO-XNq" secondAttribute="trailing" id="k8Y-1g-rW5"/>
                                                 <constraint firstItem="GyG-Cz-Xbp" firstAttribute="width" secondItem="uEV-Dx-GAt" secondAttribute="width" multiplier="0.45" id="kAf-Iv-QQY"/>
+                                                <constraint firstItem="nHI-gL-gCY" firstAttribute="top" secondItem="d5T-hO-XNq" secondAttribute="bottom" id="kJV-UA-NSB"/>
                                                 <constraint firstItem="vzh-eD-yFD" firstAttribute="width" secondItem="uEV-Dx-GAt" secondAttribute="width" multiplier="0.4" id="qHK-SH-tOH"/>
                                                 <constraint firstItem="d5T-hO-XNq" firstAttribute="top" secondItem="e9u-lJ-p74" secondAttribute="top" id="tNI-kE-cy4"/>
                                                 <constraint firstItem="e9u-lJ-p74" firstAttribute="width" secondItem="uEV-Dx-GAt" secondAttribute="width" multiplier="0.45" id="v1G-uJ-yIw"/>
+                                                <constraint firstItem="vzh-eD-yFD" firstAttribute="top" secondItem="nHI-gL-gCY" secondAttribute="bottom" constant="4" id="xqd-gr-FY1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -96,6 +105,7 @@
                                             <outlet property="location" destination="e9u-lJ-p74" id="Fam-a2-bfa"/>
                                             <outlet property="summaryLabel" destination="GyG-Cz-Xbp" id="qh1-U9-CPI"/>
                                             <outlet property="temperature" destination="htT-X5-unD" id="oKf-6l-OhY"/>
+                                            <outlet property="time" destination="nHI-gL-gCY" id="p9s-V4-J4d"/>
                                             <outlet property="weatherIconImage" destination="vzh-eD-yFD" id="u4E-fv-339"/>
                                         </connections>
                                     </tableViewCell>
