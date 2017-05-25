@@ -42,7 +42,11 @@
     
     NSDictionary *iconDictionary = @{@"clear-day": [UIImage imageNamed:@"clear-day"], @"clear-night": [UIImage imageNamed:@"clear-night"], @"rain": [UIImage imageNamed:@"rain"], @"snow": [UIImage imageNamed:@"snow"], @"sleet": [UIImage imageNamed:@"sleet"], @"wind": [UIImage imageNamed:@"wind"], @"fog": [UIImage imageNamed:@"fog"], @"cloudy": [UIImage imageNamed:@"cloudy"], @"partly-cloudy-day": [UIImage imageNamed:@"partly-cloudy-day"], @"partly-cloudy-night": [UIImage imageNamed:@"partly-cloudy-night"], @"thunderstorm": [UIImage imageNamed:@"thunderstorm"], @"hail": [UIImage imageNamed:@"hail"], @"haze": [UIImage imageNamed:@"haze"], @"tornado": [UIImage imageNamed:@"wind"]};
     
-    return [iconDictionary objectForKey:iconName];
+    if ([iconDictionary objectForKey:iconName]) {
+        return [iconDictionary objectForKey:iconName];
+    } else {
+        return [UIImage imageNamed:@"default-icon"];
+    }
 
 }
 
