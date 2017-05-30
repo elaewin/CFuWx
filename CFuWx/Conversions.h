@@ -12,7 +12,7 @@
 @interface Conversions : NSObject
 
 // Number formatters
-+(NSString *)getStringFormatFrom:(double)rawDouble to:(int)decimalPlaces;
++(NSString *)getStringFormatFrom:(double)rawDouble toPlaces:(int)decimalPlaces;
 +(NSString *)formatToZeroDecimal:(double)numberToFormat;
 +(NSString *)formatToOneDecimal:(double)numberToFormat;
 +(NSString *)formatToTwoDecimals:(double)numberToFormat;

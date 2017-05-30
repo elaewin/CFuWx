@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="top" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pqf-6v-JqH">
-                                        <rect key="frame" x="71.5" y="30" width="59" height="58.5"/>
+                                        <rect key="frame" x="68" y="30" width="66" height="66"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pqf-6v-JqH" secondAttribute="height" multiplier="1:1" id="isV-fy-lQE"/>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-hh-cEB">
-                                        <rect key="frame" x="249.5" y="30" width="52" height="51.5"/>
+                                        <rect key="frame" x="246" y="30" width="59" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Gln-hh-cEB" secondAttribute="height" multiplier="1:1" id="03V-RV-mlB"/>
@@ -73,13 +73,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G74-Od-CJG">
-                                        <rect key="frame" x="63" y="94.5" width="74.5" height="24"/>
+                                        <rect key="frame" x="63" y="102" width="74.5" height="24"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAILY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc9-6l-vIA">
-                                        <rect key="frame" x="249" y="94.5" width="53" height="24"/>
+                                        <rect key="frame" x="249" y="102" width="53" height="24"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -101,12 +101,12 @@
                                     <constraint firstItem="364-DQ-n94" firstAttribute="width" secondItem="fMK-Qh-XVs" secondAttribute="width" multiplier="0.45" id="hkw-dI-bsx"/>
                                     <constraint firstItem="oc9-6l-vIA" firstAttribute="top" secondItem="G74-Od-CJG" secondAttribute="top" id="ole-RA-MMd"/>
                                     <constraint firstItem="Gln-hh-cEB" firstAttribute="top" secondItem="pqf-6v-JqH" secondAttribute="top" id="uFI-LT-5G1"/>
-                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.4" id="uTb-XV-Gwh"/>
-                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.35" id="wA7-f6-Gra"/>
+                                    <constraint firstItem="pqf-6v-JqH" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.45" id="uTb-XV-Gwh"/>
+                                    <constraint firstItem="Gln-hh-cEB" firstAttribute="height" secondItem="fMK-Qh-XVs" secondAttribute="height" multiplier="0.4" id="wA7-f6-Gra"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0h-z0-3dG" userLabel="ForecastTableView">
-                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="174.5" width="375" height="492.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -116,11 +116,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FVi-m5-ciH" firstAttribute="width" secondItem="T7e-dU-IZB" secondAttribute="width" id="7wG-FP-6kM"/>
+                            <constraint firstItem="U0h-z0-3dG" firstAttribute="top" secondItem="fMK-Qh-XVs" secondAttribute="bottom" constant="8" id="8bP-tz-iKZ"/>
                             <constraint firstItem="fMK-Qh-XVs" firstAttribute="top" secondItem="DK7-lj-rN2" secondAttribute="bottom" id="AMT-Vy-XX5"/>
                             <constraint firstItem="fMK-Qh-XVs" firstAttribute="leading" secondItem="T7e-dU-IZB" secondAttribute="leading" id="KKb-cf-djG"/>
                             <constraint firstItem="RGt-RF-Gwa" firstAttribute="top" secondItem="U0h-z0-3dG" secondAttribute="bottom" id="Ulb-x9-MvU"/>
                             <constraint firstItem="FVi-m5-ciH" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" id="XfM-tZ-7pz"/>
-                            <constraint firstItem="U0h-z0-3dG" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" multiplier="0.7" id="aHh-oN-t8u"/>
                             <constraint firstItem="U0h-z0-3dG" firstAttribute="centerX" secondItem="T7e-dU-IZB" secondAttribute="centerX" id="c19-Yt-R5b"/>
                             <constraint firstAttribute="trailing" secondItem="fMK-Qh-XVs" secondAttribute="trailing" id="hDW-Y8-Cdh"/>
                             <constraint firstItem="fMK-Qh-XVs" firstAttribute="height" secondItem="T7e-dU-IZB" secondAttribute="height" multiplier="0.22" id="jBl-Ql-Q2D"/>

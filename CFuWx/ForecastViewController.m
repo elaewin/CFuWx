@@ -50,7 +50,6 @@
     }
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -173,7 +172,6 @@
     return 1;
 }
 
-// still need to fix getting headers to display properly.
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     if ([self.forecastToDisplay isEqualToString:@"hourly"]) {
@@ -188,14 +186,6 @@
     return 65;
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 45;
-//}
-
-// code for background images from collections via unsplash
-//-(NSURL *)getURLForLocalTimeOfForecast {
-//    return [NSURL URLWithString:@"https://source.unsplash.com/collection/566474"];
-//}
 -(BOOL)isItCurrentlyDaytime {
     NSTimeInterval sunriseInterval = [self.dailyWeatherArray[0] sunriseTime].doubleValue;
     NSTimeInterval sunsetInterval = [self.dailyWeatherArray[0] sunsetTime].doubleValue;
@@ -217,8 +207,8 @@
     }
 }
 
+// code for background images from collections via unsplash: setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
 -(UIImage *)getBackgroundImage {
-    //    setting background to image grabbed from "Forecast Backgrounds" collection in unsplash.com
     
     NSURL *imageURL = [[NSURL alloc] init];
     
